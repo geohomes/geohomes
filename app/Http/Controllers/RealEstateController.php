@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class RealEstateController extends Controller
 {
+
+
     public function index()
     {
-        return view('real-estate');
+         
+         $fetch = DB::table('estate')->get();
+         $estate = json_decode(json_encode($fetch ), true);
+        return view('real-estate', ['estate'=> $fetch]);
     }
 
 }

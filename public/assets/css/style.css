@@ -63,26 +63,26 @@
 /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
 .boxed-btn {
   background: #fff;
-  color: #FF3514 !important;
-  display: inline-block;
+  color: #0EA15F !important;
+  display:inline-block;
   padding: 18px 44px;
+  margin-left:0 !important;
   font-family: "Muli", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
-  border: 1px solid #FF3514;
+  border: 1px solid black;
   letter-spacing: 3px;
   text-align: center;
-  color: #FF3514;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
 .boxed-btn:hover {
-  background: #FF3514;
+  background: #0EA15F;
   color: #fff !important;
-  border: 1px solid #FF3514;
+  border: 1px solid black;
 }
 
 /* line 72, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_variables.scss */
@@ -492,7 +492,7 @@ hr {
   font-size: 16px;
   background-size: 200%;
   transition: 0.6s;
-  background-image: linear-gradient(to left, #FF3514, #d62d12, #FF3514);
+  background-image: #0EA15F;
   background-position: right;
 }
 
@@ -525,16 +525,16 @@ hr {
   text-transform: capitalize;
   border-radius: 0px;
   cursor: pointer;
-  color: #FF3514;
+  color: #0EA15F;
   display: inline-block;
   font-size: 16px;
-  border: 1px solid #FF3514;
+  border: 1px solid #0EA15F;
   background: none;
 }
 
 /* line 290, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .btn2 i {
-  color: #FF3514;
+  color: #0EA15F;
   font-size: 13px;
   font-weight: 500;
   position: relative;
@@ -611,15 +611,15 @@ hr {
 .borders-btn {
   padding: 14px 35px;
   background: none;
-  border: 1px solid #ff2656;
+  border: 1px solid #0EA15F;
   border-radius: 0 10px;
   display: inline-block;
-  color: #ff2656;
+  color: #0EA15F;
 }
 
 /* line 356, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .borders-btn::before {
-  background: #331391;
+  background: #0EA15F;
 }
 
 /* line 362, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -643,10 +643,9 @@ hr {
 
 /* line 380, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .submit-btn2 {
-  background: #FF3514;
+  background: #0EA15F;
   width: 100%;
   height: 60px;
-  padding: 10px 20px;
   border: 0;
   color: #fff;
   text-transform: capitalize;
@@ -657,7 +656,7 @@ hr {
 
 /* line 393, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .border-btn {
-  border: 1px solid #ff5600;
+  border: 1px solid #0EA15F;
   color: #464d65;
   background: none;
   border-radius: 5px;
@@ -693,7 +692,7 @@ hr {
   top: 0;
   width: 101%;
   height: 101%;
-  background: #FF3514;
+  background: #0EA15F;
   z-index: -1;
   transition: transform 0.5s;
   transition-timing-function: ease;
@@ -751,7 +750,7 @@ hr {
   border-radius: 50%;
   line-height: 48px;
   border: 2px solid transparent;
-  box-shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
+  shadow: 0 0 10px 3px rgba(108, 98, 98, 0.2);
 }
 
 @media (max-width: 575px) {
@@ -2750,7 +2749,7 @@ hr {
 
 /* line 804, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .w-padding3 {
-  padding: 34px 0;
+  padding: 15px 0;
 }
 
 /* line 807, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -3163,14 +3162,14 @@ hr {
 
 /* line 1065, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .all-btn {
-  color: #FF3514;
+  color: #0EA15F;
   text-decoration: underline;
   font-size: 16px;
 }
 
 /* line 1069, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .all-btn:hover {
-  color: #FF3514;
+  color: #0EA15F;
   text-decoration: underline;
   letter-spacing: 1px;
 }
@@ -3439,9 +3438,10 @@ hr {
 .main-header ul > li:hover > ul.sub-menu {
   visibility: visible;
   opacity: 1;
-  top: 100%;
+  top: 50%;
   margin-left: -177px;
-  background-color: black !important;
+  color:black !important;
+  margin-bottom: 250px !important;
 }
 
 /* line 163, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
@@ -4204,6 +4204,7 @@ hr {
   -moz-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+   opacity:0.9;
 }
 
 /* line 19, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_gallery.scss */
@@ -4406,7 +4407,10 @@ hr {
 /* 21. Contact */
 /* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
 .contact-form .form-wrapper {
-  padding: 65px;
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 145px;
+  padding-top: 110px;
   box-shadow: 0 23px 46px rgba(20, 12, 64, 0.1);
 }
 
@@ -4418,7 +4422,7 @@ hr {
 }
 
 /* line 12, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
-.contact-form input {
+.contact-form input{
   border: 1px solid #eaeaea;
   height: 35px;
   width: 100%;
@@ -4430,8 +4434,9 @@ hr {
   border-radius: 0px;
 }
 
+
 /* line 22, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
-.contact-form input .list {
+.contact-form input.list {
   width: 100%;
   border-radius: 0;
 }
@@ -4767,13 +4772,13 @@ hr {
 /* line 267, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
 .man-slider-active button.slick-arrow i {
   font-size: 20px;
-  color: #FF3514;
+  color: #0EA15F;
 }
 
 /* line 282, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
 .man-slider-active button.slick-next {
   right: 0px;
-  background: #FF3514;
+  background: #0EA15F;
 }
 
 /* line 286, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
@@ -5225,7 +5230,7 @@ hr {
 
 /* line 1, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_footer.scss */
 .footer-area {
-  background: white;
+  background:#F5F9FB;
 }
 
 /* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_footer.scss */
@@ -8691,3 +8696,72 @@ del {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* map responsive Area */
+.map-responsive{
+overflow:hidden;
+padding-bottom:20%;
+margin-top:25% ;
+position:relative;
+height:340px;
+}
+.map-responsive iframe{
+left:0;
+top:0;
+height:340px;
+width:100%;
+position:absolute;
+}
+
+/* mapp responsive Area Ends */
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #0EA15F;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    min-width: 160px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F5F9FB;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom:0px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 5px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #0EA15F;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color:#212529;
+}     

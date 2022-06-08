@@ -9,13 +9,13 @@
       @include('layout.navbar')
     </header>
   <!--? Hero Start -->
-        <div class="slider-area2 section-bg2" data-background="assets/img/hero/hero2.png">
+        <div class="slider-area2 section-bg2" data-background="assets/img/materials/about.jpg" >
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2">
-                                <h2>About US</h2>
+                                <h2 style="color: black;">About US</h2>
                             </div>
                         </div>
                     </div>
@@ -27,20 +27,22 @@
         <section class="about-low-area section-padding40">
             <div class="container">
                 <div class="row justify-content-between">
+                     @if(empty($about))
+                      <div class="alert alert-warning col-lg-12 text-center">
+                        <strong>No Content Available Yet.</strong>
+                      </div>
+                     
+
+                     @else
+                      @foreach($about as $row)
                     <div class="col-xl-6 col-lg-6 col-md-10">
                         <div class="about-caption mb-50">
                             <!-- Section Tittle -->
                             <div class="section-tittle mb-35">
                                 <span class="element" style="background-color:#0EA15F;">About Us</span>
-                                <h2>Words About Us</h2>
+                                <h2>{{$row->title}}</h2>
                             </div>
-                            <p> The Group successfully ventured into Real Estate by creating a series of residential spaces
-                            at strategic locations in Kolkata, Siliguri and Durgapur under the aegis of Dream Homes.
-                            <br> <br>
-
-                            Our mission is to engage in issues that are of concern to individuals, families and
-                            communities through an uncompromising commitment to create outstanding living, work and
-                            leisure environments.</p>
+                            <p>{{$row->description}}</p>
                         </div>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -57,6 +59,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-xl-5 col-lg-6 col-md-9 offset-md-1 offset-sm-1">
                         <div class="about-right-cap">
                             <div class="about-right-img">
@@ -67,6 +70,8 @@
                                 <p>Years of experience</p>
                             </div>
                         </div>
+                        @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

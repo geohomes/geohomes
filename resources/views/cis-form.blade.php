@@ -6,177 +6,308 @@
     <!-- Header -->
       @include('layout.navbar')
     </header>
-  <!-- Global Banner -->
-    <section class="global-banner">
-       <img src="/assets/img/materials/client-banner.jpg" alt="">
-        <h2 class="container">Welcome CIS Page</h2>
-    </section>
-    <!-- Global Banner End -->
-
-    <form class="application-form">
-      <h3 class="mb-3" style="background-color:#FF3514;">CLIENT’S INFORMATION SYSTEM (CIS) FORM<br>Kindly fill out the form with the correct details.</h3>
-      
-      <div class="leftcontact">
-            <div class="form-group">
-              <p>Full Name</p>
-                <input type="text" name="nom" id="nom" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Nom' doit être renseigné."/>
-                <div class="validation"></div>
-       </div> 
-            
-       <div class="form-group">
-      <p>Phone number</p>  
-        <input type="text" name="phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"/>
-                <div class="validation"></div>
-      </div>
-
-      <div class="form-group">
-      <p>E-mail</p>  
-                <input type="email" name="email" id="email" data-rule="email" data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire."/>
- 			  <div class="validation"></div>
-     	 </div> 
-     	 <div class="form-group">
-      <p> Residential Address <span>*</span></p>
-      
-        <input type="text" name="home-adresse" id="adresse" data-rule="required" data-msg="please fill this filled"/>
-                <div class="validation"></div>
-      </div>
- 		
- 		<div class="form-group">
-      <p>Occupation</p>
-                <input type="text" name="property" id="fonction" data-rule="required" data-msg="please fill this filled"/>
-                <div class="validation"></div>
-      </div>
-
- 		<div class="form-group">
-      <p>Date of Birth</p>
-        <input type="calendar" name="LGA" data-rule="required" data-msg="please fill this filled"/>
-                <div class="validation"></div>
-      </div>
-
-      <div class="form-group">
-      <p>Plot Number</p>
-        <input type="text" name="state" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
-         <div class="validation"></div>
-      </div>  
-      	<p>Lifted</p>
-      	<div class="form-group">
-        <input type="text" name="state" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
-        <div class="validation"></div>
-      </div> 
-
-  </div>
-  <div class="rightcontact">  
-
-      <p>Layout</p>
-      	<div class="form-group">
-        <input type="text" name="state" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
-        <div class="validation"></div>
-      </div>
-
-       <p>Amount</p>
-      	<div class="form-group">
-        <input type="text" name="state" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
-        <div class="validation"></div>
-      </div> 
-
-      <h3 class="mb-4">Agent</h3>
-      <div class="form-group">
-      <p>Full Name</p>
-      
-        <input type="text" name="state" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."/>
-         <div class="validation"></div>
-      </div> 
-  <div class="form-group">
-      <p>Phone number</p>  
-        <input type="text" name="phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"/>
-                <div class="validation"></div>
-      </div>
-     	 <div class="form-group">
-      <p> Residential Address</p>
-      
-        <input type="text" name="home-adresse" id="adresse" data-rule="required" data-msg="please fill this filled"/>
-                <div class="validation"></div>
-      </div>
-      <div class="form-group">
-      <p>Email</p>
-        <input type="email" name="home-adresse" id="adresse" data-rule="required" data-msg="please fill this filled"/>
-         <div class="validation"></div>
-      </div>
- 		
- 		<div class="form-group">
-      <p>Occupation</p>
-        <input type="text" name="property" id="fonction" data-rule="required" data-msg="please fill this filled"/>
-        <div class="validation"></div>
-      </div>
-
-  </div>
-<button type="submit" class="bouton-contact mb-5">Send</button>
-</form>
-                            <div class="container">
-                            	<div class="d-flex justify-content-center" style="border: 10px; background-color: black; ">
-                            <h3 style="color: white; font-size: 35px;">Terms and Conditions</h3>
-                        </div>
-                            <div class="row mb-5">
-                                    <div class="col-sm-12 col-lg-6 mt-4" style="border:7px #0EA15F solid; border-radius: 20px;">
-                                    	<u style="color: black"><h2 class="mt-4" style="color:  #0EA15F "> Agency Agreement</h2></u>
-                                        This AGENCY AGREEMENT made between (Applying Agent) and KERAE HOMES LIMITED, a
-                                        body registered under Part A of the Companies and Allied Matters Act, Cap C20,
-                                        Laws of the Federation of Nigeria, and having its registered Office address at
-                                        Km 36, Ero’s House, Duplex 2 Eputu, Lekki-Expressway, Lagos State. (Principal)
-                                        on the other Part HEREBY APPOINTS (Agent) in accordance with the terms of this
-                                        Agreement :
-                                    </div>
-                                    <div class="col-sm-12 col-lg-6 mt-4" style="border:7px #0EA15F solid; border-radius: 20px;">
-                                    	<u style="color: black"><h2 style="color:  #0EA15F " class="mt-4" >IDEMNIFICATION</h2></u>
-                                        The Principal will not indemnify the agent or any third party for any loss or damage arising from the actions of the agent in course of any transaction on behalf of the Principal.
-
-                                    	<u style="color: black"><h2 style="color:  #0EA15F ">TERMINATION</h2></u>
-                                        The Agent agreement will be terminated by the consent of both parties.
-                                    </div>
-
-                            			<div class="col-sm-12 col-lg-6 "style="border:7px #0EA15F solid; border-radius: 20px;">
-                                    	<u style="color: black">
-                                        <h2 style="color:  #0EA15F " class="mt-4" > AGENCY RELATIONSHIP AND DUTIES OF AGENT</h2></u>
-             
-                                        A. The agency relationship in respect of the property shall be a single agency,
-                                        and shall perform his duties in person and cannot appoint a sub-agent to do what
-                                        he was pointed to do. <br>
-                                        B. The Agent must have notified the management in writing and signed the agency
-                                        agreement before commencing any negotiations and sale on behalf of the
-                                        management. <br>
-                                        C. The management does not authorize the agent to collect the money paid by the
-                                        client into his personal account; all such monies must be deposited directly
-                                        into the authorized accounts of the management. <br>
-                                        D. The Agent must act with the Principal’s best interests in mind: the agent
-                                        cannot act in a way that would harm the Management or the company’s property
-                                        <br>
-                                        E. The Agent must exercise reasonable care and skill and keep confidential any
-                                        information obtained while performing agency duties. <br>
-                                        F. The Agent must disclose all material facts relating to the business at hand.
-                                    </div>
-
-                                    <div class="col-sm-12 col-lg-6 " style="border:7px #0EA15F solid; border-radius: 20px;">
-                                    	<u style="color: black">
-                                    	<h2 style="color: #0EA15F" class="mt-4" >COMMISSION</h2></u>
-                                        A. The Agent shall be paid a total of 10% of the proceeds from the sale of land,
-                                        (such variance shall be dependent on if the Agent’s Client gets a discount) and
-                                        5% (such variance shall be dependent on if the Agent’s Client gets a discount)
-                                        for the sale of any Buildings. With respect to Buildings the commission shall be
-                                        paid on the result after deduction of statutory fees. <br> <br>
-                                        B. The above stated commission is subject to review upon an increase or 
-                                        decrease. <br> <br>
-                                        C. All cost incurred during the sale of the company’s Property by the Agent 
-                                        shall be borne by the agent. All such cost includes but are not limited to
-                                        transportation for site visitation and call credits used for communication with
-                                        the client. <br> <br>
-                                        D. The Agent shall conform to the advertised price of the company.
-                                    </div>
-                                
-                                        
-                                    
-                                </div>
+   <!--? Hero Start -->
+        <div class="slider-area2 section-bg2" data-background="assets/img/materials/cis.jpg">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2">
+                                <h2 style="color:black">Client’s Information System (CIS)</h2>
                             </div>
-    <!-- Consultants Form End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+        <div class="container">
+                 <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title mt-30 padding-40" style="color:#0EA15F">Kindly, fill the form with correct detail.</h2>
+                    </div>
+                  </div>
+
+                          <!-- it gives feedback messages -->
+                                      @if($message = Session::get('success'))
+                                      <div class="alert">
+                                        <p style="color:#0EA10F;">{{$message}}</p>
+                                      </div>
+                                      @endif
+
+                                      @if($message = Session::get('error'))
+                                      <div class="alert">
+                                        <p style="color:red;">{{$message}}</p>
+                                      </div>
+                                      @endif
+                                      <!-- feedback message ends here -->
+
+                        <form class="form-contact contact_form" action="#" method="POST" novalidate="novalidate">
+                            <div class="row">
+                               
+                                <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <small class="text-danger">{{$errors->first('email') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                     <div class="form-group">
+                                        <input class="form-control valid" name="phone" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mobile Line'" placeholder="Mobile Line">
+                                        <small class="text-danger">{{$errors->first('phone') }}</small>
+                                    </div>
+                                </div>
+                                 
+                              
+                                <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                       <small class="text-danger">{{$errors->first('email') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="residential" id="phone" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Residential Address '" placeholder="Residential Address">
+                                       <small class="text-danger">{{$errors->first('residential') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="occupation" id="address" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Occupation'" placeholder="Occupation">
+                                       <small class="text-danger">{{$errors->first('ocupation') }}</small>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="date_of_birth" id="date_of_birth" type="date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Date Of Birth'" placeholder="Date Of Birth">
+                                       <small class="text-danger">{{$errors->first('date_of_birth') }}</small>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="plot_number" id="plot_number" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Plot Number'" placeholder="Plot Number">
+                                       <small class="text-danger">{{$errors->first('plot_number') }}</small>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="lifted" id="lifted" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lifted'" placeholder="Lifted">
+                                       <small class="text-danger">{{$errors->first('lifted') }}</small>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="amount" id="amount" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'amount'" placeholder="120,000 per plot" readonly="">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <select name="layout" id="select2">
+                                      <option value="Divine City">Divine City Layout</option>
+                                      <option value="Beloved">Beloved Layout</option>
+                                       <option value="Golden Gate" >Golden Gate</option>
+                                         <option value="Precious">Precious</option>
+                                        <option value="Monic " >Monic</option>
+                                        <option value="Valley of Life" >Valley of Life</option>
+                                         <option value="Destiny" >Destiny</option>
+                                        <option value="Christa City" >Christa City</option>
+                                        <option value="blue lake" >Blue lake</option>
+                                         <option value="peace" >Peace</option>
+                                        <option value="Agu bite" >Agu Bite</option>
+                                            </select>
+                                            <small class="text-danger">{{$errors->first('layout') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="agent_name" id="agent_name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'agent name'" placeholder="Agent Name" >
+                                       <small class="text-danger">{{$errors->first('agent_name') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="agent_phone" id="amount" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'agent phone'" placeholder="Agent Mobile Line" >
+                                       <small class="text-danger">{{$errors->first('agent_phone') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="agent_address" id="agent_address" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Agent Address'" placeholder="Agent Address " >
+                                       <small class="text-danger">{{$errors->first('agent_address') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="agent_occupation" id="agent_occupation" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'agent occupation'" placeholder="Agent Occupation" >
+                                       <small class="text-danger">{{$errors->first('agent_occupation') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-md-6 col-lg-4 ">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="agent_office" id="agent office" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'agent office'" placeholder="Agent Office" >
+                                       <small class="text-danger">{{$errors->first('agent_office') }}</small>
+                                    </div>
+                                </div>
+                           <div class="col-sm-6 col-lg-12 submit-info mb-40">
+                             <button class="submit-btn2" type="submit" style="background-color:#0EA15F; margin-left:none; border-radius: 5px;">Submit</button>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+                         
+        <!-- Contact form End -->
+        <!--
+      <center>
+    <div class="container">
+    <div class="form-wrapper mt-50">
+   <form id="contact-form" action="#" method="POST">
+    <div class="row">
+       <div class="col-12">
+
+       it gives feedback messages 
+           @if($message = Session::get('success'))
+          <div class="alert alert-success">
+           <p style="color:#0EA10F;">{{$message}}</p>
+            </div>
+             @endif
+
+             @if($message = Session::get('error'))
+            <div class="alert alert-danger">
+            <p style="color:red;">{{$message}}</p>
+            </div>
+            @endif
+           feedback message ends here 
+
+        <p class="contact-title mt-20 padding-10 " style="color:black">Kindly fill the CIS Form with correct details.</p>
+        </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="form-box user-icon mb-0">
+              <p>Full Name</p>
+                <input type="text" name="name" id="name" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Nom' doit être renseigné."required="" />
+                <div class="validation"></div>
+            </div> 
+                
+            
+            <div class="form-box user-icon mb-0">
+            <p>Phone number</p> 
+              <input type="text" name="phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"required="" />
+                      <div class="validation"></div>
+            </div>
+
+              <div class="form-box user-icon mb-0">
+              <p>E-mail</p>
+                <input type="email" name="email" id="email" data-rule="email" data-msg="Vérifiez votre saisie sur les champs : Le champ 'E-mail' est obligatoire."required="" />
+         			  <div class="validation"></div>
+             	 </div> 
+             	 
+               <div class="form-box user-icon mb-0">
+              <p> Residential Address</p>
+                <input type="text" name="residential" id="adresse" data-rule="required" data-msg="please fill this filled"required="" />
+                <div class="validation"></div>
+              </div>
+ 		
+           		   <div class="form-box user-icon mb-0">
+                <p>Occupation</p>
+                 <input type="text" name="occupation" id="fonction" data-rule="required" data-msg="please fill this filled"required="" />
+                 <div class="validation"></div>
+                </div>
+              </div>
+
+             		<div class="col-lg-4 col-md-4 col-sm-12">
+                  <div class="form-box user-icon mb-0">
+                  <p>Date of Birth</p>
+                    <input type="calendar" name="date_of_birth" data-rule="required" data-msg="please fill this filled"required="" />
+                    <div class="validation"></div>
+                  </div>
+
+                  <div class="form-box user-icon mb-0">
+                  <p>Plot Number</p>
+                  <input type="number" name="plot_number" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."required="" />
+                   <div class="validation"></div>
+                </div> 
+
+                  <div class="form-box user-icon mb-0">
+                	<p>Lifted</p>
+                  <input type="text" name="lifted" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."required="" />
+                  <div class="validation"></div>
+                </div> 
+
+                <div class="form-box user-icon mb-0">
+                 <p>Amount</p>
+                  <input type="text" name="amount" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."required=""  value="$24,000 Per Plot" readonly />
+                  <div class="validation"></div>
+                </div>
+
+                  <div class="form-box user-icon mb-0">
+                 <p style="float: left;" class="ml-50">Layouts</p>
+                 <select name="layout" id="select2" class="select-form ml-40" data-rule="required" >
+                  <option value="Divine City">Divine City Layout</option>
+                  <option value="Beloved">Beloved Layout</option>
+                   <option value="Golden Gate" >Golden Gate</option>
+                     <option value="Precious">Precious</option>
+                    <option value="Monic " >Monic</option>
+                    <option value="Valley of Life" >Valley of Life</option>
+                     <option value="Destiny" >Destiny</option>
+                    <option value="Christa City" >Christa City</option>
+                    <option value="blue lake" >Blue lake</option>
+                     <option value="peace" >Peace</option>
+                    <option value="Agu bite" >Agu Bite</option>
+                    
+                    </select>
+                    select ends here
+
+                </div>
+
+
+                  <div class="col-lg-4 col-md-4 col-sm-12">
+                  
+                  <div class="form-box user-icon mb-0">
+                     <p>Agent Only</p>
+                    <input type="text" name="agent_name"  placeholder="Agent`s Full Name" id="ville" data-rule="required" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Ville' doit être renseigné."required="" />
+                     <div class="validation"></div>
+                  </div> 
+
+                   <div class="form-box user-icon mb-0">
+                  <p>Agent`s Phone number</p>  
+                    <input type="text" name="agent_phone" id="phone" data-rule="maxlen:10" data-msg="Vérifiez votre saisie sur les champs : Le champ 'Téléphone' doit être renseigné. Minimum 10 chiffres"required="" />
+                            <div class="validation"></div>
+                  </div>
+                 	<div class="form-box user-icon mb-0">
+                  <p> Agent`s Residential Address</p>
+                    <input type="text" name="agent_adresse" id="adresse" data-rule="required" data-msg="please fill this filled"required="" />
+                    <div class="validation"></div>
+                  </div>
+
+             		
+             		<div class="form-box user-icon mb-0">
+                  <p>Agent`s Occupation</p>
+                    <input type="text" name="agent_occupation" id="fonction" data-rule="required" data-msg="please fill this filled"required="" />
+                    <div class="validation"></div>
+                  </div>
+
+
+                
+                  <p> Agent`s Office Address</p>
+                    <input type="text" name="agent_office" id="fonction"  data-msg="please fill this filled"/>
+                    <div class="validation"></div>
+                  </div>
+                </div>
+             <div class="col-lg-12 submit-info mb-45 ml-0">
+              <button class="submit-btn2" type="submit" style="background-color:#0EA10F; width:80%;">Submit Form</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        </center>
+                          
+  Consultants Form End -->
         @include('layout.footer')
      </body>
 </html>

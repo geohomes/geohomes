@@ -26,25 +26,26 @@
         <div class="categories-area section-padding40">
             <div class="container">
                 <div class="row">
+                    @if(empty($consultancy))
+                      <div class="alert alert-warning col-lg-12 text-center">
+                        <strong>No Content Available Yet.</strong>
+                      </div>
+                     
+
+                     @else
+                      @foreach($consultancy as $row)
                     <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
                         <div class="about-caption">
                             <div class="section-tittle mt-10 mb-0">
-                                <h2>Geohomes Consultancy </h2>
+                                <h2>{{$row->title}}</h2>
                             </div>
-                            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Fugiat voluptatem beatae facilis fugit ut error aliquam,
-                            ducimus debitis quod similique. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Similique minima repudiandae commodi ex doloribus perferendis,
-                            eligendi, praesentium modi obcaecati repellendus sint voluptatem labore minus quis pariatur 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Fugiat voluptatem beatae facilis fugit ut error aliquam,
-                            ducimus debitis quod similique. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            <p class="mb-0">{{$row->firstdescription}}</p>
                           
                             </div>
                     </div>
                     <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
                         <div class="singel-details-img mt-40">
-                            <img src="assets/img/luxery/consultancy01.jpg" alt="">
+                            <img src="{{ asset('assets/upload/consultancy_images/'.$row->firstimage) }} " class="img-responsive img-fluid w-100" alt="">
                         </div>
                     </div>
                 </div>
@@ -52,26 +53,35 @@
                 <div class="row">
                     <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
                         <div class="singel-details-img mt-40">
-                            <img src="assets/img/luxery/consultancy02.jpeg" alt="">
+                            <img src="{{asset('assets/upload/consultancy_images/'.$row->secondimage) }}"  class="img-responsive img-fluid w-100"alt="">
                         </div>
                     </div>
                     
                     <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
                         <div class="about-caption  mt-40">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Fugiat voluptatem beatae facilis fugit ut error aliquam,
-                            ducimus debitis quod similique. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Similique minima repudiandae commodi ex doloribus perferendis,
-                            eligendi, praesentium modi obcaecati repellendus sint voluptatem labore minus quis pariatur 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Fugiat voluptatem beatae facilis fugit ut error aliquam,
-                            ducimus debitis quod similique. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                          
+                            <p>{{$row->seconddescription}}</p>
                             </div>
+                             <a href="{{route('consultants-form')}}" class="btn hero-btn mt-20" style="background:#0EA15F;" >Get a consultants form <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
                 
                 </div>
+                <div class="col-lg-12 mt-40">
+                        <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $consultancy->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                           
+                        </div>
+                 @endforeach
+                 @endif
+                </div>
+                 </div>
                 </div>
                 
               

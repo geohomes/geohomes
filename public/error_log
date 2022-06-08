@@ -1,1 +1,0 @@
-[23-Apr-2022 02:50:54 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.2". You are running 7.3.33. in /home1/geohomes/public_html/vendor/composer/platform_check.php on line 24

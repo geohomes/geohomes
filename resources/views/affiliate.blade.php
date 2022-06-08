@@ -23,62 +23,64 @@
             </div>
         </div>
         <!-- Hero End -->
-                    <div class="container">
-                        <div class="row mt-50 mb-50">
-                      <div class="col-lg-6 col-md-12 mt-40 col-sm-12">
-                        <!-- galary -->
-                        <div class="text">
-                        <h2 style="color: #0EA15F">Steps</h2>
-                        <ul>
-                            <li>To acknowledge your acceptance to be become an affiliate with Geohomes, Kindly fill the form on the right.</li>
-                            <li>Download full agreement form, sign and send to <br> info@geohomes.com</li>
-                            <li>To download full agreement form <a href="/assets/img/materials/house01.jpg" download style="color: #0EA15F">CLICK HERE</a></li>
-                        </ul>
+        <section class="contact-section">
+            <div class="container">
+                <div class="row">
+                     <!-- it gives feedback messages -->
+                                      @if($message = Session::get('success'))
+                                      <div class="alert">
+                                        <p style="color:#0EA10F; font-weight: bold;">{{$message}}</p>
+                                      </div>
+                                      @endif
 
-                        <h2 style="color: #0EA15F">Thank You.</h2>
+                                      @if($message = Session::get('first'))
+                                      <div class="alert">
+                                        <p style="color:red;font-weight: bold;">{{$message}}</p>
+                                      </div>
+                                      @endif
+                                      <!-- feedback message ends here -->
+
+                    <div class="col-12">
+                    <h2 class="contact-title mt-0 p-0" style="color:#0EA15F">Please Fill The Form.</h2>
                     </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <!-- contact-form -->
-                        <div class="form-wrapper">
-                            <div class="row ">
-                                <div class="col-xl-12 col-sm-12">
-                                    <div class="section-tittle section-tittle2 mt-20 mb-0">
-                                        <h2>Drop your message</h2>
+                     
+                    <div class="col-lg-6">
+                <form class="form-contact contact_form" action="#" method="post" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-sm-6 col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <small class="text-danger">{{$errors->first('name') }}</small>
                                     </div>
                                 </div>
+
+                                <div class="col-sm-6 col-lg-12 ">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <small class="text-danger">{{$errors->first('email') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6  col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="phone" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone'" placeholder="Mobile Line">
+                                        <small class="text-danger">{{$errors->first('phone') }}</small>
+                                    </div>
+                                </div>
+                                 
+                            <div class="form-group mt-3 col-lg-12 col-sm-6">
+                                <button type="submit" class="button button-contactForm boxed-btn" style="background:#0EA15F !important; color: black !important; border: none !important;">Submit</button>
                             </div>
-                            <form id="contact-form" action="#" method="POST">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="form-box user-icon mb-10">
-                                            <input type="text" name="name" placeholder="Full Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="form-box email-icon mb-10">
-                                            <input type="text" name="email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6 col-sm-12">
-                                        <div class="form-box email-icon ">
-                                            <input type="text" name="email" placeholder="Phone no.">
-                                        </div>
-                                    </div>
-                                    
-                                        <div class="submit-info">
-                                            <button class="submit-btn2 ml-50" type="submit" style="background-color:#0EA15F;">Send Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form> 
+                        </div>
+                        </form>
+                    </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6">
+                        <div class="singel-details-img mt-0">
+                            <img src="assets/img/materials/careers-banner.jpg" class="img-responsive img-fluid w-100" alt="">
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        </div>
-        <div>
+          </section>
         <!-- Contact form End -->
     <!-- Affiliate End -->
     

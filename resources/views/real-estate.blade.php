@@ -24,85 +24,85 @@
         </div>
         <!-- Hero End -->
         <!-- Product-detals-header Start -->
-        <div class="product-detals-header section-padding40">
+                     
+        <div class="categories-area section-padding40">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-8 col-lg-9 col-md-12">
-                        <div class="about-caption mb-50">
-                            <div class="section-tittle mb-30">
-                                <h2>Top Estates With Quality Infrastructure.</h2>
+                  @if(empty($estate))
+                      <div class="alert alert-warning col-lg-12 text-center">
+                        <strong>No Content Available Yet.</strong>
+                      </div>
+                     @else
+                      @foreach($estate as $row)
+                         <div class="col-xl-8 col-lg-9 col-md-12">
+                        <div class="about-caption mb-70">
+                            <div class="section-tittle mb-10">
+                                <h2>{{$row->title}}</h2>
                             </div>
-                            <p>Productboard is the product management system that helps you understand what users need. You don't believe in the commonplace, and neither do we.
-                            We strive for absolute greatness - and our watches are the living illustration of that ideology. Are you ready to make your mark?</p>
+                            <p>{{$row->titledescription}}</p>
                         </div>
                     </div>
-                </div>
-                <div class="single-projects-img pt-50">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="singel-details-img mb-3">
-                                <img src="assets/img/materials/house01.jpg" alt="" style="height:180px;">
-                            </div>
-                             <div class="singel-details-img mb-30">
-                                <img src="assets/img/materials/house03.jpg" alt="" style="height:195px;">
-                            </div>
+                         <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="singel-details-img mt-0">
+                            <img src="{{asset('assets/upload/estate_images/'.$row->first_image) }}" alt=""  class="img-responsive img-fluid w-100 img-thumbnail">
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="singel-details-img mb-30">
-                                <img src="assets/img/materials/house02.jpg" alt="">
+                    </div>
+                    <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="about-caption mt-40">
+                             <span style="color: #0EA15F">01.</span>
+                                    <hp style="color: black">{{$row->first_description}}</p>
+                                     
                             </div>
-                        </div>
-                </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="about-caption mt-40">
+                             <span style="color: #0EA15F">02.</span>
+                                    <p style="color: black">{{$row->second_description}}</p>
+                                      
+                            </div>
+                    </div>
 
-                 <div class="single-projects pt-50 pb-50">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="singel-details mb-30">
-                                <span style="color: #0EA15F">01.</span>
-                                <h3 style="color: black">The product management system that helps you understand.</h3>
-                                  <ul>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i> 5 bedrooms Villa (Oak) - 49 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms Terrace (Acacia) - 52 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>3 bedrooms apartment (Maple) - 54 units </li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms penthouse - 5 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Land size: 4.32 ha.</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Location: Plot No. 132, cadastral zone Bo3, Wuye District</li>
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="singel-details mb-30">
-                                <span style="color: #0EA15F">02.</span>
-                                <h3 style="color: black">The product management system that helps you understand.</h3>
-                                  <ul>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i> 5 bedrooms Villa (Oak) - 49 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms Terrace (Acacia) - 52 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>3 bedrooms apartment (Maple) - 54 units </li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms penthouse - 5 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Land size: 4.32 ha.</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Location: Plot No. 132, cadastral zone Bo3, Wuye District</li>
-                        </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="singel-details mb-30">
-                                <span style="color: #0EA15F">03.</span>
-                                <h3 style="color:black">The product management system that helps you understand.</h3>
-                                  <ul>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i> 5 bedrooms Villa (Oak) - 49 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms Terrace (Acacia) - 52 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>3 bedrooms apartment (Maple) - 54 units </li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>4 bedrooms penthouse - 5 units</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Land size: 4.32 ha.</li>
-                            <li><i style="color: #0EA15F" class="fa fa-home"></i>Location: Plot No. 132, cadastral zone Bo3, Wuye District</li>
-                        </ul>
-                            </div>
+                     <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="singel-details-img mt-20">
+                            <img src="{{asset('assets/upload/estate_images/'.$row->second_image) }}" alt=""  class="img-responsive img-fluid w-100 img-thumbnail">
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </div>
+                
+                <div class="row">
+                    <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="singel-details-img mt-20">
+                            <img src="{{asset('assets/upload/estate_images/'.$row->third_image) }}" alt=""  class="img-responsive img-fluid w-100 img-thumbnail">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6">
+                        <div class="about-caption  mt-40 mb-10">
+                                <span style="color: #0EA15F">03.</span>
+                                    <p style="color: black">{{$row->third_description}}</p>
+                          
+                         </div>
+                        
+                          <!-- Dropdown real Estate form-->
+                                <div class="dropdown mt-0 mb-80">
+                              <button class="dropbtn">Real Estate</button>
+                            <div class="dropdown-content">
+                            <a href="{{route('book-inspection')}}">Booking</a>
+                            <a href="{{route('cis-form')}}">CIS Form</a>
+                            <a href="{{route('site-form')}}">Book Site Inspection</a>
+                            <a href="{{route('application-form')}}">Application</a>
+                            <a href="{{route('property-form')}}">Property Search</a>
+                          </div>
+                        </div>
+                          <!-- Dropdown real Estate form ends here-->
+                           @endforeach
+                         @endif
+                    </div>
+                     
+                </div>
+                                
+                </div>
+                </div>
     <!-- Estates Detail End -->
 
      @include('layout.footer')

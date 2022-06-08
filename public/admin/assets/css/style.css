@@ -1,0 +1,208 @@
+/* line 53, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact label {
+  font-size: 14px;
+}
+
+/* line 57, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact .form-group {
+  margin-bottom: 30px;
+}
+
+/* line 61, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact .form-control {
+  border: 1px solid #e5e6e9;
+  border-radius: 0px;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 13px;
+  background: transparent;
+}
+
+/* line 69, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact .form-control:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+/* line 74, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact .form-control::placeholder {
+  font-weight: 300;
+  color: #999999;
+}
+
+/* line 80, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
+.form-contact textarea {
+  border-radius: 0px;
+  height: 100% !important;
+}
+/* 21. Contact */
+/* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .form-wrapper {
+  padding-left: 65px;
+  padding-right: 65px;
+  padding-bottom: 145px;
+  padding-top: 110px;
+  box-shadow: 0 23px 46px rgba(20, 12, 64, 0.1);
+}
+
+@media (max-width: 575px) {
+  /* line 4, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+  .contact-form .form-wrapper {
+    padding: 25px;
+  }
+}
+
+/* line 12, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form input{
+  border: 1px solid #eaeaea;
+  height: 35px;
+  width: 100%;
+  padding: 10px 25px;
+  padding-right: 30px;
+  color: #a3a3a3;
+  font-weight: 500;
+  text-transform: capitalize;
+  border-radius: 0px;
+}
+
+
+/* line 22, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form input.list {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* line 27, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .nice-select {
+  border: 1px solid #eaeaea;
+  height: 50px;
+  width: 100%;
+  color: #a3a3a3;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding-top: 10px;
+  border-radius: 0px;
+}
+
+/* line 36, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .nice-select::after {
+  border-bottom: 2px solid #a3a3a3;
+  border-right: 2px solid #a3a3a3;
+  height: 7px;
+  right: 41px;
+  width: 7px;
+}
+
+/* line 43, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .nice-select.open .list {
+  width: 100%;
+  border-radius: 0;
+}
+
+/* line 47, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .nice-select .option {
+  color: #a3a3a3;
+}
+
+/* line 51, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form textarea {
+  color: #a3a3a3;
+  border: 1px solid #eaeaea;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  height: 116px;
+  width: 100%;
+  padding: 30px 50px;
+  border-radius: 0px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  /* line 51, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+  .contact-form textarea {
+    padding: 30px 42px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 51, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+  .contact-form textarea {
+    padding: 30px 42px;
+  }
+}
+
+@media (max-width: 575px) {
+  /* line 51, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+  .contact-form textarea {
+    padding: 30px 42px;
+  }
+}
+
+/* line 70, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form textarea::placeholder {
+  color: #898faf;
+  font-size: 16px;
+  font-weight: 300;
+  transition: .4s;
+}
+
+/* line 77, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .contact {
+  border: 1px solid #eaedff;
+  padding: 40px 10px;
+}
+
+/* line 80, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .contact i {
+  background: #8fb569;
+  font-size: 40px;
+  height: 150px;
+  width: 150px;
+  color: #ffffff;
+  border-radius: 50%;
+  line-height: 135px;
+  border: 10px solid #fff;
+  -webkit-box-shadow: 0px 16px 32px 0px rgba(206, 226, 255, 0.4);
+  box-shadow: 0px 16px 32px 0px rgba(206, 226, 255, 0.4);
+  margin-bottom: 30px;
+}
+
+/* line 93, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .contact h3 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+/* line 97, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form .contact p {
+  margin: 0;
+  padding: 0 50px;
+}
+
+/* line 102, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form input::-moz-placeholder,
+.contact-form input::-moz-placeholder {
+  color: #898faf;
+  font-size: 16px;
+  font-weight: 300;
+  transition: .4s;
+}
+
+/* line 109, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact_form.scss */
+.contact-form input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
+}
+/* line 380, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
+.submit-btn2 {
+  background: #0EA15F;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0px;
+}

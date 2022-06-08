@@ -1,7 +1,6 @@
  @include('layout.header')
 <title>GeoHomes</title>
 </head>
-</head>
 <body>
     
      <!-- ? Preloader Start -->
@@ -50,13 +49,13 @@
                                 <span class="element" style="background-color:#0EA15F;">About Us</span>
                                <h2>Words About Us</h2>
                             </div>
-                            <p> The Group successfully ventured into Real Estate by creating a series of residential spaces
-                            at strategic locations in Kolkata, Siliguri and Durgapur under the aegis of Dream Homes.
+                            <p> Geohomes is a firm of qualified, Experienced Estate Developers and Mangers, Civil Engineers.
+                                The Company deals on constructions, Supply of Raw Materials, General Merchandise, and General Contracts.
                             <br> <br>
 
-                            Our mission is to engage in issues that are of concern to individuals, families and
-                            communities through an uncompromising commitment to create outstanding living, work and
-                            leisure environments.</p>
+                            The Company has grown successfully executing and completing high profile jobs for public Agencies. Which is attributable to our team of professionals.</p>
+
+                            <a href="{{route('about')}}" class="btn hero-btn mt-0" style="background:#0EA15F;" >Read More <i class="ti-arrow-right"></i></a>
                         </div>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -88,54 +87,65 @@
             </div>
         </section>
         <!-- About  End-->
-        <!--? Gallery Area Start -->
+         <!--? Gallery Area Start -->
         <div class="gallery-area">
             <div class="container-fluid p-0 fix">
                 <div class="row no-gutters">
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single-gallery text-center">
-                            <div class="gallery-img" style="background-image: url(/assets/img/materials/our-estates-banner.jpg);"></div>
+                            <a href="{{route('real-estate')}}">
+                            <div class="gallery-img" style="background-image: url(/assets/img/featured/estate.jpg);"></div>
                             <div class="thumb-content-box">
                                 <div class="thumb-content">
-                                     <h3>Residential Developments</h3>
+                                     <h3>Real Estate</h3>
                                     <p>We leverage our breadth of asset classes, vertically integrated services, unique business
                                 model, and in-house development and management expertise.</p>
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single-gallery no-margin text-center">
-                            <div class="gallery-img" style="background-image: url(/assets/img/featured/home1.jpg;"></div>
+                            <a href="{{route('constructions')}}">
+                            <div class="gallery-img" style="background-image: url(/assets/img/featured/construction.jpg);"></div>
+                            <div class="thumb-content-);"></div>
                             <div class="thumb-content-box">
                                 <div class="thumb-content">
-                                   <h3>Commercial Developments</h3>
+                                   <h3>Construction</h3>
                                     <p>We leverage our breadth of asset classes, vertically integrated services, unique business
                                 model, and in-house development and management expertise.</p>
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-6">
                         <div class="single-gallery text-center">
-                            <div class="gallery-img" style="background-image: url(/assets/img/materials/house03.jpg);"></div>
+                             <a href="{{route('energys')}}">
+                            <div class="gallery-img" style="background-image: url(/assets/img/featured/energy.jpeg);"></div>
                             <div class="thumb-content-box">
                                 <div class="thumb-content">
-                                   <h3>Currently Selling</h3>
+                                   <h3>Energy</h3>
                                     <p>We leverage our breadth of asset classes, vertically integrated services, unique business
                                 model, and in-house development and management expertise.</p>
-                                    <a href="services.html">Learn More</a>
                                 </div>
                             </div>
                         </div>
+                    </a>
                     </div>
                 </div>
             </div>
         </div>
+         <div class="form-group mt-3 d-flex justify-content-center">
+            <a href="{{route('services')}}">
+                 <button type="submit" class="btn" style="background:#0EA15F !important;">View all Services</button></a>
+                </div>
         <!-- Gallery Area End -->
         <!--? Categories Area Start -->
         <div class="categories-area section-padding40 gray-bg">
             <div class="container">
+
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8">
                         <div class="section-tittle text-center mb-100">
@@ -144,6 +154,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="single-cat">
@@ -154,15 +165,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="single-cat">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="single-cat ">
                             <div class="cat-cap">
                                 <h5><a href="#" style="color:#0EA15F;">Reliablity</a></h5>
                                 <p>We collect and analyze information about your general usage of the website, products, services, and courses.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-cat">
                             <div class="cat-cap">
                                 <h5><a href="#" style="color:#0EA15F;">Experience</a></h5>
@@ -170,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="single-cat">
                             <div class="cat-cap">
                                   <h5><a href="#" style="color:#0EA15F;">Manufacturing</a></h5>
@@ -185,50 +196,51 @@
         <!-- Services Area start -->
         <div class="service-area section-bg" data-background="/assets/img/gallery/section_bg01.png">
             <div class="container">
-                <div class="row align-items-end no-gutters">
+                <div class="row align-items-end">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="single-main position-relative">
                             <div class="single-wrapper active">
-                                <div class="single-services ">
-                                    <span>01.</span>
-                                      <h4 style="color:black !important">Building Yead</h4>
-                                    <p>We collect and analyze information about your general usage of the website to the products services and courses.</p>
-                                </div>
-                                <div class="services-btn">
-                                    <a href="{{ route('our-work') }}" style="background-color: #0EA15F!important">View More</a>
-                                </div>
+                               <div class="single-man-slider">
+                       <div class="man-slider-active">
+                        <div class="single-mam-img">
+                        <img style="height: 400px;" class="gallery-img  w-100" src="/assets/img/currently-selling/sell01.jpg"> </div>
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell02.jpg"></div>
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell04.jpg"></div>
+                        </div>
+                         </div>
                             </div>
-                            <span class="transparrent-btn active position-absolute">02. Meghna Bridge</span>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="single-main position-relative ">
-                            <div class="single-wrapper hide">
-                                <div class="single-services ">
-                                    <span>02.</span>
-                                    <h4 style="color:black !important">Meghna Bridge</h4>
-                                    <p>We collect and analyze information about your general usage of the website to the products services and courses.</p>
-                                </div>
-                                <div class="services-btn">
-                                    <a href="{{ route('our-work') }}" style="background-color: #0EA15F!important">View More</a>
-                                </div>
+                            <div class="single-wrapper">
+                                 <div class="single-man-slider">
+                       <div class="man-slider-active">
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell03.jpg"> </div>
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell05.jpg"></div>
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell07.jpg"></div>
+                        </div>
+                    </div>
                             </div>
-                            <span class="transparrent-btn position-absolute">02. Meghna Bridge</span>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="single-main position-relative">
-                            <div class="single-wrapper hide">
-                                <div class="single-services ">
-                                    <span>03.</span>
-                                     <h4 style="color:black !important">Kalis Vadru</h4>
-                                    <p>We collect and analyze information about your general usage of the website to the products services and courses.</p>
-                                </div>
-                                <div class="services-btn">
-                                    <a href="{{ route('our-work') }}" style="background-color: #0EA15F!important">View More</a>
-                                </div>
+                            <div class="single-wrapper">
+                                 <div class="single-man-slider">
+                       <div class="man-slider-active">
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell08.jpg"></div>
+                        <div class="single-mam-img">
+                        <img style="height: 400px;"  class="gallery-img  w-100" src="/assets/img/currently-selling/sell09.jpg"></div>
+                        </div>
+                    </div>
                             </div>
-                            <span class="transparrent-btn position-absolute">03. Kalis Vadru</span>
                         </div>
                     </div>
                 </div>
@@ -330,6 +342,21 @@
                                     </div>
                                 </div>
                             </div>
+
+                             <!-- it gives feedback messages -->
+                                      @if($message = Session::get('success'))
+                                      <div class="alert">
+                                        <p style="color:#0EA10F;">{{$message}}</p>
+                                      </div>
+                                      @endif
+
+                                      @if($message = Session::get('error'))
+                                      <div class="alert">
+                                        <p style="color:red;">{{$message}}</p>
+                                      </div>
+                                      @endif
+                                      <!-- feedback message ends here -->
+
                             <form id="contact-form" action="#" method="POST">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
@@ -340,21 +367,6 @@
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-box email-icon mb-15">
                                             <input type="text" name="email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6">
-                                        <div class="form-box email-icon mb-15">
-                                            <input type="text" name="email" placeholder="Phone no.">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 col-md-6 mb-15">
-                                        <div class="select-itms">
-                                            <select name="select" id="select2">
-                                                <option value="">Topic</option>
-                                                <option value="">Topic one</option>
-                                                <option value="">Topic Two</option>
-                                                <option value="">Topic Three</option>
-                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -382,7 +394,7 @@
                             <span class="element" style="background-color:#0EA15F;">From News</span>
                             <h2>News & Media center</h2>
                             <p>We collect and analyze information about your general usage of the website products services and courses.</p>
-                            <a href="blog_details.html" class="all-btn" style="color:#0EA15F;">View All</a>
+                            <a href="{{ route('blogs') }}" class="all-btn" style="color:#0EA15F;">View All</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
@@ -393,7 +405,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
-                                    <h3><a href="blog_details.html">We might track your usage patterns to see</a></h3>
+                                    <h3><a href="{{ route('blogs') }}">We might track your usage patterns to see</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -406,7 +418,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
-                                    <h3><a href="blog_details.html">The massive stadium screens at the MCG</a></h3>
+                                    <h3><a href="{{ route('blogs') }}">The massive stadium screens at the MCG</a></h3>
                                 </div>
                             </div>
                         </div>

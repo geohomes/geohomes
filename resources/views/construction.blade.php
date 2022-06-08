@@ -26,47 +26,52 @@
         <div class="categories-area section-padding40">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 col-xl-10 col-lg-10 col-md-6">
+                    @if(empty($construction))
+                      <div class="alert alert-warning col-lg-12 text-center">
+                        <strong>No Content Available Yet.</strong>
+                      </div>
+                     
+
+                     @else
+                      @foreach($construction as $row)
+                    <div class="col-sm-12 col-xl-7 col-lg-7 col-md-7">
                         <div class="about-caption">
                             <div class="section-tittle mb-20">
-                                <h2>Geohomes Construcion</h2>
+                                <h2>{{$row->title}}</h2>
                             </div>
-                            <p class="mb-30">By carefully analyzing the potential of any property – built or otherwise – and armed with
-                            insight into emerging trends across Nigeria’s socio-economic landscape, Geohomes is able to
-                            perform turnaround services that transform even lagging /assets to cash cows.
-                            <br>
-                            Geohomes provides turnaround services for private firms, institutions and corporate bodies. We
-                            focus on transforming dormant or non-performing /assets into viable sources of revenue; for
-                            instance, hotels, lettable spaces or housing solutions.
-                            This unique service enables our partners harness untapped revenue streams and increases their
-                            overall Return On Investment (ROI). <br> <br>
+                            <p class="mb-30">{{$row->description}}</p>
+                    </div>
+                    </div>
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Fugiat voluptatem beatae facilis fugit ut error aliquam,
-                            ducimus debitis quod similique. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                            Similique minima repudiandae commodi ex doloribus perferendis,
-                            eligendi, praesentium modi obcaecati repellendus sint voluptatem labore minus quis pariatur ullam ut? Beatae accusantium eum nostrum rem ratione.
-                            Maiores non harum ut dignissimos, incidunt esse nobis ipsum, perspiciatis reprehenderit illo eaque quasi obcaecati labore.
-                            </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-2 col-lg-2 col-md-6">
+                    <div class="col-sm-12 col-xl-5 col-lg-5 col-md-5">
                         <div class="singel-details-img mt-40">
-                            <img src="assets/img/materials/construction.png" alt="">
+                            <img src="{{ asset('assets/upload/construction_images/'.$row->first_image) }}" class="img-responsive img-fluid w-100" alt="">
                         </div>
                     </div>
-                </div>
-                </div>
-                </div>
-        
-        <div class="container-fluid">
-            <div class="row">
-                 <div class="col-sm-12 col-xl-12 col-lg-12 col-md-12">
+                    </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12 col-md-12">
                         <div class="singel-details-img mb-40 pt-50 pb-50">
-                            <img src="assets/img/gallery/services-details.png" alt="" style="width:95%;">
+                            <img src="{{ asset('assets/upload/construction_images/'.$row->second_image) }}" class="img-responsive img-fluid w-100"alt="">
                         </div>
                     </div>
-            </div>
-        </div>
+                </div>
+
+                <div class="col-lg-12">
+                        <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $construction->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                           
+                        </div>
+            @endforeach
+             @endif
+         </div>
         <!-- cat End -->
     <!-- Construction End -->
      @include('layout.footer')

@@ -1,0 +1,1 @@
+lifting_table.blade.php

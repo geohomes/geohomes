@@ -1,5 +1,5 @@
     @include('layout.header')
-<title>GeoHomes | Book Inspection</title>
+<title>GeoHomes | Booking</title>
 </head>
 
 <body>
@@ -9,115 +9,152 @@
       @include('layout.navbar')
     </header>
 
-  <!-- Global Banner -->
-    <section class="global-banner">
-       <img src="/assets/img/materials/book-inspection-banner.jpg" alt="">
-        <h2 class="container">Book Inspection</h2>
-    </section>
-    <!-- Global Banner End -->
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm-6 col-md-6 col-lg-4 mt-50">
-                   <input type="text" name="" required="name"  placeholder="Name">
-                   <input type="text" name="" id="surname" placeholder="Surname" required="">
-                   <input type="text" name="" id="phone"  placeholder="Mobile Number" required="">
-                   <input type="email" id="email" placeholder="Email" required="">
-                  <input type="text" id="address" placeholder="Address" required="">
-                  </div>
-
-                  <div class="col-sm-6 col-md-6 col-lg-4">
-                    <div class="application-form">
-                    <h3 class="second-title">Next of Kin Information</h3></div>
-
-                  <input type="text" name="" id="next of kin" placeholder="Next of Kin full name" required="">
-                  <input type="text" name="" id="next of kin" placeholder="Next of Kin`s Address" required="">
-                  <input type="text" name="" id="next of kin" placeholder="Relation With Next of Kin" required="">
-                  <input type="text" name="" id="next of kin" placeholder="Prepared By Who" required="">
-                  </div>
-
-                  <div class="col-sm-6 col-md-6 col-lg-4">
-                    <div class="application-form">
-                    <h3 class="second-title">Account Detail</h3></div>
-                    <input type="text" name="" placeholder="Account Name" required="">
-                    <input type="text" name="" placeholder="Account Number" required="">
-                    <input type="text" name="" placeholder="Bank detail" required="">
-                    <input type="text" name="" placeholder="Corporate Organization (if Available)">
-                    <input type="email" name="" placeholder="Company Email" required="">
-                    <input type="email" name="" placeholder="Company Mobile Line" required="">
-                  </div>
-                  <div class="application-form mt-0 mb-0 col-sm-12 col-md-12 col-lg-9">
-                    
-                   <button type="submit" class="bouton-contact mb-5">Submit</button>
-
-                  </div>
-                </div>
-              </div>
-     
-                            <div class="container">
-                                <div class="d-flex justify-content-center" style="border: 10px; background-color: black; ">
-                            <h3 style="color: white; font-size: 35px;">Terms and Conditions</h3>
-                        </div>
-                            <div class="row mb-5">
-                                    <div class="col-sm-12 col-lg-6 mt-4" style="border:7px black solid; border-radius: 20px;">
-                                        <u style="color: black"><h2 class="mt-4" style="color:  #0EA15F "> Agency Agreement</h2></u>
-                                        This AGENCY AGREEMENT made between (Applying Agent) and KERAE HOMES LIMITED, a
-                                        body registered under Part A of the Companies and Allied Matters Act, Cap C20,
-                                        Laws of the Federation of Nigeria, and having its registered Office address at
-                                        Km 36, Ero’s House, Duplex 2 Eputu, Lekki-Expressway, Lagos State. (Principal)
-                                        on the other Part HEREBY APPOINTS (Agent) in accordance with the terms of this
-                                        Agreement :
-                                    </div>
-                                    <div class="col-sm-12 col-lg-6 mt-4" style="border:7px black solid; border-radius: 20px;">
-                                        <u style="color: black"><h2 style="color:  #0EA15F " class="mt-4" >IDEMNIFICATION</h2></u>
-                                        The Principal will not indemnify the agent or any third party for any loss or damage arising from the actions of the agent in course of any transaction on behalf of the Principal.
-
-                                        <u style="color: black"><h2 style="color:  #0EA15F ">TERMINATION</h2></u>
-                                        The Agent agreement will be terminated by the consent of both parties.
-                                    </div>
-
-                                        <div class="col-sm-12 col-lg-6 "style="border:7px black solid; border-radius: 20px;">
-                                        <u style="color: black">
-                                        <h2 style="color:  #0EA15F " class="mt-4" > AGENCY RELATIONSHIP AND DUTIES OF AGENT</h2></u>
-             
-                                        A. The agency relationship in respect of the property shall be a single agency,
-                                        and shall perform his duties in person and cannot appoint a sub-agent to do what
-                                        he was pointed to do. <br>
-                                        B. The Agent must have notified the management in writing and signed the agency
-                                        agreement before commencing any negotiations and sale on behalf of the
-                                        management. <br>
-                                        C. The management does not authorize the agent to collect the money paid by the
-                                        client into his personal account; all such monies must be deposited directly
-                                        into the authorized accounts of the management. <br>
-                                        D. The Agent must act with the Principal’s best interests in mind: the agent
-                                        cannot act in a way that would harm the Management or the company’s property
-                                        <br>
-                                        E. The Agent must exercise reasonable care and skill and keep confidential any
-                                        information obtained while performing agency duties. <br>
-                                        F. The Agent must disclose all material facts relating to the business at hand.
-                                    </div>
-
-                                    <div class="col-sm-12 col-lg-6 " style="border:7px black solid; border-radius: 20px;">
-                                        <u style="color: black">
-                                        <h2 style="color: #0EA15F" class="mt-4" >COMMISSION</h2></u>
-                                        A. The Agent shall be paid a total of 10% of the proceeds from the sale of land,
-                                        (such variance shall be dependent on if the Agent’s Client gets a discount) and
-                                        5% (such variance shall be dependent on if the Agent’s Client gets a discount)
-                                        for the sale of any Buildings. With respect to Buildings the commission shall be
-                                        paid on the result after deduction of statutory fees. <br> <br>
-                                        B. The above stated commission is subject to review upon an increase or 
-                                        decrease. <br> <br>
-                                        C. All cost incurred during the sale of the company’s Property by the Agent 
-                                        shall be borne by the agent. All such cost includes but are not limited to
-                                        transportation for site visitation and call credits used for communication with
-                                        the client. <br> <br>
-                                        D. The Agent shall conform to the advertised price of the company.
-                                    </div>
-                                
-                                        
-                                    
-                                </div>
+   <!--? Hero Start -->
+        <div class="slider-area2 section-bg2" data-background="assets/img/materials/book-inspection-banner.jpg">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2">
+                                <h2>Booking Form</h2>
                             </div>
-    <!-- Consultants Form End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+             <!-- booking Form starts here -->
+                  <div class="container">
+                 <div class="row">
+                    <div class="col-12">
+                        <h2 class="contact-title mt-50 padding-40" style="color:#0EA15F">Kindly, fill the form to book your desired service.</h2>
+                    </div>
+                  </div>
+
+                          <!-- it gives feedback messages -->
+                                      @if($message = Session::get('success'))
+                                      <div class="alert">
+                                        <p style="color:#0EA10F;">{{$message}}</p>
+                                      </div>
+                                      @endif
+
+                                      @if($message = Session::get('error'))
+                                      <div class="alert">
+                                        <p style="color:red;">{{$message}}</p>
+                                      </div>
+                                      @endif
+                                      <!-- feedback message ends here -->
+
+                        <form class="form-contact contact_form" action="#" method="POST" novalidate="novalidate">
+                            <div class="row">
+                               
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control valid" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                                        <small class="text-danger">{{$errors->first('name') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                     <div class="form-group">
+                                        <input class="form-control valid" name="middlename" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your Miidle Name">
+                                        <small class="text-danger">{{$errors->first('middlename') }}</small>
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6 col-lg-6">
+                                     <div class="form-group">
+                                        <input class="form-control valid" name="surname" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your Surname">
+                                        <small class="text-danger">{{$errors->first('surname') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                       <small class="text-danger">{{$errors->first('email') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="phone" id="phone" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Mobile Line">
+                                       <small class="text-danger">{{$errors->first('phone') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="residential" id="residential" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Residential address'" placeholder="Residential Address">
+                                       <small class="text-danger">{{$errors->first('residential') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="office" id="address" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Office address'" placeholder="Office Address">
+                                       <small class="text-danger">{{$errors->first('office') }}</small>
+                                    </div>
+                                </div>
+                                    <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                       <input class="form-control valid" name="desired-service" id="service" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Desired Service address'" placeholder="Desired Service">
+                                       <small class="text-danger">{{$errors->first('desired-service') }}</small>
+                                    </div>
+                                </div>
+                           <div class="col-sm-6 col-lg-6 submit-info mb-40">
+                             <button class="submit-btn2" type="submit" style="background-color:#0EA15F; margin-left:none">Book</button>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        <!-- Contact Area End -->
+                       <!-- <center>
+                        <div class="container">
+                        <div class="form-wrapper mt-50">
+                            <form id="contact-form" action="#" method="POST">
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-12">
+                                        
+                                        
+
+                                        <p class="contact-title mt-20 padding-10" style="color:black">Kindly, fill the form to book your desired service.</p>
+                                       </div>
+                                         <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-box user-icon mb-10">
+                                            <input type="text" name="name" placeholder="Your Name" required="name" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="middlename" placeholder="Middle Name" required="middlename" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="surname" placeholder="Surname" required="surname" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="tel" name="phone" placeholder="Mobile Number" required="phone" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="email" placeholder="Email" required="email" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="residential" placeholder="Residential Address" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="office" placeholder="Office Address" >
+                                        </div>
+                                        <div class="form-box email-icon mb-10">
+                                            <input type="text" name="desired-service" placeholder="Desired Service" required="desired-service">
+                                        </div>
+                                    </div>
+                                    </div>
+                                <div class="col-lg-12 submit-info mb-45 ml-0">
+                                 <button class="submit-btn2" type="submit" style="background-color:#0EA10F; width:50%;">Submit Form</button>
+                              </div>
+                            </form> 
+                        </div>
+                    </div>
+                </center>
+
+    <!-- booking Form End -->
  @include('layout.footer')
     </body>
 
