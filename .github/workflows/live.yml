@@ -1,8 +1,8 @@
 on:
   push:
     branches:
-      - master
-name: 🚀 Deploy website on push to master branch
+      - main
+name: 🚀 Deploy website on push to main branch
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -17,7 +17,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
-        server: pmsg.ng
+        server: geohomesgroup.com
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: public_html/
