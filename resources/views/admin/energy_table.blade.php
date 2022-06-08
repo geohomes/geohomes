@@ -33,7 +33,7 @@
        @foreach($energy as $row)
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="card">
-      <img src="{{ asset('assets/upload/energy_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here">
+      <img src="{{ asset('assets/upload/energy_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
        <div class="col-lg-6 col-sm-6 col-md-6 mt-40">
        <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-success " style="color: black;" href="viewenergy/{{$row->id}}">view detail</a>
         </div>

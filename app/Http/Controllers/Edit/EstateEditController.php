@@ -10,11 +10,22 @@ use Str;
 class EstateEditController extends Controller
 {
     //
-    public function edit()
+    public function edit($id)
     {
-        $fetch = DB::table('estate')->get();
+        $fetch = DB::table('estate')
+         ->where('id', $id)
+         ->get();
          $estate = json_decode(json_encode($fetch ), true);
         return view('edit.estateedit', ['estate'=>$estate]);
+    }
+
+     public function view($id)
+    {
+        $fetch = DB::table('estate')
+         ->where('id', $id)
+         ->get();
+         $estate = json_decode(json_encode($fetch ), true);
+        return view('view.view_estate', ['estate'=>$estate]);
     }
 
     public function EstateEdit(Request $request)

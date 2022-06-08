@@ -20,7 +20,9 @@ class AddEstateController extends Controller
 {
 
      $data = request()->all();
-    $validator = Validator::make($data, [  
+    $validator = Validator::make($data, [ 
+        'title' => ['required'],
+        'titledescription' => ['required'], 
         'firstdescription' => ['required'],
         'seconddescription' => ['required'],
         'thirddescription' => ['required'],
@@ -58,7 +60,9 @@ class AddEstateController extends Controller
 
 
     $request=array([
-        'first_description' => $request['firstdescription'],
+        'title' => $request['title'],
+        'titledescription' => $request['firstdescription'],
+        'first_description' => $request['titledescription'],
         'second_description' => $request['seconddescription'],
         'third_description' => $request['thirddescription'],
         'first_image' => $firstfilename, // save full image path to database
@@ -77,68 +81,4 @@ class AddEstateController extends Controller
         return back()->with('error', 'Sorry, Content was not Added. Please try Again.');
        }
     }
-
-    // Edit function
-        public function edit(Request $request,$id) {
-
-       
-     $data = request()->all();
-    $validator = Validator::make($data, [  
-        'firstdescription' => ['required'],
-        'seconddescription' => ['required'],
-        'thirddescription' => ['required'],
-        'firstimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'secondimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'thirdimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 0,
-                'error' => $validator->errors()
-            ]);
-        }
-
-    $firstimage = request()->file('firstimage');
-    $secondimage = request()->file('secondimage');
-     $thirdimage = request()->file('thirdimage');
-
-        $extension = $firstimage->getClientOriginalExtension();
-        $firstfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/estate_images';
-        $firstimage->move($path, $firstfilename);
-
-        $extension = $secondimage->getClientOriginalExtension();
-        $secondfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/estate_images';
-        $secondimage->move($path, $secondfilename);
-
-         $extension = $thirdimage->getClientOriginalExtension();
-        $thirdfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/estate_images';
-        $thirdimage->move($path, $thirdfilename);
-
-
-    $request=array([
-         $first_description => $request->input('firstdescription'),
-         $second_description => $request->input('seconddescription'),
-         $third_description => $request->input('thirddescription'),
-        'first_image' => $firstfilename, // save full image path to database
-        'second_image' => $secondfilename, // save full image path to database
-        'third_image' => $thirdfilename, // save full image path to database
-    
-
-        $edit=DB::update('update portifolio set first_description = ?, second_description=?, third_description=?,first_image=?, second_image=?, third_image=? where id = ?',[$first_description,$second_description,$third_description,$firstfilename,$secondfilename,$thirdfilename,$id]);
-
-        if ($edit) {
-                return back()->with('success', 'Record Updated successfully');
-
-        }
-
-           else{
-            return back()->with('error', 'Record was not Updated. please try Again.');
-           }
-
-        }
 }

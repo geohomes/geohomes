@@ -95,6 +95,19 @@
                           </div>
                         </div>
                           <!-- Dropdown real Estate form ends here-->
+
+                             <div class="col-lg-12 mt-40">
+                        <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $estate->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                           
+                        </div>
                            @endforeach
                          @endif
                     </div>

@@ -131,7 +131,7 @@ Route::get('/admin/blogpost/{id}', [App\Http\Controllers\BlogPostController::cla
 Route::get('/admin/portifolio/{id}', [App\Http\Controllers\PortifolioController::class, 'delete'])->name('delete');
 Route::post('/admin/constructiontable/{id}', [App\Http\Controllers\ConstructionTableController::class, 'delete'])->name('delete');
 Route::post('/admin/consultancytable/{id}', [App\Http\Controllers\ConsultancyTableController::class, 'delete'])->name('delete');
-Route::get('/admin/estatetable/{id}', [App\Http\Controllers\EstateTableController::class, 'delete'])->name('delete');
+Route::post('/admin/estatetable/{id}', [App\Http\Controllers\EstateTableController::class, 'delete'])->name('delete');
 Route::post('/admin/energy/{id}', [App\Http\Controllers\EnergyTableController::class, 'delete'])->name('delete');
 Route::get('/admin/logistic/{id}', [App\Http\Controllers\LogisticTableController::class, 'delete'])->name('delete');
 Route::get('/admin/medical/{id}', [App\Http\Controllers\MedicalTableController::class, 'delete'])->name('delete');
@@ -154,12 +154,14 @@ Route::get('/admin/viewcis/{id}', [App\Http\Controllers\Edit\CisFormEditControll
 Route::get('/admin/viewproperty/{id}', [App\Http\Controllers\Edit\PropertyFormEditController::class, 'view'])->name('editproperty/{id}');
 Route::get('/admin/viewconstruction/{id}', [App\Http\Controllers\Edit\ConstructionEditController::class, 'view'])->name('viewconstruction/{id}');
 Route::get('/admin/viewconsultancy/{id}', [App\Http\Controllers\Edit\ConsultancyEditController::class, 'view'])->name('viewconsultancy');
+Route::get('/admin/viewenergy/{id}', [App\Http\Controllers\Edit\EnergyEditController::class, 'view'])->name('viewenergy');
+Route::get('/admin/viewestate/{id}', [App\Http\Controllers\Edit\EstateEditController::class, 'view'])->name('viewestate');
 
 /* getting Editing Documents */
 Route::get('/admin/editabout', [App\Http\Controllers\Edit\AboutEditController::class, 'edit'])->name('editabout');
 Route::get('/admin/editconstruction/{id}', [App\Http\Controllers\Edit\ConstructionEditController::class, 'edit'])->name('editconstruction/{id}');
 Route::get('/admin/editconsultancy/{id}', [App\Http\Controllers\Edit\ConsultancyEditController::class, 'edit'])->name('editconsultancy');
-Route::get('/admin/editestate', [App\Http\Controllers\Edit\EstateEditController::class, 'edit'])->name('editestate');
+Route::get('/admin/editestate/{id}', [App\Http\Controllers\Edit\EstateEditController::class, 'edit'])->name('editestate/{id}');
 Route::get('/admin/editenergy/{id}', [App\Http\Controllers\Edit\EnergyEditController::class, 'edit'])->name('editenergy');
 Route::get('/admin/editagriculture', [App\Http\Controllers\Edit\AgricultureEditController::class, 'edit'])->name('editagriculture');
 Route::get('/admin/editmedical', [App\Http\Controllers\Edit\MedicalEditController::class, 'edit'])->name('editmedical');
@@ -182,7 +184,7 @@ Route::get('/admin/editportifolio', [App\Http\Controllers\UpdateController::clas
 Route::post('/admin/editportifolio', [App\Http\Controllers\UpdateController::class, 'editportifolio'])->name('edit');
 Route::post('/admin/editabout', [App\Http\Controllers\Edit\AboutEditController::class, 'AboutEdit'])->name('editabout');
 Route::post('/admin/editconstruction/{id}', [App\Http\Controllers\Edit\ConstructionEditController::class, 'Constructionedit'])->name('editconstruction/{id}');
-Route::post('/admin/editestate', [App\Http\Controllers\Edit\EstateEditController::class, 'EstateEdit'])->name('editestate');
+Route::post('/admin/editestate/{id}', [App\Http\Controllers\Edit\EstateEditController::class, 'EstateEdit'])->name('editestate/{id}');
 Route::post('/admin/editenergy/{id}', [App\Http\Controllers\Edit\EnergyEditController::class, 'EnergyEdit'])->name('editenergy');
 Route::post('/admin/editagriculture', [App\Http\Controllers\Edit\AgricultureEditController::class, 'agricultureEdit'])->name('editagriculture');
 Route::post('/admin/editmedical', [App\Http\Controllers\Edit\MedicalEditController::class, 'MedicalEdit'])->name('editmedical');
@@ -226,7 +228,7 @@ Route::post('/admin/addconstruction', [App\Http\Controllers\AddConstructionContr
 Route::post('/admin/addconsultancy', [App\Http\Controllers\AddConsultancyController::class, 'ConsultancyInsert'])->name('addconsultancy');
 Route::post('/admin/addenergy', [App\Http\Controllers\AddEnergyController::class, 'EnergyInsert'])->name('addenergy');
 
-Route::post('/admin/addestate{id}', [App\Http\Controllers\AddEstateController::class, 'edit'])->name('addestate{id}');
+Route::post('/admin/addestate', [App\Http\Controllers\AddEstateController::class, 'estateInsert'])->name('addestate');
 Route::post('/admin/addlogistic', [App\Http\Controllers\AddLogisticController::class, 'LogisticInsert'])->name('addlogistic');
 Route::post('/admin/addmedical', [App\Http\Controllers\AddMedicalController::class, 'MedicalInsert'])->name('addmedical');
 Route::post('/admin/addmineral', [App\Http\Controllers\AddMineralController::class, 'MineralInsert'])->name('addmineral');

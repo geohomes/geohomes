@@ -1,9 +1,11 @@
-@include('adminLayout.header');
+@include('./updatelayout.header')
+     <link rel="stylesheet" type="text/css" href="../../admin/css/style.css">
+<title>GeoHomes | Update Estate Page</title>
+</head>
 
- <title>
- Update Estate Page
-  </title>
-  @include('adminLayout.navbar')
+<body>
+   @include('./updatelayout.navbar')
+    </header>
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -89,12 +91,12 @@
                                 </div>
                                 <input type="hidden" value="{{$row['id']}}" name="id">
                             <div class="form-group mt-3">
-                                <button type="submit" class="btn btn-success" style="background-color: #0EA15F;">Update</button>
+                                <button type="submit" class="btn btn-success" style="background-color: #0EA15F; color: black;">Update</button>
                             </div>
                         </form>
                         @endforeach
   </main>
   
-   @include('adminLayout.footer');
+   @include('./updateLayout.footer');
 </body>
 </html>

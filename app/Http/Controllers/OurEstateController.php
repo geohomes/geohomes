@@ -10,7 +10,7 @@ class OurEstateController extends Controller
      public function index()
     {
 
-        $fetch = DB::table('portifolio')->paginate(4);
+        $fetch = DB::table('portifolio')->paginate(1);
          $portifolio = json_decode(json_encode($fetch ), true);
         return view('our-estate', ['portifolio'=> $fetch]);
     }

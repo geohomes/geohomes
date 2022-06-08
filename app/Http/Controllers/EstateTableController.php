@@ -11,9 +11,9 @@ class EstateTableController extends Controller
 
      public function admin()
     {
-         $fetch = DB::table('estate')->get();
+         $fetch = DB::table('estate')->paginate(8);
          $estate = json_decode(json_encode($fetch ), true);
-        return view('estate_table', ['estate'=> $estate]);
+        return view('estate_table', ['estate'=> $fetch]);
     }
     
     public function delete($id) {
