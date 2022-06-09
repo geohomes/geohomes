@@ -11,12 +11,25 @@ use Str;
 class MineralEditController extends Controller
 {
     //
-    public function edit()
+    public function edit($id)
     {
-        $fetch = DB::table('mineral')->get();
+        $fetch = DB::table('mineral')
+        ->where('id', $id)
+         ->get();
          $mineral= json_decode(json_encode($fetch ), true);
         return view('edit.mineraledit', ['mineral'=>$mineral]);
     }
+
+// Viewing of page detail
+    public function view($id)
+    {
+        $fetch = DB::table('mineral')
+        ->where('id', $id)
+         ->get();
+         $mineral= json_decode(json_encode($fetch ), true);
+        return view('view.view_mineral', ['mineral'=>$mineral]);
+    }
+    
 
     public function MineralEdit(Request $request)
 {

@@ -10,9 +10,9 @@ class LogisticTableController extends Controller
     //
         public function admin()
     {
-         $fetch = DB::table('logistic')->get();
+         $fetch = DB::table('logistic')->paginate(8);
          $logistic = json_decode(json_encode($fetch ), true);
-        return view('logistic-table', ['logistic'=>$logistic]);
+        return view('logistic-table', ['logistic'=>$fetch]);
     }
     
     public function delete($id) {

@@ -1,6 +1,6 @@
 @include('updateLayout.header');
  <title>
- View Construction
+ Dashboard | Consultancy Detail
   </title>
   @include('updateLayout.navbar')
  <div class="container-fluid py-4">

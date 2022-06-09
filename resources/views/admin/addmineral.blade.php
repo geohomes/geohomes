@@ -13,7 +13,7 @@
          <div class="container">
          <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title mt-30 padding-40" style="color:#0EA15F">Content</h2>
+                        <h2 class="contact-title mt-30 padding-40" style="color:#0EA15F">Add Content to mineral page</h2>
                     </div>
                        <!-- it gives feedback messages -->
                                       @if($message = Session::get('success'))

@@ -1,10 +1,10 @@
-@include('adminLayout.header');
+@include('updateLayout.header');
  <title>
-  Logistic
+  Dashboard | Logistic Table
   </title>
-  @include('adminLayout.navbar')
- <div class="container-fluid py-4">
-      <div class="row">
+  @include('updateLayout.navbar')
+  <div class="container">
+   <div class="row">
               @if(isset(Auth::user()->email))
          @else
           <script>window.location="login"</script>
@@ -23,83 +23,69 @@
             </div>
             @endif
             <!-- feedback message ends here -->
-
-            <!--- this code will show add button if content is empty -->
-            @if(empty($logistic))
             <div>
               <a href="{{route('addlogistic')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
-               create new Logistic Page</a>
+               Create new Item</a>
             </div>
-                     
-           @else
-            
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Logistic table</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">S/N</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Title</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">First Image</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Second Image</th>
-                        <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Third Image</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Description</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                       @foreach($logistic as $row)
-                        <td>
-                        <p class="text-sm font-weight-bold mb-0">{{$row['id']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['title']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['first_image']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['second_image']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['third_image']}}</p>
-                      </td>
-                      
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0 cell expand-maximum-on-hover">{{$row['description']}}</p>
-                      </td>
-
-                       <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['created_at']}}</p>
-                      </td>
-                      <td>
-                        <a   class="text-secondary font-weight-bold text-xs btn btn-success" data-toggle="tooltip" data-original-title="Edit user" href="{{route('editlogistic')}}" name="{{$row['id']}}">
-                          Update
-                        </a>
-                      </td>
-                      <td>
-                        <a href="logistic/{{$row['id']}}" class="text-secondary font-weight-bold text-xs btn btn-danger" data-toggle="tooltip" data-original-title="Edit user">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                       @endforeach
-                        @endif
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
+              
+             
+     <div class="row g-4">
+       @foreach($logistic as $row)
+  <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="card">
+      <img src="{{ asset('assets/upload/logistic_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here">
+       <div class="col-lg-6 col-sm-6 col-md-6 mt-40">
+       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-warning " style="color: black;" href="viewlogistic/{{$row->id}}">view detail</a>
         </div>
+      <div class="card-body">
+        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
+        <p class="card-text">
+          {{ Str::limit($row->description, 20) }}
+        </p>
       </div>
-  </main>
+      <div class="row">
+      <div class="col-lg-6 col-sm-6 col-md-6">
+       <a class=" btn btn-success" href="editlogistic/{{$row->id}}" name="{{$row->id}}">Edit</a>
+      </div>
+      <div class="col-lg-6 col-sm-6 col-md-6">
+      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="logistic/{{$row->id}}">Delete</a>
+       </div>
+       </div>
+     </div>
+    </div>
 
-   @include('adminLayout.footer');
+   @endforeach
+   <div class="col-lg-12">
+   <nav class="blog-pagination justify-content-center d-flex">
+       <ul class="pagination">
+   <li class="page-item">
+    {{ $logistic->links('././vendor.pagination.default') }}
+    </li>
+    </ul>
+     </nav>
+     </div>
+</div>
+</div>
+</div>
+
+<!-- Modal -->
+@foreach($logistic as $row)
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-contact contact_form" action="logistic/{{$row->id}}" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+      <div class="modal-body">
+        <p>The Data will be deleted completely. Do you wish to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-warning" >Yes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+ @endforeach
+   @include('updateLayout.footer')
 </body>
 </html>

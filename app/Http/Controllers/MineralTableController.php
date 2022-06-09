@@ -10,9 +10,9 @@ class MineralTableController extends Controller
     //
         public function admin()
     {
-         $fetch = DB::table('mineral')->get();
+         $fetch = DB::table('mineral')->paginate(8);
          $mineral = json_decode(json_encode($fetch ), true);
-        return view('mineral-table', ['mineral'=>$mineral]);
+        return view('mineral-table', ['mineral'=>$fetch ]);
     }
     
     public function delete($id) {

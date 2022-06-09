@@ -8,7 +8,7 @@
     </header>
     <main>
         <!--? Hero Start -->
-        <div class="slider-area2 section-bg2" data-background="assets/img/featured/medical03.jpg">
+        <div class="slider-area2 section-bg2" data-background="assets/img/featured/medical03.jpg" style="opacity: 0.6;">
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
@@ -49,6 +49,19 @@
                         </div>
                     </div>
                 </div>
+            <!-- Pagination -->
+             <div class="col-lg-12 mt-40">
+                        <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $medical->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                        </div>
+            <!--End of Pagination -->
                  @endforeach
                 @endif
                 </div>

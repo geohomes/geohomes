@@ -24,7 +24,7 @@
             @endif
             <!-- feedback message ends here -->
             <div>
-              <a href="{{route('addconstruction')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-col-lg-3 col-md-4 col-sm-6or: #0EA15F;">
+              <a href="{{route('addconstruction')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
                Create new Item</a>
             </div>
               

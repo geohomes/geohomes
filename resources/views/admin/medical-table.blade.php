@@ -1,10 +1,10 @@
-@include('adminLayout.header');
+@include('updateLayout.header');
  <title>
-  Medical Services
+  Medical Table
   </title>
-  @include('adminLayout.navbar')
- <div class="container-fluid py-4">
-      <div class="row">
+  @include('updateLayout.navbar')
+  <div class="container">
+   <div class="row">
               @if(isset(Auth::user()->email))
          @else
           <script>window.location="login"</script>
@@ -23,72 +23,66 @@
             </div>
             @endif
             <!-- feedback message ends here -->
-
-            <!--- this code will show add button if content is empty -->
-            @if(empty($medical))
             <div>
               <a href="{{route('addmedical')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
-               create new Medical Page</a>
+               Create new Item</a>
             </div>
-                     
-           @else
-            
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Medical table</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">S/N</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Title</th>
-                       <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Image</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Description</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                       @foreach($medical as $row)
-                        <td>
-                        <p class="text-sm font-weight-bold mb-0">{{$row['id']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['title']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['image']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0 cell expand-maximum-on-hover">{{$row['description']}}</p>
-                      </td>
-                       <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['created_at']}}</p>
-                      </td>
-                      <td>
-                        <a   class="text-secondary font-weight-bold text-xs btn btn-success" data-toggle="tooltip" data-original-title="Edit user" href="{{route('editmedical')}}" name="{{$row['id']}}">
-                          Edit
-                        </a>
-                      </td>
-                      <td>
-                        <a href="medical/{{$row['id']}}" class="text-secondary font-weight-bold text-xs btn btn-danger" data-toggle="tooltip" data-original-title="Edit user">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                       @endforeach
-                        @endif
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+              
+             
+     <div class="row g-4">
+       @foreach($medical as $row)
+  <div class="col-lg-3 col-md-4 col-sm-6">
+    <div class="card">
+      <img src="{{ asset('assets/upload/medical_images/'.$row->image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
+
+        <div class="col-lg-6 col-sm-6 col-md-6 mt-40"> 
+       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-warning " style="color: black;" href="viewmedical/{{$row->id}}">
+       view</a>
+         <a class=" btn btn-success" href="editmedical/{{$row->id}}" name="{{$row->id}}">Edit</a>
+          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="medical/{{$row->id}}">Dele</a>
       </div>
-  </main>
-   @include('adminLayout.footer');
+
+      <div class="card-body">
+        <h5 class="card-title">{{Str::limit($row->title, 20) }}</h5>
+        <p class="card-text">
+          {{ Str::limit($row->description, 40) }}
+        </p>
+      </div>
+     </div>
+    </div>
+
+   @endforeach
+   <div class="col-lg-12">
+   <nav class="blog-pagination justify-content-center d-flex">
+       <ul class="pagination">
+   <li class="page-item">
+    {{ $medical->links('././vendor.pagination.default') }}
+    </li>
+    </ul>
+     </nav>
+     </div>
+</div>
+</div>
+</div>
+
+<!-- Modal -->
+@foreach($medical as $row)
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-contact contact_form" action="medical/{{$row->id}}" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+      <div class="modal-body">
+        <p>The Data will be deleted completely. Do you wish to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-warning" >Yes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+ @endforeach
+   @include('updateLayout.footer')
 </body>
 </html>

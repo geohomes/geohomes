@@ -10,12 +10,25 @@ use Str;
 
 class LogisticEditController extends Controller
 {
-    //
-    public function edit()
+
+    //editing table
+    public function edit($id)
     {
-        $fetch = DB::table('logistic')->get();
+        $fetch = DB::table('logistic')
+        ->where('id', $id)
+         ->get();
          $logistic= json_decode(json_encode($fetch ), true);
         return view('edit.logisticedit', ['logistic'=>$logistic]);
+    }
+
+// Viewing table data
+  public function view($id)
+    {
+        $fetch = DB::table('logistic')
+        ->where('id', $id)
+         ->get();
+         $logistic= json_decode(json_encode($fetch ), true);
+        return view('view.view_logistic', ['logistic'=>$logistic]);
     }
 
     public function logisticEdit(Request $request)

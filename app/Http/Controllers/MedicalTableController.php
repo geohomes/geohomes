@@ -10,13 +10,13 @@ class MedicalTableController extends Controller
     //
         public function admin()
     {
-         $fetch = DB::table('medicals')->get();
+         $fetch = DB::table('medicals')->paginate(8);
          $medical = json_decode(json_encode($fetch ), true);
-        return view('medical-table', ['medical'=>$medical]);
+        return view('medical-table', ['medical'=>$fetch]);
     }
     
     public function delete($id) {
-    $delet=DB::delete('delete from medical where id = ?',[$id]);
+    $delet=DB::delete('delete from medicals where id = ?',[$id]);
 
         if ($delet) {
             return back()->with('success', 'Record deleted successfully');

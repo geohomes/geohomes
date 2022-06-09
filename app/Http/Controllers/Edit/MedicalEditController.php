@@ -11,12 +11,24 @@ use Str;
 class MedicalEditController extends Controller
 {
     //
-    public function edit()
+    public function edit($id)
     {
-        $fetch = DB::table('medicals')->get();
+        $fetch = DB::table('medicals')
+        ->where('id', $id)
+         ->get();
          $medical= json_decode(json_encode($fetch ), true);
         return view('edit.medicaledit', ['medical'=>$medical]);
     }
+
+     public function view($id)
+    {
+        $fetch = DB::table('medicals')
+        ->where('id', $id)
+         ->get();
+         $medical= json_decode(json_encode($fetch ), true);
+        return view('view.view_medical', ['medical'=>$medical]);
+    }
+
 
     public function MedicalEdit(Request $request)
 {
@@ -63,7 +75,7 @@ class MedicalEditController extends Controller
 
 
         if ($edit) {
-                return back()->with('success', 'Record Updated successfully');
+                return back()->with('success', 'Record Updated successfully. Check the Services Table');
 
         }
 

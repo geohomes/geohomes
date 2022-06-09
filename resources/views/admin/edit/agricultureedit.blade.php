@@ -1,9 +1,10 @@
-@include('adminLayout.header');
- 
- <title>
- Update Agriculture page
-  </title>
-  @include('adminLayout.navbar')
+@include('./updatelayout.header')
+     <link rel="stylesheet" type="text/css" href="../../admin/css/style.css">
+<title>GeoHomes | Update Agriculture Page</title>
+</head>
+
+<body>
+   @include('./updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -69,6 +70,6 @@
                         </form>
   </main>
   
-   @include('adminLayout.footer');
+   @include('./updateLayout.footer');
 </body>
 </html>

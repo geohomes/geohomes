@@ -10,11 +10,22 @@ use Str;
 class AgricultureEditController extends Controller
 {
     //
-    public function edit()
+    public function edit($id)
     {
-        $fetch = DB::table('agriculture')->get();
+        $fetch = DB::table('agriculture')
+        ->where('id', $id)
+         ->get();
          $agriculture= json_decode(json_encode($fetch ), true);
         return view('edit.agricultureedit', ['agriculture'=>$agriculture]);
+    }
+
+        public function view($id)
+    {
+        $fetch = DB::table('agriculture')
+        ->where('id', $id)
+         ->get();
+         $agriculture= json_decode(json_encode($fetch ), true);
+        return view('view.view_agriculture', ['agriculture'=>$agriculture]);
     }
 
     public function agricultureEdit(Request $request)

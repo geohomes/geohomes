@@ -10,9 +10,9 @@ class AgricultureTableController extends Controller
     //
       public function admin()
     {
-         $fetch = DB::table('agriculture')->get();
+         $fetch = DB::table('agriculture')->paginate(8);
          $agriculture = json_decode(json_encode($fetch ), true);
-        return view('agriculture-table', ['agriculture'=>$agriculture]);
+        return view('agriculture-table', ['agriculture'=>$fetch]);
     }
     
     public function delete($id) {
