@@ -1,9 +1,9 @@
-@include('./updateLayout.header');
+@include('./updatelayout.header');
  <link rel="stylesheet" href="../assets/css/style.css">
  <title>
   Update Blog Post
   </title>
-  @include('./updateLayout.navbar')
+  @include('./updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -72,6 +72,6 @@
                         </form>
   </main>
   
-   @include('./updateLayout.footer');
+   @include('./updatelayout.footer');
 </body>
 </html>

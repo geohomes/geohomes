@@ -59,6 +59,6 @@
                         </form>
                         @endforeach
                     </div>
-                     @include('updateLayout.header')
+                     @include('updatelayout.header')
                     </body>
                   </htm>

@@ -1,9 +1,9 @@
-@include('./updateLayout.header');
+@include('./updatelayout.header');
  <link rel="stylesheet" href="../assets/css/style.css">
  <title>
   Update AbouT Us Page
   </title>
-  @include('./updateLayout.navbar')
+  @include('./updatelayout.navbar')
      <!-- Consultants Form starts here -->
  <div class="container-fluid py-4">
       <div class="row">
@@ -95,6 +95,6 @@
   
                      </main>            
   
-   @include('./updateLayout.footer');
+   @include('./updatelayout.footer');
 </body>
 </html>

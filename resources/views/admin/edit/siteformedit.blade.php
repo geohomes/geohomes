@@ -183,7 +183,7 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                    <div class="form-box user-icon mb-0">
-                  <p>Layout/Location</p>
+                  <p>layout/Location</p>
                     <input type="text" name="layout" data-rule="required" data-msg="please fill this filled"/>
                     <div class="validation"></div>
                   </div>
@@ -228,6 +228,6 @@
         </center>
                           
    Consultants Form End -->
-        @include('updateLayout.footer')
+        @include('updatelayout.footer')
      </body>
 </html>

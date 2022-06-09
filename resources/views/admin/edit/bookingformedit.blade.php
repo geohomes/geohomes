@@ -138,7 +138,7 @@
                 </center>
 
  booking Form End -->
- @include('updateLayout.footer')
+ @include('updatelayout.footer')
     </body>
 
 </html>
