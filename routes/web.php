@@ -127,8 +127,8 @@ Route::post('/admin/inspection/{id}', [App\Http\Controllers\SiteInspectionTableC
 Route::post('/admin/propertysearch/{id}', [App\Http\Controllers\PSRTableController::class, 'delete'])->name('delete');
 Route::post('/admin/booking/{id}', [App\Http\Controllers\BookingTableController::class, 'delete'])->name('delete');
 Route::post('/admin/contact/{id}', [App\Http\Controllers\ContactTableController::class, 'delete'])->name('deletes');
-Route::get('/admin/blogpost/{id}', [App\Http\Controllers\BlogPostController::class, 'delete'])->name('delete');
-Route::get('/admin/portifolio/{id}', [App\Http\Controllers\PortifolioController::class, 'delete'])->name('delete');
+Route::post('/admin/blogpost/{id}', [App\Http\Controllers\BlogTableController::class, 'delete'])->name('delete');
+Route::post('/admin/portifolio/{id}', [App\Http\Controllers\PortifolioController::class, 'delete'])->name('delete');
 Route::post('/admin/constructiontable/{id}', [App\Http\Controllers\ConstructionTableController::class, 'delete'])->name('delete');
 Route::post('/admin/consultancytable/{id}', [App\Http\Controllers\ConsultancyTableController::class, 'delete'])->name('delete');
 Route::post('/admin/estatetable/{id}', [App\Http\Controllers\EstateTableController::class, 'delete'])->name('delete');
@@ -137,7 +137,7 @@ Route::post('/admin/logistic/{id}', [App\Http\Controllers\LogisticTableControlle
 Route::post('/admin/medical/{id}', [App\Http\Controllers\MedicalTableController::class, 'delete'])->name('delete');
 Route::post('/admin/mineral/{id}', [App\Http\Controllers\MineralTableController::class, 'delete'])->name('delete');
 Route::post('/admin/agriculture/{id}', [App\Http\Controllers\AgricultureTableController::class, 'delete'])->name('delete');
-Route::get('/admin/about/{id}', [App\Http\Controllers\AboutTableController::class, 'delete'])->name('delete');
+Route::post('/admin/about/{id}', [App\Http\Controllers\AboutTableController::class, 'delete'])->name('delete');
 
 Route::post('/admin/application/{id}', [App\Http\Controllers\ApplicationTableController::class, 'delete'])->name('delete');
 Route::post('/admin/affiliate/{id}', [App\Http\Controllers\AffiliateTableController::class, 'delete'])->name('delete');
@@ -146,6 +146,7 @@ Route::post('/admin/booking/{id}', [App\Http\Controllers\BookingTableController:
 Route::post('/admin/consultants/{id}', [App\Http\Controllers\ConsultantsTableController::class, 'delete'])->name('delete');
 
 /* Viewing Form detail */
+Route::get('/admin/viewabout/{id}', [App\Http\Controllers\Edit\AboutEditController::class, 'view'])->name('viewabout/{id}');
 Route::get('/admin/viewapplication/{id}', [App\Http\Controllers\Edit\ApplicationFormEditController::class, 'view'])->name('viewapplication/{id}');
 Route::get('/admin/viewconsultant/{id}', [App\Http\Controllers\Edit\ConsultantFormEditController::class, 'view'])->name('viewconsultant/{id}');
 Route::get('/admin/viewinspection/{id}', [App\Http\Controllers\Edit\SiteFormEditController::class, 'view'])->name('editsiteinspection/{id}');
@@ -160,10 +161,14 @@ Route::get('/admin/viewagriculture/{id}', [App\Http\Controllers\Edit\Agriculture
 Route::get('/admin/viewmedical/{id}', [App\Http\Controllers\Edit\MedicalEditController::class, 'view'])->name('viewmedical/{id}');
 Route::get('/admin/viewmineral/{id}', [App\Http\Controllers\Edit\MineralEditController::class, 'view'])->name('viewmineral/{id}');
 Route::get('/admin/viewlogistic/{id}', [App\Http\Controllers\Edit\LogisticEditController::class, 'view'])->name('viewlogistic/{id}');
+Route::get('/admin/viewportifolio/{id}', [App\Http\Controllers\Edit\PortifolioEditControllor::class, 'view'])->name('viewportifolio/{id}');
+Route::get('/admin/viewblog/{id}', [App\Http\Controllers\Edit\BlogEditController::class, 'view'])->name('viewblog/{id}');
+
+
 /* The Viewing of data ends here */
 
 /* getting Editing Documents */
-Route::get('/admin/editabout', [App\Http\Controllers\Edit\AboutEditController::class, 'edit'])->name('editabout');
+Route::get('/admin/editabout/{id}', [App\Http\Controllers\Edit\AboutEditController::class, 'edit'])->name('editabout/{id}');
 Route::get('/admin/editconstruction/{id}', [App\Http\Controllers\Edit\ConstructionEditController::class, 'edit'])->name('editconstruction/{id}');
 Route::get('/admin/editconsultancy/{id}', [App\Http\Controllers\Edit\ConsultancyEditController::class, 'edit'])->name('editconsultancy');
 Route::get('/admin/editestate/{id}', [App\Http\Controllers\Edit\EstateEditController::class, 'edit'])->name('editestate/{id}');
@@ -182,12 +187,15 @@ Route::get('/admin/editcis/{id}', [App\Http\Controllers\Edit\CisFormEditControll
 Route::get('/admin/editcontact/{id}', [App\Http\Controllers\Edit\ContactEditController::class, 'edit'])->name('editcontact/{id}');
 Route::get('/admin/editproperty/{id}', [App\Http\Controllers\Edit\PropertyFormEditController::class, 'edit'])->name('editproperty/{id}');
 Route::get('/admin/editsiteinspection/{id}', [App\Http\Controllers\Edit\SiteFormEditController::class, 'edit'])->name('editsiteinspection/{id}');
+Route::get('/admin/editportifolio/{id}', [App\Http\Controllers\Edit\PortifolioEditControllor::class, 'edit'])->name('editportifolio/{id}');
+Route::get('/admin/editblog/{id}', [App\Http\Controllers\Edit\BlogEditController::class, 'edit'])->name('editblog/{id}');
 
-Route::get('/admin/editportifolio', [App\Http\Controllers\UpdateController::class, 'editportifolio'])->name('editportifolio');
+
+/* end of getting files for editing */
 
 /* posting edited document */
-Route::post('/admin/editportifolio', [App\Http\Controllers\UpdateController::class, 'editportifolio'])->name('edit');
-Route::post('/admin/editabout', [App\Http\Controllers\Edit\AboutEditController::class, 'AboutEdit'])->name('editabout');
+Route::post('/admin/editportifolio/{id}', [App\Http\Controllers\Edit\PortifolioEditControllor::class, 'portifolioedit'])->name('editportifolio/{id}');
+Route::post('/admin/editabout/{id}', [App\Http\Controllers\Edit\AboutEditController::class, 'AboutEdit'])->name('editabout/{id}');
 Route::post('/admin/editconstruction/{id}', [App\Http\Controllers\Edit\ConstructionEditController::class, 'Constructionedit'])->name('editconstruction/{id}');
 Route::post('/admin/editestate/{id}', [App\Http\Controllers\Edit\EstateEditController::class, 'EstateEdit'])->name('editestate/{id}');
 Route::post('/admin/editenergy/{id}', [App\Http\Controllers\Edit\EnergyEditController::class, 'EnergyEdit'])->name('editenergy');
@@ -205,6 +213,7 @@ Route::post('/admin/editproperty/{id}', [App\Http\Controllers\Edit\PropertyFormE
 Route::post('/admin/editsiteinspection/{id}', [App\Http\Controllers\Edit\SiteFormEditController::class, 'SiteInspectionEdit'])->name('editsiteinspection/{id}');
 
 Route::post('/admin/editconsultancy/{id}', [App\Http\Controllers\Edit\ConsultancyEditController::class, 'ConsultancyEdit'])->name('editconsultancy');
+Route::post('/admin/editblog/{id}', [App\Http\Controllers\Edit\BlogEditController::class, 'blogEdit'])->name('editblog/{id}');
 /* end of editing */
 
 

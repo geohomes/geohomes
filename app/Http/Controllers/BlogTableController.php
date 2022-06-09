@@ -10,9 +10,9 @@ class BlogTableController extends Controller
     //
       public function admin()
     {
-        $fetch = DB::table('blogs')->get();
-         $array = json_decode(json_encode($fetch ), true);
-        return view('blog_table', ['array'=>$array]);
+        $fetch = DB::table('blogs')->paginate(8);
+         $blog = json_decode(json_encode($fetch ), true);
+        return view('blog_table', ['blog'=>$fetch]);
     }
     
     

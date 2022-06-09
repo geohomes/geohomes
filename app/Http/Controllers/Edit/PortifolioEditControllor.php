@@ -1,24 +1,42 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Edit;
+use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use DB;
 use Validator;
 use Str;
 
-class UpdateController extends Controller
+
+
+class PortifolioEditControllor extends Controller
 {
-    public function admin()
+  public function edit($id)
     {
-        return view('editabout');
+        $fetch = DB::table('portifolio')
+        ->where('id', $id)
+         ->get();
+         $portifolio = json_decode(json_encode($fetch ), true);
+        return view('edit.editportifolio', ['portifolio'=>$fetch]);
     }
 
-    // Edit function
-        public function editportifolio(Request $request) {
+     public function view($id)
+    {
+        $fetch = DB::table('portifolio')
+        ->where('id', $id)
+         ->get();
+         $portifolio = json_decode(json_encode($fetch ), true);
+        return view('view.view_portifolio', ['portifolio'=>$portifolio]);
+    }
 
-             $data = request()->all();
-            $validator = Validator::make($data, [  
+   public function portifolioedit(Request $request) {
+
+            $data = request()->all();
+            $validator = Validator::make($data, [ 
+        'firsttitle' => ['required'],
+        'secondtitle' => ['required'],
+        'thirdtitle' => ['required'], 
         'firstdescription' => ['required'],
         'seconddescription' => ['required'],
         'thirddescription' => ['required'],
@@ -53,6 +71,9 @@ class UpdateController extends Controller
         $path = 'assets/upload/portifolio_images';
         $thirdimage->move($path, $thirdfilename);
 
+        $first_title = $request->input('firsttitle');
+        $second_title = $request->input('secondtitle');
+        $third_title = $request->input('thirdtitle');
         $first_description = $request->input('firstdescription');
         $second_description = $request->input('seconddescription');
         $third_description = $request->input('thirddescription');
@@ -61,7 +82,11 @@ class UpdateController extends Controller
         
         $edit=DB::table('portifolio')
             ->where('id', $id)
-            ->update(['first_description' => "$first_description",
+            ->update([
+                'first_title' => "$first_title",
+                'second_title' => "$second_title",
+                'third_title' => "$third_title",
+                'first_description' => "$first_description",
                 'second_description' => "$second_description",
                 'third_description' => "$third_description",
                 'first_image' => "$firstfilename",
@@ -78,7 +103,5 @@ class UpdateController extends Controller
             return back()->with('error', 'Record was not Updated. please try Again.');
            }
         }
-	}
-
-
+    }
 }

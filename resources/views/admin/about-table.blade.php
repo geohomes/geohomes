@@ -1,6 +1,6 @@
 @include('adminLayout.header');
  <title>
-  About
+  about
   </title>
   @include('adminLayout.navbar')
  <div class="container-fluid py-4">
@@ -26,66 +26,73 @@
 
             <!--- this code will show add button if content is empty -->
             @if(empty($about))
+            <div class="alert">
+              <p style="color:red; font-weight: bold;">Sorry, the table is empty</p>
+            </div>
             <div>
               <a href="{{route('addabout')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
-               create new Content</a>
+               create new about</a>
             </div>
+            
                      
            @else
-            
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>About Us table</h6>
+             <div>
+              <a href="{{route('addabout')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
+               create new about</a>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-secondary text-xs font-weight-bolder opacity-7">S/N</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Title</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Description</th>
-                      <th class=" text-uppercase text-secondary text-xs font-weight-bolder opacity-7">Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                       @foreach($about as $row)
-                        <td>
-                        <p class="text-sm font-weight-bold mb-0">{{$row['id']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['title']}}</p>
-                      </td>
-                      <td>
-                        <p class="text-sm  font-weight-bold mb-0 cell expand-maximum-on-hover">{{$row['description']}}</p>
-                      </td>
-
-                       <td>
-                        <p class="text-sm  font-weight-bold mb-0">{{$row['created_at']}}</p>
-                      </td>
-                      <td>
-                        <a  class="text-secondary font-weight-bold text-xs btn btn-success" data-toggle="tooltip" data-original-title="Edit user" href="{{route('editabout')}}" name="{{$row['id']}}">
-                          Update
-                        </a>
-                      </td>
-                      <td>
-                        <a href="about/{{$row['id']}}" class="text-secondary font-weight-bold text-xs btn btn-danger" data-toggle="tooltip" data-original-title="Edit user">
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                       @endforeach
-                        @endif
-                  </tbody>
-                </table>
-              </div>
-            </div>
+             @foreach($about as $row)
+              <div class="col-lg-6 col-sm-12 col-md-6">
+                  <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
+                        <p class="card-text">{{Str::limit($row->description, 70) }}</p>
+                        <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
+                        <div class="row g-0">
+                      <div class="col-lg-4 col-sm-6 col-md-6">
+                     <a class=" btn btn-success text-secondary font-weight-bold text-sm btn btn-success" data-original-title="Edit user" href="editabout/{{$row->id}}" name="{{$row->id}}">Edit</a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6 col-md-6">
+                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="about/{{$row->id}}">Delete</a>
+                      </div>
+                        </div>
+                      </div>
+                    </div> 
+                    </div>
+                    </div>
+                    </div>   
+            @endforeach 
+            @endif  
           </div>
+          </div>  
         </div>
+
       </div>
   </main>
+
+
+
+<!-- Delete Modal -->
+@foreach($about as $row)
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form class="form-contact contact_form" action="about/{{$row->id}}" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+      <div class="modal-body">
+        <p>The Data will be deleted completely. Do you wish to proceed?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-warning" >Yes</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+ @endforeach
+
    @include('adminLayout.footer');
 </body>
 </html>

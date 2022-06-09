@@ -1,9 +1,10 @@
-@include('adminLayout.header');
- 
+@include('./updateLayout.header');
+ <link rel="stylesheet" href="../assets/css/style.css">
  <title>
-  Update About US Page
+  Update AbouT Us Page
   </title>
-  @include('adminLayout.navbar')
+  @include('./updateLayout.navbar')
+     <!-- Consultants Form starts here -->
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -12,6 +13,7 @@
          @endif
          <div class="container">
          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-md-12">
                     <div class="col-12">
                         <h2 class="contact-title mt-30 padding-40" style="color:#0EA15F">Update About Us Page</h2>
                     </div>
@@ -51,9 +53,48 @@
                             </div>
                         </form>
                            @endforeach
+                       </div>
+                       <div class="col-lg-6 col-sm-12 col-md-12">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel text-uppercase">about Detail</h6>
+                              </div>
+
+                              <div class="modal-body">
+                                <div class="container-fluid">
+                                  <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-md-6 ">
+                                    <h6 style="font-weight: bold;">Title:</h6>
+                                    </div>
+                                    <div class="col-lg-12 col-sm-12 col-md-6">
+                                    <h5>{{$row[ 'title' ] }}</h6>
+                                    </div>
+                                    
+                                    <br><br>
+                                     <div class="col-lg-12 col-sm-12 col-md-12 ">
+                                    <h6 style="font-weight: bold;"> Description:</h6>
+                                    </div>
+                                     <div class="col-lg-12 col-sm-12 col-md-12">
+                                    <h6> {{$row[ 'description' ] }}</h6>
+                                    </div>
+                                    <br><br>
+                                    <div class="col-lg-12 col-sm-12 col-md-12">
+                                    <h6> {{$row[ 'created_at' ] }}</h6>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" ><a href="javascript:history.go(-1)" style="color: black;">Back</a></button>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
   
                      </main>            
   
-   @include('adminLayout.footer');
+   @include('./updateLayout.footer');
 </body>
 </html>

@@ -12,13 +12,24 @@ use Str;
 
 class AboutEditController extends Controller
 {
-  public function edit()
+  public function edit($id)
     {
-        $fetch = DB::table('about')->get();
+        $fetch = DB::table('about')
+        ->where('id', $id)
+         ->get();
          $about = json_decode(json_encode($fetch ), true);
         return view('edit.editabout', ['about'=>$about]);
     }
 
+  public function view($id)
+    {
+        $fetch = DB::table('about')
+        ->where('id', $id)
+         ->get();
+         $about = json_decode(json_encode($fetch ), true);
+        return view('view.view_about', ['about'=>$about]);
+    }
+    
     public function AboutEdit(Request $request)
 {
 

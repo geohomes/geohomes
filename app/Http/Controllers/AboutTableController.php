@@ -12,7 +12,7 @@ class AboutTableController extends Controller
     {
          $fetch = DB::table('about')->get();
          $about = json_decode(json_encode($fetch ), true);
-        return view('about-table', ['about'=>$about]);
+        return view('about-table', ['about'=>$fetch ]);
     }
     
     public function delete($id) {

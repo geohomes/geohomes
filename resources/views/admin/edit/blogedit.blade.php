@@ -1,9 +1,9 @@
-@include('adminLayout.header');
+@include('./updateLayout.header');
  <link rel="stylesheet" href="../assets/css/style.css">
  <title>
   Update Blog Post
   </title>
-  @include('adminLayout.navbar')
+  @include('./updateLayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -32,39 +32,46 @@
                         <form class="form-contact contact_form" action="#" method="POSt" enctype="multipart/form-data" novalidate="novalidate">
                           
                             <div class="row">
-                               
+                               @foreach($blog as $row)
                                  <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input required="" class="form-control valid" name="name" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Writer`s Name">
+                                        <input required="" class="form-control valid" name="name"  type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="{{$row['writer']}}">
+                                         <small class="text-danger">{{$errors->first('name') }}</small>
                                     </div>
                                 </div>
                                     <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input required=""class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                                        <input required=""class="form-control valid" name="email" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="{{$row['email']}}">
+                                         <small class="text-danger">{{$errors->first('email') }}</small>
                                     </div>
                                 </div>
                                       <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input required=""class="form-control valid" name="blog_title" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Blog Title">
+                                        <input required=""class="form-control valid" name="title" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="{{$row['title']}}">
+                                         <small class="text-danger">{{$errors->first('title') }}</small>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input required=""class="form-control valid" name="image" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Upload image">
+                                         <small class="text-danger">{{$errors->first('image') }}</small>
                                     </div>
                                 </div>
                                  <div class="col-12">
                                     <div class="form-group">
-                                        <textarea class="form-control w-100" name="description" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Blog Description'" placeholder=" Enter Message"></textarea>
+                                        <textarea class="form-control w-100" name="description" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Blog Description'" placeholder=" {{$row['description']}}"></textarea>
+                                         <small class="text-danger">{{$errors->first('description') }}</small>
                                     </div>
                                 </div>
-                                  <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input required=""class="form-control valid" name="image" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Upload image">
-                                    </div>
-                                </div>
+                                <input type="hidden" name="id" value="{{$row['id']}}">
                             </div>
                             <div class="form-group mt-3">
-                                <button type="submit" class="button button-contactForm boxed-btn">Update</button>
+                                <button type="submit" class="btn btn-outline-dark button-contactForm boxed-btn">Update</button>
                             </div>
+                            @endforeach
                         </form>
   </main>
   
-   @include('adminLayout.footer');
+   @include('./updateLayout.footer');
 </body>
 </html>

@@ -19,16 +19,26 @@ class BlogPostController extends Controller
     public function BlogInsert(Request $request)
 {
     $image = request()->file('image');
-        $validator = Validator::make(['image' => $image], [
-            'image' => ['required', 'image', 'mimes:jpg,png,jpeg,|max:10240']
+
+        //Validation //
+         $data = request()->all();
+        $validator = Validator::make($data, [  
+        'name' => ['required'],
+        'email' => ['required','email'],
+        'blog_title' => ['required'],
+        'image' => $image,
+        'image' => ['required', 'image', 'mimes:jpg,png,jpeg,|max:10240'],
+        'description' => ['required'],
         ]);
 
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => 0, 
-                'error' => $validator->errors()
-            ]);
+         
+      if ($validator->fails()) {
+         return back()
+         ->withInput()
+         ->withErrors($validator);
         }
+
+        else{
 
         $extension = $image->getClientOriginalExtension();
         $filename = Str::uuid().'.'.$extension;
@@ -46,7 +56,7 @@ class BlogPostController extends Controller
          $submit= DB::table('blogs')->insert($request);
 
         if ($submit) {
-            return view('blog_table')->with('success', 'Blog Created Successful. Thank You.');
+            return back()->with('success', 'Blog Created Successful. Thank You.');
 
     }
 
@@ -55,5 +65,5 @@ class BlogPostController extends Controller
        }
     }
 
-   
+   }
 }
