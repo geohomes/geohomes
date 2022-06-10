@@ -24,39 +24,42 @@
             @endif
             <!-- feedback message ends here -->
             <div>
-              <a href="{{route('addlogistic')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
+              <a href="{{route('addlogistic')}}" class=" font-weight-bold text-xs btn btn-outline-warning" >
                Create new Item</a>
             </div>
               
              
-     <div class="row g-4">
-       @foreach($logistic as $row)
-  <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">
-      <img src="{{ asset('assets/upload/logistic_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here">
-       <div class="col-lg-6 col-sm-6 col-md-6 mt-40">
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-warning " style="color: black;" href="viewlogistic/{{$row->id}}">view detail</a>
-        </div>
-      <div class="card-body">
-        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-        <p class="card-text">
-          {{ Str::limit($row->description, 20) }}
-        </p>
-      </div>
-      <div class="row">
-      <div class="col-lg-6 col-sm-6 col-md-6">
-       <a class=" btn btn-success" href="editlogistic/{{$row->id}}" name="{{$row->id}}">Edit</a>
-      </div>
-      <div class="col-lg-6 col-sm-6 col-md-6">
-      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="logistic/{{$row->id}}">Delete</a>
-       </div>
-       </div>
-     </div>
-    </div>
 
+       @foreach($logistic as $row)
+ <div class="col-lg-4 col-sm-12 col-md-6">
+                  <div class="card mb-3" style="max-width: 540px;">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <img src="{{ asset('assets/upload/logistic_images/'.$row->first_image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center;">
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <div class="card-body">
+                        <a value="{{$row->id}}" name="{{$row->id}}"   href="viewlogistic/{{$row->id}}" >
+                        <h5 class="card-title"><u>{{Str::limit($row->title, 10) }}</u></h5>
+                        <p class="card-text"><u>{{Str::limit($row->description,15) }}</u></p>
+                        <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
+                      </a>
+                      <div class="row mt-4">
+                      <div class="col-lg-6 col-sm-6 col-md-6">
+                     <a class="  text-secondary  btn btn-success"  href="editlogistic/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6 ">
+                      <a  class=" btn btn-danger  "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="logisticpost/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                      </div>
+                        </div>
+                      </div>
+                    </div> 
+                    </div>
+                    </div>
+                    </div>   
    @endforeach
    <div class="col-lg-12">
-   <nav class="blog-pagination justify-content-center d-flex">
+   <nav class="logistic-pagination justify-content-center d-flex">
        <ul class="pagination">
    <li class="page-item">
     {{ $logistic->links('././vendor.pagination.default') }}

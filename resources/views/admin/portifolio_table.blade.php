@@ -3,7 +3,7 @@
   Portifolio
   </title>
   @include('./adminlayout.navbar')
- <div class="container-fluid py-4">
+ <div class="container ">
       <div class="row">
               @if(isset(Auth::user()->email))
          @else
@@ -40,41 +40,25 @@
                create new Portifolio</a>
             </div>
              @foreach($portifolio as $row)
-             <div class="col-lg-4 col-sm-12 col-md-6">
-                  <div class="card mb-3" style="max-width: 540px;">
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->first_image) }}" class="img-fluid rounded-start" alt="...">
-                      <div class="row">
-                      <div class="col-lg-6">
-                         <img src="{{ asset('assets/upload/portifolio_images/'.$row->second_image) }}" class="img-fluid rounded-start" alt="...">
-                      </div>
-                       <div class="col-lg-6">
-                         <img src="{{ asset('assets/upload/portifolio_images/'.$row->third_image) }}" class="img-fluid rounded-start" alt="...">
-                      </div>
-                    </div>
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <a value="{{$row->id}}" name="{{$row->id}}"  href="viewportifolio/{{$row->id}}">
-                        <h5 class="card-title">{{Str::limit($row->first_title, 18) }}</h5>
-                        <p class="card-text">{{Str::limit($row->first_description, 60) }}</p>
-                        <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
-                      </a>
-                        <div class="row">
-                      <div class="col-lg-4 col-sm-6 col-md-6">
-                     <a class=" btn btn-success text-secondary font-weight-bold text-sm btn btn-success" data-original-title="Edit user" href="editportifolio/{{$row->id}}" name="{{$row->id}}">Edit</a>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="portifolio/{{$row->id}}">Delete</a>
-                      </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
+              <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+              <img src="{{ asset('assets/upload/portifolio_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here" style="height: 300px; object-fit: center;">
+
+                <div class="d-flex justify-content-between mt-4"> 
+                 <a class=" btn btn-success" href="editeportifolio/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+                  <a  class=" btn btn-danger "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="eportifoliotable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
               </div>
+
+              <div class="card-body">
+                <a value="{{$row->id}}" name="{{$row->id}}" href="vieweportifolio/{{$row->id}}">
+                <h5 class="card-title"><u>{{Str::limit($row->first_title, 20) }}</u></h5>
+                <p class="card-text"><u>
+                  {{ Str::limit($row->first_description, 200) }}</u>
+                </p>
+              </a>
+              </div>
+             </div>
+            </div>
                 @endforeach 
                 @endif    
         </div>

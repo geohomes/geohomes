@@ -37,8 +37,8 @@
             <div class="card text-center">
           <div class="card-body">
              <a value="{{$row['id']}}" name="{{$row['id']}}"  href="viewcis/{{$row['id']}}" >
-            <h5 class="card-title">{{$row[ 'fullname' ] }}</h5>
-            <h6 class="card-title">{{$row[ 'email' ] }}</h6>
+            <h5 class="card-title"><u>{{$row[ 'fullname' ] }}</u></h5>
+            <h6 class="card-title"><u>{{$row[ 'email' ] }}</u></h6>
             <p class="card-text">{{$row[ 'created_at' ] }}</p>
             <div>
           </a>
@@ -46,10 +46,10 @@
 
             <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6">
-          <a class=" btn btn-success" href="editcis/{{$row['id']}}" name="{{$row['id']}}" >Edit</a>
+          <a class=" btn btn-success" href="editcis/{{$row['id']}}" name="{{$row['id']}}" ><i class="fas fa-edit" ></i></a>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6">
-          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="application/{{$row['id']}}">Delete</a>
+          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="application/{{$row['id']}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
         </div>
       </div>

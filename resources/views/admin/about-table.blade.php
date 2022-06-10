@@ -41,21 +41,19 @@
                create new about</a>
             </div>
              @foreach($about as $row)
-              <div class="col-lg-6 col-sm-12 col-md-6">
-                  <div class="card mb-3" style="max-width: 540px;">
+              <div class="col-lg-4 col-sm-12 col-md-6">
+                  <div class="card mb-3" style="max-width:300px;">
                   <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
                       <div class="card-body">
-                        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-                        <p class="card-text">{{Str::limit($row->description, 70) }}</p>
+                        <a value="{{$row->id}}" name="{{$row->id}}"   href="viewabout/{{$row->id}}" >
+                        <h5 class="card-title"><u>{{Str::limit($row->title, 22) }}</u></h5>
+                        <p class="card-text"><u>{{Str::limit($row->description,30) }}</u></p>
                         <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
-                        <div class="row g-0">
-                      <div class="col-lg-4 col-sm-6 col-md-6">
-                     <a class=" btn btn-success text-secondary font-weight-bold text-sm btn btn-success" data-original-title="Edit user" href="editabout/{{$row->id}}" name="{{$row->id}}">Edit</a>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="about/{{$row->id}}">Delete</a>
+                      </a>
+                      <div class="d-flex justify-content-between mt-4">
+                     <a class="  text-secondary  btn btn-success"  href="editabout/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+                      <a  class=" btn btn-danger  "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="aboutpost/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                       </div>
                         </div>
                       </div>

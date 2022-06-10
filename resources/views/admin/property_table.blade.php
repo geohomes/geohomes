@@ -36,8 +36,8 @@
             <div class="col-lg-3 col-sm-6 col-md-4  mb-50" style="margin-bottom: 50px!important;">
             <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title">{{$row[ 'clientname' ] }}</h5>
-            <h6 class="card-title">{{$row[ 'email' ] }}</h6>
+            <h5 class="card-title"><u>{{$row[ 'clientname' ] }}</u></h5>
+            <h6 class="card-title"><u>{{$row[ 'email' ] }}</u></h6>
             <p class="card-text">{{$row[ 'created_at' ] }}</p>
             <div>
            <a value="{{$row['id']}}" name="{{$row['id']}}" class=" btn " style="background-color:#0EA15F;color: black;" href="viewproperty/{{$row['id']}}" >view detail</a></div>
@@ -45,10 +45,10 @@
 
             <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6">
-          <a class=" btn btn-success" href="editproperty/{{$row['id']}}" name="{{$row['id']}}" >Edit</a>
+          <a class=" btn btn-success" href="editproperty/{{$row['id']}}" name="{{$row['id']}}" ><i class="fas fa-edit"></i></a>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6">
-          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="propertysearch/{{$row['id']}}">Delete</a>
+          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="propertysearch/{{$row['id']}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
         </div>
       </div>

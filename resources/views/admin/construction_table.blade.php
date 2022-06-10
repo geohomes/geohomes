@@ -1,10 +1,11 @@
 @include('updatelayout.header');
+
  <title>
   Construction
   </title>
   @include('updatelayout.navbar')
   <div class="container">
-   <div class="row">
+    <div class="row" >
               @if(isset(Auth::user()->email))
          @else
           <script>window.location="login"</script>
@@ -24,34 +25,33 @@
             @endif
             <!-- feedback message ends here -->
             <div>
-              <a href="{{route('addconstruction')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
+              <a href="{{route('addconstruction')}}" class=" font-weight-bold text-xs btn btn-outline-success">
                Create new Item</a>
             </div>
-              
-             
-     <div class="row g-4">
-       @foreach($construction as $row)
-  <div class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card">
-      <a value="{{$row->id}}" name="{{$row->id}}"  href="viewconstruction/{{$row->id}}">
-      <img src="{{ asset('assets/upload/construction_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here">
-      <div class="card-body">
-        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-        <p class="card-text">
-          {{ Str::limit($row->description, 40) }}
-        </p>
-      </a>
-      </div>
-      <div class="row">
-      <div class="col-lg-6 col-sm-6 col-md-6">
-       <a class=" btn btn-success" href="editconstruction/{{$row->id}}" name="{{$row->id}}">Edit</a>
-      </div>
-      <div class="col-lg-6 col-sm-6 col-md-6">
-      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="constructiontable/{{$row->id}}">Delete</a>
-       </div>
-       </div>
-     </div>
-    </div>
+                      
+                     
+               @foreach($construction as $row)
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <a value="{{$row->id}}" name="{{$row->id}}"  href="viewconstruction/{{$row->id}}">
+              <img src="{{ asset('assets/upload/construction_images/'.$row->first_image) }}" class="card-img-top " alt="There is an Image here" style="height: 200px; object-fit: center;" >
+
+              <div class="card-body">
+                <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
+                <p class="card-text"><u>
+                  {{ Str::limit($row->description, 40) }}</u>
+                </p>
+              </a>
+             </div>
+             <div class="card-footer bg-dark">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <a class=" btn btn-success mr-3" href="editconstruction/{{$row->id}}" name="{{$row->id}}"><i class=" fas fa-edit"></i></a>
+                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="constructiontable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></i></a>
+                   </div>
+                </div>
+                </div>
+              </div>
+
 
    @endforeach
    <div class="col-lg-12">
@@ -64,8 +64,7 @@
      </nav>
      </div>
 </div>
-</div>
-</div>
+
 
 <!-- Modal -->
 @foreach($construction as $row)

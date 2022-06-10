@@ -35,18 +35,18 @@
     <div class="card">
       <img src="{{ asset('assets/upload/estate_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
 
-        <div class="col-lg-6 col-sm-6 col-md-6 mt-40"> 
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-warning " style="color: black;" href="viewestate/{{$row->id}}">
-       view</a>
-         <a class=" btn btn-success" href="editestate/{{$row->id}}" name="{{$row->id}}">Edit</a>
-          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="estatetable/{{$row->id}}">Dele</a>
+        <div class="d-flex justify-content-between mt-4"> 
+         <a class=" btn btn-success" href="editestate/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+          <a  class=" btn btn-danger "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="estatetable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
       </div>
 
       <div class="card-body">
-        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-        <p class="card-text">
-          {{ Str::limit($row->titledescription, 40) }}
+        <a value="{{$row->id}}" name="{{$row->id}}" href="viewestate/{{$row->id}}">
+        <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
+        <p class="card-text"><u>
+          {{ Str::limit($row->titledescription, 40) }}</u>
         </p>
+      </a>
       </div>
      </div>
     </div>

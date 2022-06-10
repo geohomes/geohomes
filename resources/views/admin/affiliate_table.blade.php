@@ -49,10 +49,10 @@
 
             <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6">
-          <a class=" btn btn-success" href="editaffiliate/{{$row['id']}}" name="{{$row['id']}}" >Edit</a>
+          <a class=" btn btn-success" href="editaffiliate/{{$row['id']}}" name="{{$row['id']}}" ><i class="fas fa-edit" ></i></a>
         </div>
         <div class="col-lg-6 col-sm-6 col-md-6">
-          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="application/{{$row['id']}}">Delete</a>
+          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="application/{{$row['id']}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
         </div>
       </div>

@@ -44,24 +44,23 @@
               <div class="col-lg-4 col-sm-12 col-md-6">
                   <div class="card mb-3" style="max-width: 540px;">
                   <div class="row">
-                    <div class="col-md-4">
-                      <img src="{{ asset('assets/upload/blog_images/'.$row->image) }}" class="img-fluid rounded-start" alt="...">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <img src="{{ asset('assets/upload/blog_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center;">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
                       <div class="card-body">
                         <a value="{{$row->id}}" name="{{$row->id}}"   href="viewblog/{{$row->id}}" >
-                        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-                        <p class="card-text">{{Str::limit($row->description, 60) }}</p>
-                        <p class="card-text">Written by {{Str::limit($row->writer, 40) }}</p>
+                        <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
+                        <p class="card-text"><u>{{Str::limit($row->description,20) }}</u></p>
+                        <p class="card-text">{{Str::limit($row->writer, 40) }}</p>
                         <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
                       </a>
-                        <div class="row g-0">
-                      <div class="col-lg-4 col-sm-6 col-md-6">
-                     <a class=" btn btn-success text-secondary font-weight-bold text-sm btn btn-success" data-original-title="Edit user" href="editblog/{{$row->id}}" name="{{$row->id}}">Edit</a>
+                      <div class="row ">
+                      <div class="col-lg-6 col-sm-6 col-md-6">
+                     <a class="  text-secondary  btn btn-success"  href="editblog/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
                     </div>
-                    
-                    <div class="col-lg-4 col-sm-6 col-md-6">
-                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="blogpost/{{$row->id}}">Delete</a>
+                    <div class="col-lg-6 col-sm-6 col-md-6 ">
+                      <a  class=" btn btn-danger  "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="blogpost/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
                       </div>
                         </div>
                       </div>

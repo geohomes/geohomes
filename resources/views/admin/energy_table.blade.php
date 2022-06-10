@@ -36,19 +36,17 @@
       <img src="{{ asset('assets/upload/energy_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
       <div class="card-body">
         <a value="{{$row->id}}" name="{{$row->id}}" href="viewenergy/{{$row->id}}">
-        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-        <p class="card-text">
-          {{ Str::limit($row->first_description, 40) }}
+        <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
+        <p class="card-text"><u>
+          {{ Str::limit($row->first_description, 40) }}</u>
         </p>
         </a>
       </div>
-      <div class="row">
-      <div class="col-lg-6 col-sm-6 col-md-6">
-       <a class=" btn btn-success" href="editenergy/{{$row->id}}" name="{{$row->id}}">Edit</a>
-      </div>
-      <div class="col-lg-6 col-sm-6 col-md-6">
-      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="energytable/{{$row->id}}">Delete</a>
-       </div>
+      <div class="card-footer bg-dark">
+          <div class="d-flex align-items-center justify-content-between">
+            <a class=" btn btn-success mr-3" href="editenergy/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit" ></i></a>
+              <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="energytable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+           </div>
        </div>
      </div>
     </div>

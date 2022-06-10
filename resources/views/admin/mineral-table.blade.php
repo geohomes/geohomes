@@ -34,39 +34,27 @@
             </div>
                      
            @else
-           <div class="row g-4">
             @foreach($mineral as $row)
-            <div class="col-lg-3 col-md-6 col-sm-6">
-        <div class="card mb-3" style="max-width: 500px;">
-  <div class="row g-4">
-    <div class="col-md-6 col-lg-4">
-      <img src="{{ asset('assets/upload/mineral_images/'.$row->first_image) }}" alt="image" class="img-fluid img-thumbnail mb-40" 
-      style="height:70px;" />
-    </div>
-     <div class="col-lg-4 col-sm-6 col-md-6 mt-40">
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-success " style="color: black;" href="viewmineral/{{$row->id}}" class="mt-50">view</a>
-        </div>
-      <div class="col-lg-4 col-sm-6 col-md-6">
-       <a class=" btn btn-success" href="editmineral/{{$row->id}}" name="{{$row->id}}">Edit</a>
-      </div>
-      
-    <div class="col-md-6 col-lg-12">
-      <div class="card-body">
-        <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
-        <p class="card-text">
-           {{ Str::limit($row->description, 20) }}
-        </p>
-        <p class="card-text">
-          <small class="text-muted"> {{$row->created_at }}</small>
-        </p>
-       <div class="col-lg-6 col-sm-6 col-md-6">
-      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="mineral/{{$row->id}}">Delete</a>
-       </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card">
+              <a value="{{$row->id}}" name="{{$row->id}}"  href="viewmineral/{{$row->id}}">
+              <img src="{{ asset('assets/upload/mineral_images/'.$row->first_image) }}" class="card-img-top " alt="There is an Image here" style="height: 200px; object-fit: center;" >
+
+              <div class="card-body">
+                <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
+                <p class="card-text"><u>
+                  {{ Str::limit($row->description, 40) }}</u>
+                </p>
+              </a>
+             </div>
+             <div class="card-footer bg-dark">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <a class=" btn btn-success mr-3" href="editmineral/{{$row->id}}" name="{{$row->id}}"><i class=" fas fa-edit"></i></a>
+                      <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="mineraltable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></i></a>
+                   </div>
+                </div>
+                </div>
+              </div>
    @endforeach
  </div>
  @endif

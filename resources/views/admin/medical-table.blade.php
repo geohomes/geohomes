@@ -24,33 +24,33 @@
             @endif
             <!-- feedback message ends here -->
             <div>
-              <a href="{{route('addmedical')}}" class=" font-weight-bold text-xs btn btn-primary" style="background-color: #0EA15F;">
+              <a href="{{route('addmedical')}}" class=" font-weight-bold text-xs btn btn-outline-success" >
                Create new Item</a>
             </div>
               
              
      <div class="row g-4">
        @foreach($medical as $row)
-  <div class="col-lg-3 col-md-4 col-sm-6">
+   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="card">
       <img src="{{ asset('assets/upload/medical_images/'.$row->image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
 
-        <div class="col-lg-6 col-sm-6 col-md-6 mt-40"> 
-         <a class=" btn btn-success" href="editmedical/{{$row->id}}" name="{{$row->id}}">Edit</a>
-          <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="medical/{{$row->id}}">Dele</a>
+        <div class="d-flex justify-content-between mt-4"> 
+         <a class=" btn btn-success mb-50" href="editmedical/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+          <a  class=" btn btn-danger mb-50"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="medicaltable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
       </div>
 
-      <div class="card-body">
-        <a value="{{$row->id}}" name="{{$row->id}}"  href="viewmedical/{{$row->id}}">
-       
-        <h5 class="card-title">{{Str::limit($row->title, 20) }}</h5>
-        <p class="card-text">
-          {{ Str::limit($row->description, 40) }}
+      <div class="card-body bg-dark" style="border-radius: 0px 0px  30px 30px">
+        <a value="{{$row->id}}" name="{{$row->id}}" href="viewmedical/{{$row->id}}">
+        <h5 class="card-title" style="color:white"><u>{{Str::limit($row->title, 18) }}</u></h5>
+        <p class="card-text" style="color:white"><u>
+          {{ Str::limit($row->description, 40) }}</u>
         </p>
-        </a>
+      </a>
       </div>
      </div>
     </div>
+
 
    @endforeach
    <div class="col-lg-12">
