@@ -1,4 +1,4 @@
- @include('adminlayout.header')
+ @include('./adminlayout.header')
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <title>GeoHomes | Consultants Form</title>
 </head>
@@ -226,7 +226,7 @@
                 </center>
 
     Consultants Form End -->
-@include('adminlayout.footer')
+@include('./adminlayout.footer')
     </body>
 
 </html>

@@ -1,8 +1,8 @@
-@include('adminLayout.header')
+@include('./adminlayout.header')
  <title>
    Dashboard
   </title>
-  @include('adminLayout.navbar')
+  @include('./adminlayout.navbar')
    <div class="container-fluid py-4">
       <div class="row">
          @if(isset(Auth::user()->email))

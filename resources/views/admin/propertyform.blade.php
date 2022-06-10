@@ -1,4 +1,4 @@
-@include('adminlayout.header')
+@include('./adminlayout.header')
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> 
 <title>GeoHomes | Property Search</title>
 </head>
@@ -129,6 +129,6 @@
                 </div>
             </div>
         </section>
-@include('adminlayout.footer')
+@include('./adminlayout.footer')
   </body>
 </html>
