@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('updatelayout.header');
  <title>
  Application
   </title>
-  @include('updateLayout.navbar')
+  @include('updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row p-40 mb-50">
            @if(isset(Auth::user()->email))
@@ -37,11 +37,11 @@
             <div class="col-lg-3 col-sm-6 col-md-4  mb-50" style="margin-bottom: 50px!important;">
             <div class="card text-center">
           <div class="card-body">
+            <a value="{{$row['id']}}" name="{{$row['id']}}"  href="viewapplication/{{$row['id']}}" >
             <h5 class="card-title">{{$row[ 'name' ] }} {{ $row[ 'surname']}}</h5>
             <h6 class="card-title">{{$row[ 'email' ] }}</h6>
             <p class="card-text">{{$row[ 'created_at' ] }}</p>
-            <div>
-           <a value="{{$row['id']}}" name="{{$row['id']}}" class=" btn " style="background-color:#0EA15F;color: black;" href="viewapplication/{{$row['id']}}" >view detail</a></div>
+           </a>
             </div>
 
             <div class="row">
@@ -81,6 +81,6 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('updatelayout.footer')
 </body>
 </html>

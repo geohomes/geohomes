@@ -1,4 +1,4 @@
- @include('adminLayout.header')
+ @include('adminlayout.header')
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <title>GeoHomes | CIS Form</title>
 </head>
@@ -87,8 +87,8 @@
                                  <div class="col-sm-6 col-md-6 col-lg-4 ">
                                     <div class="form-group">
                                        <select name="layout" id="select2">
-                                      <option value="Divine City">Divine City Layout</option>
-                                      <option value="Beloved">Beloved Layout</option>
+                                      <option value="Divine City">Divine City layout</option>
+                                      <option value="Beloved">Beloved layout</option>
                                        <option value="Golden Gate" >Golden Gate</option>
                                          <option value="Precious">Precious</option>
                                         <option value="Monic " >Monic</option>
@@ -228,10 +228,10 @@
                 </div>
 
                   <div class="form-box user-icon mb-0">
-                 <p style="float: left;" class="ml-50">Layouts</p>
+                 <p style="float: left;" class="ml-50">layouts</p>
                  <select name="layout" id="select2" class="select-form ml-40" data-rule="required" >
-                  <option value="Divine City">Divine City Layout</option>
-                  <option value="Beloved">Beloved Layout</option>
+                  <option value="Divine City">Divine City layout</option>
+                  <option value="Beloved">Beloved layout</option>
                    <option value="Golden Gate" >Golden Gate</option>
                      <option value="Precious">Precious</option>
                     <option value="Monic " >Monic</option>
@@ -291,6 +291,6 @@
         </center>
                           
   Consultants Form End -->
-        @include('adminLayout.footer')
+        @include('adminlayout.footer')
      </body>
 </html>

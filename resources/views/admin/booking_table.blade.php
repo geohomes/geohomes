@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('updatelayout.header');
  <title>
  Booking Table
   </title>
-  @include('updateLayout.navbar')
+  @include('updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row p-40 mb-50">
            @if(isset(Auth::user()->email))
@@ -35,14 +35,12 @@
             @foreach($array as $row)
             <div class="col-lg-3 col-sm-6 col-md-4  mb-50" style="margin-bottom: 50px!important;">
             <div class="card text-center">
+               <a value="{{$row['id']}}" name="{{$row['id']}}" href="viewbooking/{{$row['id']}}" >
           <div class="card-header">{{$row[ 'firstname' ] }} {{ $row[ 'surname']}}</div>
           <div class="card-body">
-            <h5 class="card-title">{{$row[ 'email' ] }}</h6>
+            <h5 class="card-title">{{$row[ 'email' ] }}</h5>
             <p class="card-text">{{$row[ 'created_at' ] }}</p>
-            <div>
-           <a value="{{$row['id']}}" name="{{$row['id']}}" class=" btn " style="background-color:#0EA15F;color: black;" href="viewbooking/{{$row['id']}}" >view detail</a></div>
-            </div>
-
+          </a>
             <div class="row">
           <div class="col-lg-6 col-sm-6 col-md-6">
           <a class=" btn btn-success" href="editbooking/{{$row['id']}}" name="{{$row['id']}}" >Edit</a>
@@ -80,6 +78,6 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('updatelayout.footer')
 </body>
 </html>

@@ -1,8 +1,8 @@
-@include('adminLayout.header');
+@include('adminlayout.header');
  <title>
   about
   </title>
-  @include('adminLayout.navbar')
+  @include('adminlayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -93,6 +93,6 @@
 </div>
  @endforeach
 
-   @include('adminLayout.footer');
+   @include('adminlayout.footer');
 </body>
 </html>

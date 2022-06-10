@@ -231,7 +231,7 @@
                 </center>
 
     Consultants Form End -->
-@include('updatelayout.footer')
+@include('./updatelayout.footer')
     </body>
 
 </html>

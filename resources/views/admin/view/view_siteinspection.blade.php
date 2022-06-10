@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('./updatelayout.header');
  <title>
  View CIS
   </title>
-  @include('updateLayout.navbar')
+  @include('./updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row p-40 mb-50">
            @if(isset(Auth::user()->email))
@@ -116,6 +116,6 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('./updatelayout.footer')
 </body>
 </html>

@@ -1,8 +1,8 @@
-@include('adminLayout.header');
+@include('adminlayout.header');
  <title>
   Add Construction
   </title>
-  @include('adminLayout.navbar')
+  @include('adminlayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -64,6 +64,6 @@
                         </form>
   </main>
   
-   @include('adminLayout.footer');
+   @include('adminlayout.footer');
 </body>
 </html>

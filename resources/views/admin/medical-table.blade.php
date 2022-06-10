@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('updatelayout.header');
  <title>
   Medical Table
   </title>
-  @include('updateLayout.navbar')
+  @include('updatelayout.navbar')
   <div class="container">
    <div class="row">
               @if(isset(Auth::user()->email))
@@ -36,17 +36,18 @@
       <img src="{{ asset('assets/upload/medical_images/'.$row->image) }}" class="card-img-top" alt="There is an Image here" style="height: 200px;">
 
         <div class="col-lg-6 col-sm-6 col-md-6 mt-40"> 
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-warning " style="color: black;" href="viewmedical/{{$row->id}}">
-       view</a>
          <a class=" btn btn-success" href="editmedical/{{$row->id}}" name="{{$row->id}}">Edit</a>
           <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="medical/{{$row->id}}">Dele</a>
       </div>
 
       <div class="card-body">
+        <a value="{{$row->id}}" name="{{$row->id}}"  href="viewmedical/{{$row->id}}">
+       
         <h5 class="card-title">{{Str::limit($row->title, 20) }}</h5>
         <p class="card-text">
           {{ Str::limit($row->description, 40) }}
         </p>
+        </a>
       </div>
      </div>
     </div>
@@ -83,6 +84,6 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('updatelayout.footer')
 </body>
 </html>

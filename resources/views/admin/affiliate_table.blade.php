@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('updatelayout.header');
  <title>
    Affliate
   </title>
-  @include('updateLayout.navbar')
+  @include('updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -84,7 +84,7 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('updatelayout.footer')
 
 </body>
 </html>

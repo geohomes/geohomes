@@ -75,6 +75,6 @@
                         @endforeach
   </main>               
   
-   @include('updatelayout.footer');
+   @include('./updatelayout.footer');
 </body>
 </html>

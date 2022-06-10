@@ -95,11 +95,10 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
       
        
       </div>
+    </div>
       <div class="row mt-4">
          <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
@@ -174,19 +173,7 @@
                     </h5>
                   </div>
                 </div>
-                <div class="col-4 text-end">
-                  <div class="icon icon-shape  shadow text-center border-radius-md" style="background-color:#0EA15F !important;">
-                    <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-                 
-        </div>
-      </div>
+         
   <!--   Core JS Files   -->
   <script src="../admin/assets/js/core/popper.min.js"></script>
   <script src="../admin/assets/js/core/bootstrap.min.js"></script>

@@ -1,8 +1,8 @@
-@include('updateLayout.header');
+@include('updatelayout.header');
  <title>
   Construction
   </title>
-  @include('updateLayout.navbar')
+  @include('updatelayout.navbar')
   <div class="container">
    <div class="row">
               @if(isset(Auth::user()->email))
@@ -33,15 +33,14 @@
        @foreach($construction as $row)
   <div class="col-lg-3 col-md-4 col-sm-6">
     <div class="card">
+      <a value="{{$row->id}}" name="{{$row->id}}"  href="viewconstruction/{{$row->id}}">
       <img src="{{ asset('assets/upload/construction_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here">
-       <div class="col-lg-6 col-sm-6 col-md-6 mt-40">
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-success " style="color: black;" href="viewconstruction/{{$row->id}}">view detail</a>
-        </div>
       <div class="card-body">
         <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
         <p class="card-text">
           {{ Str::limit($row->description, 40) }}
         </p>
+      </a>
       </div>
       <div class="row">
       <div class="col-lg-6 col-sm-6 col-md-6">
@@ -86,6 +85,6 @@
   </div>
 </div>
  @endforeach
-   @include('updateLayout.footer')
+   @include('updatelayout.footer')
 </body>
 </html>

@@ -1,4 +1,4 @@
- @include('adminLayout.header')
+ @include('adminlayout.header')
 <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> 
 <title>GeoHomes | Site Inspection Form</title>
 </head>
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-sm-6 col-lg-6">
                                     <div class="form-group">
-                                       <input class="form-control valid" name="layout" id="layout" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'layout'" placeholder="Layout">
+                                       <input class="form-control valid" name="layout" id="layout" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'layout'" placeholder="layout">
                                         <small class="text-danger">{{$errors->first('layout') }}</small>
                                     </div>
                                 </div>
@@ -179,7 +179,7 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12">
                    <div class="form-box user-icon mb-0">
-                  <p>Layout/Location</p>
+                  <p>layout/Location</p>
                     <input type="text" name="layout" data-rule="required" data-msg="please fill this filled"/>
                     <div class="validation"></div>
                   </div>
@@ -224,6 +224,6 @@
         </center>
                           
    Consultants Form End -->
-        @include('adminLayout.footer')
+        @include('adminlayout.footer')
      </body>
 </html>

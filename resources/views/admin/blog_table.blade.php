@@ -1,8 +1,8 @@
-@include('adminLayout.header');
+@include('adminlayout.header');
  <title>
   blog
   </title>
-  @include('adminLayout.navbar')
+  @include('adminlayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -49,17 +49,16 @@
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
+                        <a value="{{$row->id}}" name="{{$row->id}}"   href="viewblog/{{$row->id}}" >
                         <h5 class="card-title">{{Str::limit($row->title, 18) }}</h5>
                         <p class="card-text">{{Str::limit($row->description, 60) }}</p>
                         <p class="card-text">Written by {{Str::limit($row->writer, 40) }}</p>
                         <p class="card-text"><small class="text-muted">{{Str::limit($row->created_at, 20) }}</small></p>
+                      </a>
                         <div class="row g-0">
                       <div class="col-lg-4 col-sm-6 col-md-6">
                      <a class=" btn btn-success text-secondary font-weight-bold text-sm btn btn-success" data-original-title="Edit user" href="editblog/{{$row->id}}" name="{{$row->id}}">Edit</a>
                     </div>
-                    <div class="col-lg-4 col-sm-6 col-md-6 mt-40">
-                     <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-success " style="color: black;" href="viewblog/{{$row->id}}" class="mt-50">view</a>
-                      </div>
                     
                     <div class="col-lg-4 col-sm-6 col-md-6">
                       <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="blogpost/{{$row->id}}">Delete</a>
@@ -100,6 +99,6 @@
 </div>
  @endforeach
 
-   @include('adminLayout.footer');
+   @include('adminlayout.footer');
 </body>
 </html>

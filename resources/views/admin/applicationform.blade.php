@@ -1,4 +1,4 @@
-     @include('adminLayout.header')
+     @include('adminlayout.header')
      <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <title>GeoHomes | Application</title>
 </head>
@@ -239,6 +239,6 @@ it gives feedback messages
 </div>
 </center> -->
 
-   @include('adminLayout.footer')
+   @include('adminlayout.footer')
 </body>
 </html>

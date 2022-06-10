@@ -1,8 +1,8 @@
-@include('adminLayout.header')
+@include('adminlayout.header')
  <title>
  Consultancy
   </title>
-  @include('adminLayout.navbar')
+  @include('adminlayout.navbar')
  <div class="container-fluid py-4">
       <div class="row p-40 g-4">
               @if(isset(Auth::user()->email))
@@ -40,15 +40,11 @@
         <div class="card mb-3" style="max-width: 500px;">
   <div class="row g-4">
     <div class="col-md-6 col-lg-4">
+      <a value="{{$row->id}}" name="{{$row->id}}" href="viewconsultancy/{{$row->id}}">
       <img src="{{ asset('assets/upload/consultancy_images/'.$row->firstimage) }}" alt="image" class="img-fluid img-thumbnail mb-40" 
       style="height:70px;" />
     </div>
-     <div class="col-lg-4 col-sm-6 col-md-6 mt-40">
-       <a value="{{$row->id}}" name="{{$row->id}}" class=" btn btn-outline-success " style="color: black;" href="viewconsultancy/{{$row->id}}" class="mt-50">view</a>
-        </div>
-      <div class="col-lg-4 col-sm-6 col-md-6">
-       <a class=" btn btn-success" href="editconsultancy/{{$row->id}}" name="{{$row->id}}">Edit</a>
-      </div>
+     
       
     <div class="col-md-6 col-lg-12">
       <div class="card-body">
@@ -59,9 +55,15 @@
         <p class="card-text">
           <small class="text-muted"> {{$row->created_at }}</small>
         </p>
+      </a>
+      <div class="row">
        <div class="col-lg-6 col-sm-6 col-md-6">
       <a  class=" btn btn-danger"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="consultancytable/{{$row->id}}">Delete</a>
        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6">
+       <a class=" btn btn-success" href="editconsultancy/{{$row->id}}" name="{{$row->id}}">Edit</a>
+      </div>
+    </div>
       </div>
     </div>
   </div>
@@ -90,6 +92,6 @@
   </div>
 </div>
  @endforeach
-   @include('adminLayout.footer')
+   @include('adminlayout.footer')
 </body>
 </html>
