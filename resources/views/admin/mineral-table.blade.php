@@ -1,8 +1,8 @@
-@include('./adminlayout.header')
+@include('updatelayout.header')
  <title>
  Dashboard | Mineral Table
   </title>
-  @include('./adminlayout.navbar')
+  @include('updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row p-40 g-4">
               @if(isset(Auth::user()->email))
@@ -78,6 +78,6 @@
   </div>
 </div>
  @endforeach
-   @include('./adminlayout.footer')
+   @include('updatelayout.footer')
 </body>
 </html>

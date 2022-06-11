@@ -1,8 +1,8 @@
-@include('./adminlayout.header');
+@include('updatelayout.header');
  <title>
   Portifolio
   </title>
-  @include('./adminlayout.navbar')
+  @include('updatelayout.navbar')
  <div class="container ">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -87,6 +87,6 @@
 </div>
  @endforeach
 
-   @include('./adminlayout.footer');
+   @include('updatelayout.footer');
 </body>
 </html>
