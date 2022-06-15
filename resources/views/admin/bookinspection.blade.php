@@ -1,4 +1,4 @@
-      @include('adminlayout.header')
+      @include('updatelayout.header')
      <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 <title>GeoHomes | Booking</title>
 </head>
@@ -87,7 +87,7 @@
             </div>
         </section>
         </div>
- @include('adminlayout.footer')
+ @include('updatelayout.footer')
     </body>
 
 </html>
