@@ -22,56 +22,44 @@
         <div class="container-fluid">
           <div class="row">
              <div class="col-lg-12 col-sm-12 col-md-6 mb-40">
-            <img src="{{ asset('assets/upload/portifolio_images/'.$row['first_image']) }}" class="card-img-top" alt="There is an Image here" style="margin-bottom: 50px;">
-            </div>
-            <div class="col-lg-6 col-sm-12 col-md-6 mb-40">
-            <img src="{{ asset('assets/upload/portifolio_images/'.$row['second_image']) }}" class="card-img-top" alt="There is an Image here" style="margin-bottom: 50px; height: 120px;">
-            </div>
-            <div class="col-lg-6 col-sm-12 col-md-6 mb-40">
-            <img src="{{ asset('assets/upload/portifolio_images/'.$row['third_image']) }}" class="card-img-top" alt="There is an Image here" style="margin-bottom: 50px; height: 120px;">
+            <img src="{{ asset('assets/upload/portifolio_images/'.$row['image']) }}" class="card-img-top" alt="There is an Image here" style="margin-bottom: 50px;">
             </div>
             
+            
             <div class="col-lg-12 col-sm-12 col-md-6 ">
-            <h6 style="font-weight: bold;">First Title:</h6>
+            <h6 style="font-weight: bold;">Title:</h6>
             </div>
             <div class="col-lg-12 col-sm-12 col-md-6">
-            <h5>{{$row[ 'first_title' ] }}</h6>
+            <h5>{{$row[ 'title' ] }}</h6>
             </div>
-            <div class="col-lg-12 col-sm-12 col-md-12 ">
-            <h6 style="font-weight: bold;"> Title Description:</h6>
+            <br><br>
+             <div class="col-lg-12 col-sm-12 col-md-12 ">
+            <h6 style="font-weight: bold;"> Product:</h6>
             </div>
              <div class="col-lg-12 col-sm-12 col-md-12">
-            <h6> {{$row[ 'first_description' ] }}</h6>
+            <h6> {{$row[ 'product' ] }}</h6>
+            </div>
+            <br><br>
+             <div class="col-lg-12 col-sm-12 col-md-12 ">
+            <h6 style="font-weight: bold;">Location:</h6>
+            </div>
+             <div class="col-lg-12 col-sm-12 col-md-12">
+            <h6> {{$row[ 'location' ] }}</h6>
             </div>
             <br><br>
             <br><br>
              <div class="col-lg-12 col-sm-12 col-md-12 ">
-            <h6 style="font-weight: bold;"> Second Title:</h6>
+            <h6 style="font-weight: bold;">Price:</h6>
             </div>
              <div class="col-lg-12 col-sm-12 col-md-12">
-            <h6> {{$row[ 'second_title' ] }}</h6>
-            </div>
-            <br><br>
-             <div class="col-lg-12 col-sm-12 col-md-12 ">
-            <h6 style="font-weight: bold;"> Second Description:</h6>
-            </div>
-             <div class="col-lg-12 col-sm-12 col-md-12">
-            <h6> {{$row[ 'second_description' ] }}</h6>
-            </div>
-            <br><br>
-            <br><br>
-             <div class="col-lg-12 col-sm-12 col-md-12 ">
-            <h6 style="font-weight: bold;"> Third Title:</h6>
-            </div>
-             <div class="col-lg-12 col-sm-12 col-md-12">
-            <h6> {{$row[ 'third_title' ] }}</h6>
+            <h6> {{$row[ 'price' ] }}</h6>
             </div>
              <br><br>
              <div class="col-lg-12 col-sm-12 col-md-12 ">
             <h6 style="font-weight: bold;">Description:</h6>
             </div>
              <div class="col-lg-12 col-sm-12 col-md-12">
-            <h6> {{$row[ 'third_description' ] }}</h6>
+            <h6> {{$row[ 'features' ] }}</h6>
             </div>
               <div class="col-lg-12 col-sm-12 col-md-12 ">
             <h6 style="font-weight: bold;"> Date</h6>

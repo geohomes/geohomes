@@ -33,58 +33,41 @@
                           @foreach($portifolio as $row)
                                 <div class="row">
 
-                                   <div class="col-sm-6 col-lg-4">
+                                   <div class="col-sm-12 col-lg-6">
                                     <div class="form-group">
-                                        <input required=""class="form-control valid" name="firsttitle" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->first_title}}">
-                                    </div>
-                                </div>
-                                 <div class="col-sm-12 col-lg-4">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="firstdescription" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder="{{$row->first_description}}"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-4">
-                                    <label>First Image</label>
-                                    <div class="form-group">
-                                        <input required=""class="form-control valid" name="firstimage" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->first_image}}">
-                                    </div>
-                                </div>
-                                 <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <input required=""class="form-control valid" name="secondtitle" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->second_title}}">
-                                    </div>
-                                </div>
-                                 <div class="col-sm-12 col-lg-4">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="seconddescription" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder=" {{$row->second_description}}"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-lg-4">
-                                    <label>Second Image</label>
-                                    <div class="form-group">
-                                        <input required=""class="form-control valid" name="secondimage" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->second_image}}">
-                                    </div>
-                                </div>
-                                 <div class="col-sm-6 col-lg-4">
-                                    <div class="form-group">
-                                        <input required=""class="form-control valid" name="thirdtitle" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->third_title}}">
-                                    </div>
-                                </div>
-                                 <div class="col-sm-12 col-lg-4">
-                                    <div class="form-group">
-                                        <textarea class="form-control w-100" name="thirddescription" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder=" {{$row->third_description}}"></textarea>
+                                        <input required=""class="form-control valid" name="title" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->title}}">
                                     </div>
                                 </div>
                                  
-                              
 
-                                 <div class="col-sm-6 col-lg-4">
-                                    <label>Third Image</label>
+                                <div class="col-sm-6 col-lg-6">
                                     <div class="form-group">
-                                        <input required=""class="form-control valid" name="thirdimage" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->third_description}}">
+                                        <input required=""class="form-control valid" name="location" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->location}}">
                                     </div>
+                                </div>
+                                 <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input required=""class="form-control valid" name="price" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->price}}">
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-lg-6">
+                                    <div class="form-group">
+                                        <input required=""class="form-control valid" name="product" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->product}}">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-lg-6">
+                                    <label>Image</label>
+                                    <div class="form-group">
+                                        <input required=""class="form-control valid" name="image" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Upload Second image'" placeholder="{{$row->image}}">
+                                    </div>
+                                 <div class="col-sm-12 col-lg-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="description" id="message" cols="50" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Description'" placeholder=" {{$row->features}}"></textarea>
+                                    </div>
+                                </div>
+                                 
+                            
                                     <input type="hidden" value="{{$row->id}}" name="id">
 
                             <div class="form-group mt-3">

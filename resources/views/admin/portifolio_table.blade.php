@@ -40,31 +40,43 @@
                create new Portifolio</a>
             </div>
              @foreach($portifolio as $row)
-              <div class="col-lg-4 col-md-6 col-sm-12">
-            <div class="card">
-              <img src="{{ asset('assets/upload/portifolio_images/'.$row->first_image) }}" class="card-img-top" alt="There is an Image here" style="height: 300px; object-fit: center;">
 
-                <div class="d-flex justify-content-between mt-4"> 
-                 <a class=" btn btn-success" href="editeportifolio/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
-                  <a  class=" btn btn-danger "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="eportifoliotable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
-              </div>
-
-              <div class="card-body">
-                <a value="{{$row->id}}" name="{{$row->id}}" href="vieweportifolio/{{$row->id}}">
-                <h5 class="card-title"><u>{{Str::limit($row->first_title, 20) }}</u></h5>
-                <p class="card-text"><u>
-                  {{ Str::limit($row->first_description, 200) }}</u>
-                </p>
-              </a>
-              </div>
-             </div>
-            </div>
+             <div class="col-lg-6 col-sm-12 col-md-6">
+                  <div class="card mb-3">
+                  <div class="row">
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center;">
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-sm-12">
+                      <div class="card-body">
+                        <h5 class="card-title" style="font-size: 1.8em">{{$row->title }}</h5>
+                        <p class="card-text" style="font-size: 1.2em">{{$row->product }}</p>
+                        <div class="card-text">
+                          <a href="viewportifolio/{{$row->id}}" name="{{$row->id}}">
+                            <h3><u>Description</u></h3>
+                            <p><u>{{Str::limit($row->features), 70 }}</u></p>
+                          </a>
+                        </div>
+                      <div class="row mt-4">
+                      <div class="col-lg-6 col-sm-6 col-md-6">
+                     <small class="text-muted" style="font-size: 1.2em">&#8358 {{$row->price}}</small>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-md-6 ">
+                     <small class="text-muted"><i class="fa fa-map-marker  " aria-hidden="true" style="font-size: 1.2em">   {{$row->location }}</i></small>
+                      </div>
+                        </div>
+                         <div class="d-flex justify-content-between mt-4"> 
+                       <a class=" btn btn-success" href="editportifolio/{{$row->id}}" name="{{$row->id}}"><i class="fas fa-edit"></i></a>
+                        <a  class=" btn btn-danger "  data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="eportifoliotable/{{$row->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </div>
+                      </div>
+                    </div> 
+                    </div>
+                    </div>
+                    </div>   
                 @endforeach 
                 @endif    
-        </div>
-
-      </div>
-  </main>
+       
 
 
 

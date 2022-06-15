@@ -18,16 +18,12 @@ class AddPortifolioController extends Controller
 
      $data = request()->all();
     $validator = Validator::make($data, [  
-        'firstdescription' => ['required'],
-        'seconddescription' => ['required'],
-        'first_title' => ['required'],
-        'second_title' => ['required'],
-        'thirddescription' => ['required'],
-        'third_title' => ['required'],
-        'firstimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'secondimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'thirdimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-
+        'title' => ['required'],
+        'location' => ['required'],
+        'product' => ['required'],
+        'price' => ['required'],
+        'feature' => ['required'],
+        'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
         ]);
 
         if ($validator->fails()) {
@@ -37,38 +33,23 @@ class AddPortifolioController extends Controller
             ]);
         }
 
-    $firstimage = request()->file('firstimage');
-    $secondimage = request()->file('secondimage');
-     $thirdimage = request()->file('thirdimage');
+    $image = request()->file('image');
 
-        $extension = $firstimage->getClientOriginalExtension();
-        $firstfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/portifolio_images';
-        $firstimage->move($path, $firstfilename);
 
-        $extension = $secondimage->getClientOriginalExtension();
-        $secondfilename = Str::uuid().'.'.$extension;
+        $extension = $image->getClientOriginalExtension();
+        $filename = Str::uuid().'.'.$extension;
         $path = 'assets/upload/portifolio_images';
-        $secondimage->move($path, $secondfilename);
+        $image->move($path, $filename);
 
-        $extension = $secondimage->getClientOriginalExtension();
-        $thirdfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/portifolio_images';
-        $thirdimage->move($path, $thirdfilename);
+      
 
     $request=array([
-        'first_title' => $request['firsttitle'],
-        'second_title' => $request['secondtitle'],
-        'third_title' => $request['thirdtitle'],
-        'first_description' => $request['firstdescription'],
-        'second_description' => $request['seconddescription'],
-        'third_description' => $request['thirddescription'],
-        'first_title' => $request['first_title'],
-        'second_title' => $request['second_title'],
-        'third_title' => $request['third_title'],
-        'first_image' => $firstfilename, // save full image path to database
-        'second_image' => $secondfilename, // save full image path to database
-        'third_image' => $thirdfilename, // save full image path to database
+        'title' => $request['title'],
+        'location' => $request['location'],
+        'product' => $request['product'],
+        'price' => $request['price'],
+        'features' => $request['feature'],
+        'image' => $filename, // save full image path to database
     ]);
 
          $submit= DB::table('portifolio')->insert($request);

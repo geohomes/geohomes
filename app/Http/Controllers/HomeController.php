@@ -31,4 +31,25 @@ class HomeController extends Controller
         return back()->with('error', 'Subscription Failed. please try Again.');
        }
   }
+
+  public function submitContact(Request $request)
+   {
+       $request->validate([
+           'name'           => 'required',
+           'email'          => 'required|email',
+           'subject'        => 'required',
+           'mobile_number'  => 'required|numeric',
+           'message'        => 'required',
+       ]);
+
+      Contact::create([
+          'name'          => $request->name,
+          'email'         => $request->email,
+          'message'       => $request->message,
+      ]);
+
+      return response()->json([ 'success'=> 'Form is successfully submitted!']);
+
+  }
+
 }

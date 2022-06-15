@@ -34,15 +34,12 @@ class PortifolioEditControllor extends Controller
 
             $data = request()->all();
             $validator = Validator::make($data, [ 
-        'firsttitle' => ['required'],
-        'secondtitle' => ['required'],
-        'thirdtitle' => ['required'], 
-        'firstdescription' => ['required'],
-        'seconddescription' => ['required'],
-        'thirddescription' => ['required'],
-        'firstimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'secondimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
-        'thirdimage' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
+        'title' => ['required'],
+        'location' => ['required'],
+        'price' => ['required'], 
+        'product' => ['required'],
+        'description' => ['required'],
+        'image' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,svg|max:10240'],
 
         ]);
 
@@ -52,46 +49,32 @@ class PortifolioEditControllor extends Controller
         }
 
         else{
-        $firstimage = request()->file('firstimage');
-        $secondimage = request()->file('secondimage');
-        $thirdimage = request()->file('thirdimage');
+        $image = request()->file('image');
 
-        $extension = $firstimage->getClientOriginalExtension();
-        $firstfilename = Str::uuid().'.'.$extension;
+        $extension = $image->getClientOriginalExtension();
+        $filename = Str::uuid().'.'.$extension;
         $path = 'assets/upload/portifolio_images';
-        $firstimage->move($path, $firstfilename);
+        $image->move($path, $filename);
 
-        $extension = $secondimage->getClientOriginalExtension();
-        $secondfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/portifolio_images';
-        $secondimage->move($path, $secondfilename);
+    
 
-        $extension = $secondimage->getClientOriginalExtension();
-        $thirdfilename = Str::uuid().'.'.$extension;
-        $path = 'assets/upload/portifolio_images';
-        $thirdimage->move($path, $thirdfilename);
-
-        $first_title = $request->input('firsttitle');
-        $second_title = $request->input('secondtitle');
-        $third_title = $request->input('thirdtitle');
-        $first_description = $request->input('firstdescription');
-        $second_description = $request->input('seconddescription');
-        $third_description = $request->input('thirddescription');
+        $title = $request->input('title');
+        $location = $request->input('location');
+        $product = $request->input('product');
+        $price = $request->input('price');
+        $description = $request->input('description');
         $id = $request->input('id');
 
         
         $edit=DB::table('portifolio')
             ->where('id', $id)
             ->update([
-                'first_title' => "$first_title",
-                'second_title' => "$second_title",
-                'third_title' => "$third_title",
-                'first_description' => "$first_description",
-                'second_description' => "$second_description",
-                'third_description' => "$third_description",
-                'first_image' => "$firstfilename",
-                'second_image' => "$secondfilename",
-                'third_image' => "$thirdfilename",]);
+                'title' => "$title",
+                'location' => "$location",
+                'product' => "$product",
+                'price' => "$price",
+                'features' => "$description",
+                'image' => "$filename",]);
 
 
         if ($edit) {

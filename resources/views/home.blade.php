@@ -1,5 +1,6 @@
  @include('layout.header')
 <title>GeoHomes</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
     
@@ -327,7 +328,7 @@
                                 <div class="thumb-content">
                                     <h3><a href="#">Need to make<br> an enquiry?</a></h3>
                                     <p>We collect and analyze information about your general usage of the website products.</p>
-                                    <a href="services.html">Learn More</a>
+                                    <a href="{{route('about')}}">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -361,20 +362,23 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-box user-icon mb-15">
-                                            <input type="text" name="name" placeholder="Your Name">
+                                            <input type="text" name="name" placeholder="Your Name" id="name">
+                                            <span class="text-danger" id="name-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-box email-icon mb-15">
-                                            <input type="text" name="email" placeholder="Email">
+                                            <input type="text" name="email" placeholder="Email" id="email">
+                                            <span class="text-danger" id="email-error"></span>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-box message-icon mb-15">
                                             <textarea name="message" id="message" placeholder="Message"></textarea>
+                                            <span class="text-danger" id="message-error"></span>
                                         </div>
                                         <div class="submit-info">
-                                            <button class="submit-btn2" type="submit" style="background-color:#0EA15F;">Send Message</button>
+                                            <button class="submit-btn2" type="submit" style="background-color:#0EA15F;" id="submit">Send Message</button>
                                         </div>
                                     </div>
                                 </div>
@@ -455,7 +459,46 @@ function stop(){
 }
 /*experience image changing code */
         </script>
-         <!-- About Section 01 End -->
+         <!-- About Section 01 End -->\
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+
+   <script type="text/javascript">
+
+    $('#contact-form').on('submit', function(event){
+        event.preventDefault();
+        $('#name-error').text('');
+        $('#email-error').text('');
+        $('#message-error').text('');
+
+        name = $('#name').val();
+        email = $('#email').val();
+        mobile_number = $('#message').val();
+
+        $.ajax({
+          url: "/home",
+          type: "POST",
+          data:{
+              name:name,
+              email:email,
+              message:message,
+          },
+          success:function(response){
+            console.log(response);
+            if (response) {
+              $('#success-message').text(response.success);
+              $("#contact-form")[0].reset();
+            }
+          },
+          error: function(response) {
+              $('#name-error').text(response.responseJSON.errors.name);
+              $('#email-error').text(response.responseJSON.errors.email);
+              $('#message-error').text(response.responseJSON.errors.message);
+          }
+         });
+        });
+      </script>
  @include('layout.footer')
 
 </body>
