@@ -1,10 +1,10 @@
- @include('./updatelayout.header')
+ @include('updatelayout.header')
      <link rel="stylesheet" type="text/css" href="../../admin/css/style.css">
 <title>GeoHomes | Add Blog</title>
 </head>
 
 <body>
-   @include('./updatelayout.navbar')
+   @include('updatelayout.navbar')
  <div class="container-fluid py-4">
       <div class="row">
               @if(isset(Auth::user()->email))
@@ -72,6 +72,6 @@
                         </form>
   </main>
   
-   @include('./updatelayout.footer');
+   @include('updatelayout.footer');
 </body>
 </html>
