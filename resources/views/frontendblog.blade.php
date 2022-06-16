@@ -62,7 +62,7 @@
                                 <ul class="pagination">
                                     <li class="page-item">
                                         
-                                    {{ $blog->links('vendor.pagination.default') }}
+                                    {{ $blogs->links('vendor.pagination.default') }}
                                     
                                    </li>
                                 </ul>
