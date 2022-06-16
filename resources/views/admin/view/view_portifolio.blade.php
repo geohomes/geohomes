@@ -47,7 +47,6 @@
             <h6> {{$row[ 'location' ] }}</h6>
             </div>
             <br><br>
-            <br><br>
              <div class="col-lg-12 col-sm-12 col-md-12 ">
             <h6 style="font-weight: bold;">Price:</h6>
             </div>

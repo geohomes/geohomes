@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
-    Route::get('/blog-detail', [App\Http\Controllers\BlogDetailController::class, 'index'])->name('blog-detail');
+    Route::get('/blogdetail/{id}', [App\Http\Controllers\BlogController::class, 'blogdetail'])->name('blogdetail');
 
-    Route::get('/application-form', [App\Http\Controllers\ApplicationController::class, 'index'])->name('application-form');
+ Route::get('/application-form', [App\Http\Controllers\ApplicationController::class, 'index'])->name('application-form');
 
 Route::get('/constructions', [App\Http\Controllers\ConstructionController::class, 'index'])->name('constructions');
 

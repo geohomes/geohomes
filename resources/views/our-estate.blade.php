@@ -1,6 +1,5 @@
   @include('layout.header')
 <title>GeoHomes | Shop</title>
-<link rel="stylesheet" type="text/css" href="../assets/css/portifolio.css">
 </head>
 
 <body>
@@ -33,15 +32,12 @@
                         <strong>No Content Available Yet.</strong>
                       </div>
                      @else
-                     
-                      
-                      
-       @foreach($portifolio as $row)
+                 @foreach($portifolio as $row)
               <div class="col-lg-6 col-sm-12 col-md-6">
-                  <div class="card mb-3" style="border-radius: 40px; box-shadow: 20px black">
+                  <div class="card mb-40" style="border-radius: 40px; box-shadow: 20px black">
                   <div class="row">
                     <div class="col-md-6 col-lg-6 col-sm-12">
-                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center;">
+                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center; border-radius: 40px 0px 0px 40px; border-color: gainsboro;">
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-12">
                       <div class="card-body">
@@ -59,19 +55,29 @@
                      <small class="text-muted"><i class="fa fa-map-marker  " aria-hidden="true" style="font-size: 1.2em">   {{$row->location }}</i></small>
                       </div>
                         </div>
-                      </div>
-                    </div> 
-                    </div>
-                    </div>
-                    </div>   
+                            </div>
+                                </div> 
+                            </div>
+                         </div>
+                        </div> 
+                          @endforeach
+                         @endif
+                             </div>
+                             <div class="col-lg-12 mt-40">
+                              <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $portifolio->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                           
+                        </div>
+                         </div>
+                     </div>
 
-   @endforeach
- @endif
-  </div>
-          </div>  
-        </div>
-
-      </div>
 
 
        

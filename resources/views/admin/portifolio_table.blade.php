@@ -1,9 +1,11 @@
+<!-- CSS only -->
+
 @include('updatelayout.header');
  <title>
   Portifolio
   </title>
   @include('updatelayout.navbar')
- <div class="container ">
+ <div class="container-fluid ">
       <div class="row">
               @if(isset(Auth::user()->email))
          @else
@@ -41,25 +43,24 @@
             </div>
              @foreach($portifolio as $row)
 
-             <div class="col-lg-6 col-sm-12 col-md-6">
-                  <div class="card mb-3">
+             <div class="col-lg-4 col-sm-12 col-md-6">
+                  <div class="card mb-40 " style="margin-bottom: 40px; border-radius: 40px; box-shadow: 20px black;">
                   <div class="row">
                     <div class="col-md-6 col-lg-6 col-sm-12">
-                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center;">
+                      <img src="{{ asset('assets/upload/portifolio_images/'.$row->image) }}" class="img-fluid rounded-start h-100" alt="..." style="object-fit: center; border-radius: 40px 0px 0px 40px !important; border-color: gainsboro;" >
                     </div>
                     <div class="col-md-6 col-lg-6 col-sm-12">
                       <div class="card-body">
-                        <h5 class="card-title" style="font-size: 1.8em">{{$row->title }}</h5>
-                        <p class="card-text" style="font-size: 1.2em">{{$row->product }}</p>
+                        <h5 class="card-title" style="font-size: 1.8em">{{Str::limit($row->title,10)}}</h5>
                         <div class="card-text">
                           <a href="viewportifolio/{{$row->id}}" name="{{$row->id}}">
                             <h3><u>Description</u></h3>
-                            <p><u>{{Str::limit($row->features), 70 }}</u></p>
+                            <p><u>{{Str::limit($row->features,30) }}</u></p>
                           </a>
                         </div>
                       <div class="row mt-4">
                       <div class="col-lg-6 col-sm-6 col-md-6">
-                     <small class="text-muted" style="font-size: 1.2em">&#8358 {{$row->price}}</small>
+                     <small class="text-muted" style="font-size: 1.2em">&#8358 {{Str::limit($row->price,4)}}</small>
                     </div>
                     <div class="col-lg-6 col-sm-6 col-md-6 ">
                      <small class="text-muted"><i class="fa fa-map-marker  " aria-hidden="true" style="font-size: 1.2em">   {{$row->location }}</i></small>
@@ -76,7 +77,21 @@
                     </div>   
                 @endforeach 
                 @endif    
-       
+                      </div>
+                             <div class="col-lg-12 mt-40">
+                              <nav class="blog-pagination justify-content-center d-flex">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        
+                                    {{ $portifolio->links('vendor.pagination.default') }}
+                                    
+                                   </li>
+                                </ul>
+                            </nav>
+                           
+                        </div>
+                         </div>
+                     </div>
 
 
 

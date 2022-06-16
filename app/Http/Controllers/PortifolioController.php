@@ -10,7 +10,7 @@ class PortifolioController extends Controller
     // fetching data from database
      public function admin()
    {
-        $fetch = DB::table('portifolio')->paginate(8);
+        $fetch = DB::table('portifolio')->paginate(6);
          $portifolio = json_decode(json_encode($fetch ), true);
         return view('portifolio_table', ['portifolio'=>$fetch]);
     }
