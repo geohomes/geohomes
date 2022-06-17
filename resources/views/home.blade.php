@@ -41,6 +41,17 @@
         <!--? About 1 Start-->
         <section class="about-low-area section-padding40">
             <div class="container">
+                   <!-- it gives feedback messages -->
+                        @if($message = Session::get('success'))
+                           <div class="alert">
+                        <p style="color:#0EA15F;">{{$message}}</p>
+                      </div>
+                        @endif
+                     @if($message = Session::get('error'))
+                     <div class="alert">
+                    <p style="color:red;">{{$message}}</p>
+                      </div>
+                      @endif
                 <div class="row justify-content-between">
                     <div class="col-xl-6 col-lg-6 col-md-10">
                         <div class="about-caption mb-50">
@@ -336,6 +347,7 @@
                         <!-- contact-form -->
                         <div class="form-wrapper">
                             <div class="row ">
+                                      <!-- feedback message ends here -->
                                 <div class="col-xl-12">
                                     <div class="section-tittle section-tittle2 mb-30">
                                         <h2>Drop your message</h2>
@@ -343,43 +355,34 @@
                                 </div>
                             </div>
 
-                             <!-- it gives feedback messages -->
-                                      @if($message = Session::get('success'))
-                                      <div class="alert">
-                                        <p style="color:#0EA10F;">{{$message}}</p>
-                                      </div>
-                                      @endif
-
-                                      @if($message = Session::get('error'))
-                                      <div class="alert">
-                                        <p style="color:red;">{{$message}}</p>
-                                      </div>
-                                      @endif
-                                      <!-- feedback message ends here -->
-
-                            <form id="contact-form" action="#" method="POST">
+                            <form id="contactform" action="{{route('contact')}}" method="post">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-box user-icon mb-15">
                                             <input type="text" name="name" placeholder="Your Name" id="name">
-                                            <span class="text-danger" id="name-error"></span>
+                                            <span class="text-danger" id="nameError"></span>
+                                            <small class="text-danger">{{$errors->first('name') }}</small>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-6">
                                         <div class="form-box email-icon mb-15">
                                             <input type="text" name="email" placeholder="Email" id="email">
-                                            <span class="text-danger" id="email-error"></span>
+                                            <span class="text-danger" id="emailError"></span>
+                                            <small class="text-danger">{{$errors->first('email') }}</small>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-box message-icon mb-15">
                                             <textarea name="message" id="message" placeholder="Message"></textarea>
-                                            <span class="text-danger" id="message-error"></span>
+                                            <span class="text-danger" id="messageError"></span>
+                                            <small class="text-danger">{{$errors->first('message') }}</small>
                                         </div>
                                         <div class="submit-info">
-                                            <button class="submit-btn2" type="submit" style="background-color:#0EA15F;" id="submit">Send Message</button>
+                                            <button class="submit-btn2" type="submit" style="background-color:#0EA15F;" id="submit" name="submit">Send Message</button>
                                         </div>
                                     </div>
+                                    
+
                                 </div>
                             </form> 
                         </div>
@@ -452,7 +455,7 @@ function changeImage() {
 }
 
 var timer=setInterval(changeImage,3000);
-    timer();
+    timer;
 function stop(){
     clearInterval(timer);
 }
@@ -461,45 +464,10 @@ function stop(){
          <!-- About Section 01 End -->\
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
-   <script type="text/javascript">
-
-    $('#contact-form').on('submit', function(event){
-        event.preventDefault();
-        $('#name-error').text('');
-        $('#email-error').text('');
-        $('#message-error').text('');
-
-        name = $('#name').val();
-        email = $('#email').val();
-        mobile_number = $('#message').val();
-
-        $.ajax({
-          url: "/home",
-          type: "POST",
-          data:{
-              name:name,
-              email:email,
-              message:message,
-          },
-          success:function(response){
-            console.log(response);
-            if (response) {
-              $('#success-message').text(response.success);
-              $("#contact-form")[0].reset();
-            }
-          },
-          error: function(response) {
-              $('#name-error').text(response.responseJSON.errors.name);
-              $('#email-error').text(response.responseJSON.errors.email);
-              $('#message-error').text(response.responseJSON.errors.message);
-          }
-         });
-        });
-      </script>
  @include('layout.footer')
 
+    
 </body>
 
 </html>

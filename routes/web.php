@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-   Route::post('/home', [App\Http\Controllers\HomeController::class, 'submitContact'])->name('home');
-
 
     Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
 
@@ -24,6 +22,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/blogs', [App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
 
     Route::get('/blogdetail/{id}', [App\Http\Controllers\BlogController::class, 'blogdetail'])->name('blogdetail');
+     Route::get('/blogdetail/blogdetail/{id}', [App\Http\Controllers\BlogController::class, 'blogdetail'])->name('blogdetail');
 
  Route::get('/application-form', [App\Http\Controllers\ApplicationController::class, 'index'])->name('application-form');
 
@@ -34,7 +33,7 @@ Route::get('/book-inspection', [App\Http\Controllers\BookInspectionController::c
 Route::get('/cis-form', [App\Http\Controllers\CisFormController::class, 'index'])->name('cis-form');
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
-
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'Contactinsert'])->name('contact');
 Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->name('gallery');
 
 Route::get('/consultancy', [App\Http\Controllers\ConsultancyController::class, 'index'])->name('consultancy');

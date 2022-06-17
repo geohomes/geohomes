@@ -34,22 +34,42 @@ class HomeController extends Controller
 
   public function submitContact(Request $request)
    {
-       $request->validate([
-           'name'           => 'required',
-           'email'          => 'required|email',
-           'subject'        => 'required',
-           'mobile_number'  => 'required|numeric',
-           'message'        => 'required',
-       ]);
 
-      Contact::create([
-          'name'          => $request->name,
-          'email'         => $request->email,
-          'message'       => $request->message,
-      ]);
+      $data = request()->all();
+        $validator = Validator::make($data, [
+             'name' => ['required'], 
+            'email' => ['required', 'email'], 
+            'message' => ['required'], 
+           
+        ]);
+        dd($data);
 
-      return response()->json([ 'success'=> 'Form is successfully submitted!']);
+          if ($validator->fails()) {
+         return back()
+         ->withInput()
+         ->withErrors($validator);
+        }
 
+
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $message = $request->input('message');
+        $data=array(
+            'name'=>$name,
+            'email'=>$email,
+            'message'=>$message,
+        );
+            $submit= DB::table('contacts')->insert($data);
+
+       if ($submit) {
+            return back()->with('success', 'Your Message has been submitted. Thank You.');
+
+    }
+
+       else{
+        return back()->with('error', 'message not sent. Please try Again.');
+       }
+   
   }
 
 }
