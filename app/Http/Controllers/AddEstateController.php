@@ -61,8 +61,8 @@ class AddEstateController extends Controller
 
     $request=array([
         'title' => $request['title'],
-        'titledescription' => $request['firstdescription'],
-        'first_description' => $request['titledescription'],
+        'titledescription' => $request['titledescription'],
+        'first_description' => $request['firstdescription'],
         'second_description' => $request['seconddescription'],
         'third_description' => $request['thirddescription'],
         'first_image' => $firstfilename, // save full image path to database
