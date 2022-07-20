@@ -61,7 +61,7 @@ class AddEstateController extends Controller
 
     $request=array([
         'title' => $request['title'],
-        'titledescription' => $request['titledescription'],
+         'titledescription' => $request['titledescription'],
         'first_description' => $request['firstdescription'],
         'second_description' => $request['seconddescription'],
         'third_description' => $request['thirddescription'],
