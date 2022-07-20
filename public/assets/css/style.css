@@ -3517,13 +3517,14 @@ hr {
 
 /* line 237, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu {
-  background:black;
+  background:white;
   margin-top: 0px !important;
 }
 
 /* line 240, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_btn {
   top: -32px;
+  bottom:35px;
 }
 
 /* line 243, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */

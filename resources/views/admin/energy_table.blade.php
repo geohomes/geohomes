@@ -38,7 +38,7 @@
         <a value="{{$row->id}}" name="{{$row->id}}" href="viewenergy/{{$row->id}}">
         <h5 class="card-title"><u>{{Str::limit($row->title, 18) }}</u></h5>
         <p class="card-text"><u>
-          {{ Str::limit($row->first_description, 40) }}</u>
+          {{ Str::limit($row->first_description, 20) }}</u>
         </p>
         </a>
       </div>

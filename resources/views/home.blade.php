@@ -454,10 +454,10 @@ function changeImage() {
   }
 }
 
-var timer=setInterval(changeImage,3000);
-    timer;
+var counter=setInterval(changeImage,3000);
+
 function stop(){
-    clearInterval(timer);
+    clearInterval(counter);
 }
 /*experience image changing code */
         </script>

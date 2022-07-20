@@ -9,7 +9,7 @@
       @include('layout.navbar')
     </header>
   <!--? Hero Start -->
-        <div class="slider-area2 section-bg2" data-background="assets/img/materials/about.jpg" >
+        <div class="slider-area2 section-bg2" data-background="assets/img/materials/aboutus.jpg" >
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
