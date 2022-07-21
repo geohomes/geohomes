@@ -21,7 +21,7 @@
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-50">
-                            <div class="footer-header">
+                            <div class="footer-title">
                                     <img src="assets/img/logo/logo-main.png" alt="" style="width:250px;">
                                     <p style="margin-right:20px; color: #57636e;">Geohomes is a firm of qualified, Experienced Estate Developers <br> and Mangers, Civil Engineers. </p>
                                 <a href="{{route('about')}}" style="margin-right:20px; " class=" btn2 wantToWork-btn">Learn More <i class="ti-arrow-right"></i></a>
@@ -160,6 +160,8 @@
     <script src="./assets/js/animated.headline.js"></script>
     <script src="./assets/js/jquery.magnific-popup.js"></script>
 
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
     <!-- Nice-select, sticky -->
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/jquery.sticky.js"></script>
@@ -174,6 +176,11 @@
     <script src="./assets/js/jquery.countdown.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
 
+    <!-- contact js -->
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
     
     <!-- Jquery Plugins, main Jquery -->    
     <script src="./assets/js/plugins.js"></script>
