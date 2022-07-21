@@ -9,13 +9,13 @@
       @include('layout.navbar')
     </header>
   <!--? Hero Start -->
-        <div class="slider-area2 section-bg2" data-background="assets/img/materials/aboutus.jpg" >
+        <div class="slider-area2 section-bg2" data-background="https://ssl.cdn-redfin.com/photo/95/mbphoto/180/genMid.2404180_0.jpg" >
             <div class="slider-height2 d-flex align-items-center">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2">
-                                <h2 style="color: black;">About US</h2>
+                                <h2>About US</h2>
                             </div>
                         </div>
                     </div>

@@ -3517,19 +3517,18 @@ hr {
 
 /* line 237, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu {
-  background:white;
   margin-top: 0px !important;
 }
 
 /* line 240, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_btn {
-  top: -32px;
-  bottom:35px;
+  top: -47px;
 }
 
 /* line 243, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_btn .slicknav_icon-bar {
   background-color: #0EA15F !important;
+
 }
 
 /* line 247, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
@@ -3539,7 +3538,6 @@ hr {
 
 /* line 250, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_nav a:hover {
-  background: transparent;
   color: #FF3514;
 }
 
@@ -5486,7 +5484,7 @@ hr {
 
 /* line 38, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-cap h3 a {
-  color: #191d34;
+  color: black;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.4;
@@ -5496,7 +5494,7 @@ hr {
 
 /* line 45, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-cap h3 a:hover {
-  color: #FF3514;
+  color:#0EA15F;;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -6113,7 +6111,7 @@ hr {
 
 /* line 656, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .blog-info-link li a {
-  color: #999999;
+  color:#0EA15F;;
 }
 
 /* line 660, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */

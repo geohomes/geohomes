@@ -21,8 +21,10 @@
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-50">
-                            <div class="">
+                            <div class="footer-header">
                                     <img src="assets/img/logo/logo-main.png" alt="" style="width:250px;">
+                                    <p style="margin-right:20px; color: #57636e;">Geohomes is a firm of qualified, Experienced Estate Developers <br> and Mangers, Civil Engineers. </p>
+                                <a href="{{route('about')}}" style="margin-right:20px; " class=" btn2 wantToWork-btn">Learn More <i class="ti-arrow-right"></i></a>
                                 </div>
                         </div>
                     </div>
@@ -31,15 +33,15 @@
                             <div class="footer-tittle">
                                 <h4>Contact Us</h4>
                                 <div class="footer-pera">
-                                    <p>Mon- Fri: 9.00am - 6.00 pm</p>
-                                    <p>Sat: 9.00am - 4.00 pm</p>
+                                    <p style="color: #57636e;">Mon- Fri: 9.00am - 6.00 pm</p>
+                                    <p style="color: #57636e;">Sat: 9.00am - 4.00 pm</p>
                                 </div>
                             </div>
                             <div class="footer-number">
-                                <p style="color:black;">Abuja: +234 806 0545 860</p>
-                                <p style="color:black;">Enugu: +234 906 2972 785</p>
+                                <p style="color: #57636e;">Abuja: +234 806 0545 860</p>
+                                <p style="color: #57636e;">Enugu: +234 906 2972 785</p>
 
-                                <p style="color:black;">Email: info@geohomesgroup.com</p>
+                                <p style="color: #57636e;">Email: info@geohomesgroup.com</p>
                             </div>
                         </div>
                     </div>
@@ -158,8 +160,6 @@
     <script src="./assets/js/animated.headline.js"></script>
     <script src="./assets/js/jquery.magnific-popup.js"></script>
 
-    <!-- Date Picker -->
-    <script src="./assets/js/gijgo.min.js"></script>
     <!-- Nice-select, sticky -->
     <script src="./assets/js/jquery.nice-select.min.js"></script>
     <script src="./assets/js/jquery.sticky.js"></script>
@@ -174,11 +174,6 @@
     <script src="./assets/js/jquery.countdown.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
 
-    <!-- contact js -->
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
     
     <!-- Jquery Plugins, main Jquery -->    
     <script src="./assets/js/plugins.js"></script>

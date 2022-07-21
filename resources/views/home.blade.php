@@ -407,7 +407,7 @@
                         <div class="home-blog-single mb-30">
                             <div class="blog-img-cap">
                                 <div class="blog-img">
-                                    <img src="assets/img/gallery/home-blog1.png" alt="">
+                                    <img src="assets/img/luxery/luxery3.jpg" alt="">
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
@@ -420,7 +420,7 @@
                         <div class="home-blog-single mb-30">
                             <div class="blog-img-cap">
                                 <div class="blog-img">
-                                    <img src="assets/img/gallery/home-blog2.png" alt="">
+                                    <img src="assets/img/luxery/luxury-real-estate.jpg" alt="">
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
@@ -461,7 +461,7 @@ function stop(){
 }
 /*experience image changing code */
         </script>
-         <!-- About Section 01 End -->\
+         <!-- About Section 01 End -->
 
 
 
