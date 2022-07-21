@@ -3,7 +3,7 @@
 </head>
 <body>
     
-     <!-- ? Preloader Start -->
+         <!-- ? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -411,7 +411,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
-                                    <h3><a href="{{ route('blogs') }}">We might track your usage patterns to see</a></h3>
+                                    <h3><a href="{{ route('blogs') }}">Real Estate Developement</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -424,7 +424,7 @@
                                 </div>
                                 <div class="blog-cap">
                                     <p>22 Apr 2020</p>
-                                    <h3><a href="{{ route('blogs') }}">The massive stadium screens at the MCG</a></h3>
+                                    <h3><a href="{{ route('blogs') }}">Customer's Satisfaction</a></h3>
                                 </div>
                             </div>
                         </div>

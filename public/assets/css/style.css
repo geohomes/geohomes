@@ -226,10 +226,10 @@ p {
 /* line 46, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 .img {
   max-width: 100%;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 50, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -255,10 +255,10 @@ p {
 /* line 63, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
 a,
 .button {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 67, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -444,7 +444,7 @@ hr {
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
   width: 40px;
 }
 
@@ -2532,9 +2532,9 @@ hr {
   right: 0;
   bottom: 0;
   z-index: 999999;
-  -webkit-transition: .6s;
-  -o-transition: .6s;
-  transition: .6s;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
   margin: 0 auto;
 }
 
@@ -2556,9 +2556,9 @@ hr {
   background-color: #fff;
   -webkit-animation: zoom 2000ms infinite ease;
   animation: zoom 2000ms infinite ease;
-  -webkit-transition: .6s;
-  -o-transition: .6s;
-  transition: .6s;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
 }
 
 /* line 679, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -2580,9 +2580,9 @@ hr {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   padding-top: 6px;
-  -webkit-transition: .6s;
-  -o-transition: .6s;
-  transition: .6s;
+  -webkit-transition: .4s;
+  -o-transition: .4s;
+  transition: .4s;
 }
 
 /* line 700, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_common.scss */
@@ -2608,9 +2608,9 @@ hr {
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transition: .6s;
-    -o-transition: .6s;
-    transition: .6s;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
   }
 }
 
@@ -2618,16 +2618,16 @@ hr {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    -webkit-transition: .6s;
-    -o-transition: .6s;
-    transition: .6s;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
   }
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
-    -webkit-transition: .6s;
-    -o-transition: .6s;
-    transition: .6s;
+    -webkit-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
   }
 }
 
@@ -3113,8 +3113,8 @@ hr {
   color: white;
   margin-right: 5px;
   margin-left: 5px;
-  -webkit-animation: skew 3s infinite;
-  animation: skew 3s infinite;
+  -webkit-animation: skew 4s infinite;
+  animation: skew 4s infinite;
   animation-direction: normal;
   -webkit-transform: skew(20deg);
   transform: skew(20deg);
@@ -3337,10 +3337,10 @@ hr {
   padding: 33px 2px;
   display: block;
   font-size: 16px;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
   text-transform: capitalize;
 }
 
@@ -3390,10 +3390,10 @@ hr {
   opacity: 0;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.05);
   padding: 17px 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 
@@ -5438,7 +5438,7 @@ hr {
   -moz-transform: scale 1;
   -ms-transform: scale 1;
   transform: scale 1;
-  transition: all 0.3s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
 }
 
 /* line 16, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -5599,10 +5599,10 @@ hr {
   height: 100%;
   background: #000;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 138, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -5700,10 +5700,10 @@ hr {
 /* line 224, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .single-blog:hover .thumb:after {
   opacity: .7;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 @media (max-width: 1199px) {
@@ -5732,10 +5732,10 @@ hr {
   bottom: 0;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 @media (min-width: 992px) {
@@ -5747,10 +5747,10 @@ hr {
 
 /* line 268, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .full_image.single-blog h4 {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
   border-bottom: none;
   padding-bottom: 5px;
 }
@@ -5770,10 +5770,10 @@ hr {
 .full_image.single-blog:hover .single-blog-content {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* End Blog Area css
@@ -5797,10 +5797,10 @@ hr {
   border-bottom: 1px solid #eeeeee;
   margin-bottom: 0px;
   padding-bottom: 20px;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 336, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -5944,7 +5944,7 @@ hr {
 .single-recent-blog-post .details .sec_h4 {
   line-height: 24px;
   padding: 10px 0px 13px;
-  transition: all 0.3s linear;
+  transition: all 0.4s linear;
 }
 
 /* line 492, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -6019,7 +6019,7 @@ hr {
   bottom: 20px;
   background: rgba(34, 34, 34, 0.75);
   color: #fff;
-  transition: all 0.3s linear;
+  transition: all 0.4s linear;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6310,7 +6310,7 @@ hr {
 /* line 847, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .blog_right_sidebar .post_category_widget .cat-list li {
   border-bottom: 1px solid #f0e9ff;
-  transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
   padding-bottom: 12px;
 }
 
@@ -6348,7 +6348,7 @@ hr {
   font-size: 16px;
   line-height: 20px;
   margin-bottom: 6px;
-  transition: all 0.3s linear;
+  transition: all 0.4s linear;
 }
 
 /* line 899, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -6381,7 +6381,7 @@ hr {
   padding: 4px 20px;
   margin-bottom: 8px;
   margin-right: 3px;
-  transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
   color: #888888;
   font-size: 13px;
 }
@@ -6681,20 +6681,20 @@ hr {
 
 /* line 1339, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .single-post-area .navigation-area .nav-left .thumb img {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 1344, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .single-post-area .navigation-area .nav-left .lnr {
   margin-left: 20px;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 1351, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -6727,20 +6727,20 @@ hr {
 
 /* line 1374, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .single-post-area .navigation-area .nav-right .thumb img {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 1379, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
 .single-post-area .navigation-area .nav-right .lnr {
   margin-right: 20px;
   opacity: 0;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* line 1386, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_blog_page.scss */
@@ -6964,11 +6964,11 @@ hr {
 /*=================== contact banner start ====================*/
 /* line 3, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
 .dropdown .dropdown-menu {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 /* line 10, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_contact.scss */
@@ -7492,10 +7492,10 @@ del {
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
 /* line 134, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_elements.scss */
@@ -8574,10 +8574,10 @@ del {
 /* line 983, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_elements.scss */
 .default-select .nice-select .list .option {
   font-weight: 300;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
   line-height: 28px;
   min-height: 28px;
   font-size: 12px;
@@ -8637,10 +8637,10 @@ del {
 /* line 1028, C:/Users/HP/Desktop/jun-2020/280.Industrial_HTML/assets/scss/_elements.scss */
 .form-select .nice-select .list .option {
   font-weight: 300;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
   line-height: 28px;
   min-height: 28px;
   font-size: 12px;
