@@ -172,11 +172,10 @@
     <!-- counter , waypoint,Hover Direction -->
     <script src="./assets/js/jquery.counterup.min.js"></script>
     <script src="./assets/js/waypoints.min.js"></script>
-    <script src="./assets/js/jquery.countdown.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     
     <!-- Jquery Plugins, main Jquery -->    
-    <script src="./assets/js/plugins.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/plugins.min.js"></script>
+    <script src="./assets/js/main.min.js"></script>
 
     
