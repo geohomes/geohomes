@@ -163,14 +163,12 @@
     <!-- Date Picker -->
     <!-- Nice-select, sticky -->
     <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
-    <!-- Progress -->
-    <script src="./assets/js/jquery.barfiller.js"></script>
+    <script src="./assets/js/jquery.sticky.min.js"></script>
+    
     
      <!-- Jquery Mobile Menu -->
     <script src="./assets/js/jquery.slicknav.min.js"></script>
     <!-- counter , waypoint,Hover Direction -->
-    <script src="./assets/js/jquery.counterup.min.js"></script>
     <script src="./assets/js/waypoints.min.js"></script>
     <script src="./assets/js/hover-direction-snake.min.js"></script>
     
