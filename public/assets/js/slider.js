@@ -1,1 +1,58 @@
-$(function(){function a(a){a.each(function(){var a=$(this),b=a.data("delay"),c="animated "+a.data("animation");a.css({"animation-delay":b,"-webkit-animation-delay":b}),a.addClass(c).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){a.removeClass(c)})})}$(".loop").on("init",function(b,c){a($("div.item:first-child").find("[data-animation]"))}),$(".loop").on("beforeChange",function(c,d,e,b){a($('div.item[data-slick-index="'+b+'"]').find("[data-animation]"))}),$(".loop").slick({dots:!1,infinite:!0,speed:700,arrows:!1,autoplay:!0,autoplaySpeed:2e4,fade:!0,slidesToShow:1,slidesToScroll:1}),$(".slider-left").on("click",function(){$(".testimonial-slider").slick("slickPrev")}),$(".slider-right").on("click",function(){$(".testimonial-slider").slick("slickNext")}),$(".testimonial-slider").slick({dots:!0,infinite:!0,speed:750,arrows:!1,autoplay:!0,autoplaySpeed:8e3,fade:!1,slidesToShow:1,slidesToScroll:1})})
+$(function(){
+
+   $('.loop').on('init', function(e, slick) {
+        var $firstAnimatingElements = $('div.item:first-child').find('[data-animation]');
+        doAnimations($firstAnimatingElements);
+    });
+    $('.loop').on('beforeChange', function(e, slick, currentSlide, nextSlide) {
+        var $animatingElements = $('div.item[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
+        doAnimations($animatingElements);
+    });
+
+    $('.loop').slick({
+        dots: false,
+        infinite: true,
+        speed: 700,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 20000,
+        fade: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+    
+    $(".slider-left").on("click",function(){
+        $('.testimonial-slider').slick('slickPrev');
+    });
+    $(".slider-right").on("click",function(){
+        $('.testimonial-slider').slick('slickNext');
+    });
+
+    $('.testimonial-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 750,
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        fade: false,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
+
+    function doAnimations(elements) {
+        var animationEndEvents = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        elements.each(function() {
+            var $this = $(this);
+            var $animationDelay = $this.data('delay');
+            var $animationType = 'animated ' + $this.data('animation');
+            $this.css({
+                'animation-delay': $animationDelay,
+                '-webkit-animation-delay': $animationDelay
+            });
+            $this.addClass($animationType).one(animationEndEvents, function() {
+                $this.removeClass($animationType);
+            });
+        });
+    }
+});

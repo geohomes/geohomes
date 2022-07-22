@@ -1,1 +1,180 @@
-!function($){$.fn.barfiller=function(a){var f,g,d=$.extend({barColor:"#09CC7F",tooltip:!0,duration:1e3,animateOnResize:!0,symbol:"%"},a),b=$(this),h=$.extend(d,a),i=b.width(),e=b.find(".fill"),j=b.find(".tip"),k=e.attr("data-percentage"),l=!1,c={init:function(){return this.each(function(){c.getTransitionSupport()&&(l=!0,g=c.getTransitionPrefix()),c.appendHTML(),c.setEventHandlers(),c.initializeItems()})},appendHTML:function(){e.css("background",h.barColor),h.tooltip||j.css("display","none"),j.text(k+h.symbol)},setEventHandlers:function(){h.animateOnResize&&$(window).on("resize",function(a){clearTimeout(f),f=setTimeout(function(){c.refill()},300)})},initializeItems:function(){var a=c.calculateFill(k);b.find(".tipWrap").css({display:"inline"}),l?c.transitionFill(a):c.animateFill(a)},getTransitionSupport:function(){var a=(document.body||document.documentElement).style;return void 0!==a.transition|| void 0!==a.WebkitTransition|| void 0!==a.MozTransition|| void 0!==a.MsTransition|| void 0!==a.OTransition},getTransitionPrefix:function(){return/mozilla/.test(navigator.userAgent.toLowerCase())&&!/webkit/.test(navigator.userAgent.toLowerCase())?"-moz-transition":/webkit/.test(navigator.userAgent.toLowerCase())?"-webkit-transition":/opera/.test(navigator.userAgent.toLowerCase())?"-o-transition":/msie/.test(navigator.userAgent.toLowerCase())?"-ms-transition":"transition"},getTransition:function(c,d,b){var a;return"width"===b?a={width:c}:"left"===b&&(a={left:c}),d/=1e3,a[g]=b+" "+d+"s ease-in-out",a},refill:function(){e.css("width",0),j.css("left",0),i=b.width(),c.initializeItems()},calculateFill:function(a){return i*(a*=.01)},transitionFill:function(a){var b=a-j.width();e.css(c.getTransition(a,h.duration,"width")),j.css(c.getTransition(b,h.duration,"left"))},animateFill:function(a){var b=a-j.width();e.stop().animate({width:"+="+a},h.duration),j.stop().animate({left:"+="+b},h.duration)}};return c[a]?c[a].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof a&&a?void $.error('Method "'+method+'" does not exist in barfiller plugin!'):c.init.apply(this)}}(jQuery)
+/*
+* File: jquery.barfiller.js
+* Version: 1.0.1
+* Description: A plugin that fills bars with a percentage you set.
+* Author: 9bit Studios
+* Copyright 2012, 9bit Studios
+* http://www.9bitstudios.com
+* Free to use and abuse under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+*/
+
+(function ($) {
+
+    $.fn.barfiller = function (options) {
+
+        var defaults = $.extend({
+            barColor: '#09CC7F',
+            tooltip: true,
+            duration: 1000,
+            animateOnResize: true,
+            symbol: "%"
+        }, options);
+
+
+        /******************************
+        Private Variables
+        *******************************/         
+
+        var object = $(this);
+        var settings = $.extend(defaults, options);
+        var barWidth = object.width();
+        var fill = object.find('.fill');
+        var toolTip = object.find('.tip');
+        var fillPercentage = fill.attr('data-percentage');
+        var resizeTimeout;
+        var transitionSupport = false;
+        var transitionPrefix;
+
+        /******************************
+        Public Methods
+        *******************************/         
+        
+        var methods = {
+
+            init: function() {
+                return this.each(function () {
+                    if(methods.getTransitionSupport()) {
+                        transitionSupport = true;
+                        transitionPrefix = methods.getTransitionPrefix();
+                    }
+
+                    methods.appendHTML();
+                    methods.setEventHandlers();
+                    methods.initializeItems();
+                });
+            },
+
+            /******************************
+            Append HTML
+            *******************************/			
+
+            appendHTML: function() {
+                fill.css('background', settings.barColor);
+
+                if(!settings.tooltip) {
+                    toolTip.css('display', 'none');
+                }
+                toolTip.text(fillPercentage + settings.symbol);
+            },
+            
+
+            /******************************
+            Set Event Handlers
+            *******************************/
+            setEventHandlers: function() {
+                if(settings.animateOnResize) {
+                    $(window).on("resize", function(event){
+                        clearTimeout(resizeTimeout);
+                        resizeTimeout = setTimeout(function() { 
+                        methods.refill(); 
+                        }, 300);
+                    });				
+                }
+            },				
+
+            /******************************
+            Initialize
+            *******************************/			
+
+            initializeItems: function() {
+            var pctWidth = methods.calculateFill(fillPercentage);
+            object.find('.tipWrap').css({ display: 'inline' });
+
+            if(transitionSupport)
+                methods.transitionFill(pctWidth);
+            else
+                methods.animateFill(pctWidth);
+            },
+
+            getTransitionSupport: function() {
+
+                var thisBody = document.body || document.documentElement,
+                thisStyle = thisBody.style;
+                var support = thisStyle.transition !== undefined || thisStyle.WebkitTransition !== undefined || thisStyle.MozTransition !== undefined || thisStyle.MsTransition !== undefined || thisStyle.OTransition !== undefined;
+                return support; 	
+            },
+                
+            getTransitionPrefix: function() {
+                if(/mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase())) {
+                    return '-moz-transition';
+                }
+                if(/webkit/.test(navigator.userAgent.toLowerCase())) {
+                    return '-webkit-transition';
+                }
+                if(/opera/.test(navigator.userAgent.toLowerCase())) {
+                    return '-o-transition';
+                }
+                if (/msie/.test(navigator.userAgent.toLowerCase())) {
+                    return '-ms-transition';
+                }
+                else {
+                    return 'transition';
+                }
+            },
+
+            getTransition: function(val, time, type) {
+
+                var CSSObj;
+                if(type === 'width') {
+                    CSSObj = { width : val };
+                }
+                else if (type === 'left') {
+                    CSSObj = { left: val };
+                }
+
+                time = time/1000;
+                CSSObj[transitionPrefix] = type+' '+time+'s ease-in-out';		    
+                return CSSObj;
+
+            },				
+
+            refill: function() {
+                fill.css('width', 0);
+                toolTip.css('left', 0);
+                barWidth = object.width();
+                methods.initializeItems();
+            },
+
+            calculateFill: function(percentage) {
+                percentage = percentage *  0.01;
+                var finalWidth = barWidth * percentage;
+                return finalWidth;
+            },       
+
+            transitionFill: function(barWidth) {
+
+                var toolTipOffset = barWidth - toolTip.width();
+                fill.css( methods.getTransition(barWidth, settings.duration, 'width'));
+                toolTip.css( methods.getTransition(toolTipOffset, settings.duration, 'left'));
+
+            },	
+
+            animateFill: function(barWidth) {
+                var toolTipOffset = barWidth - toolTip.width();
+                fill.stop().animate({width: '+=' + barWidth}, settings.duration);
+                toolTip.stop().animate({left: '+=' + toolTipOffset}, settings.duration);
+            }
+			
+        };
+        
+        if (methods[options]) { 	// $("#element").pluginName('methodName', 'arg1', 'arg2');
+            return methods[options].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof options === 'object' || !options) { 	// $("#element").pluginName({ option: 1, option:2 });
+            return methods.init.apply(this);  
+        } else {
+            $.error( 'Method "' +  method + '" does not exist in barfiller plugin!');
+        } 
+    };
+
+})(jQuery);
