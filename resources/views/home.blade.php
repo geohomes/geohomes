@@ -30,6 +30,7 @@
                                 <div class="hero__caption">
                                     <h1 data-animation="fadeInLeft" data-delay="0.2s">Exquisite Homes <span> With Premium Comfort</span>
                                     <p data-animation="fadeInLeft" data-delay="0.4s">Move to What Moves You.</p>
+                                   <a href="{{route('our-estate')}}" class="btn hero-btn mt-0" style="background:#0EA15F;" >Get A Land <i class="ti-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
