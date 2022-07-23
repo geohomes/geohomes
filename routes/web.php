@@ -66,6 +66,7 @@ Route::get('/medicals', [App\Http\Controllers\MedicalController::class, 'index']
 
 /* Admin Area */
 Route::get('/admin/login', [App\Http\Controllers\LoginController::class, 'admin'])->name('login');
+Route::get('/admin/passwordreset', [App\Http\Controllers\ResetPasswordController::class, 'admin'])->name('passwordreset');
 Route::post('/admin/logout', [App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');
 Route::get('/admin/dashboard', [App\Http\Controllers\DashboardController::class, 'admin'])->name('dashboard');
 Route::get('/admin/affiliates', [App\Http\Controllers\AffiliateTableController::class, 'admin'])->name('affiliates');

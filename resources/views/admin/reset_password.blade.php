@@ -1,7 +1,7 @@
 
 @include('adminLayout.header')
  <title>
-   Geohomes | Login
+   Geohomes | Password Reset
   </title>
 <body class="">
   <main class="main-content  mt-0">
@@ -12,8 +12,8 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient" style="color:#0EA10F;">Welcome back</h3>
-                  <p class="mb-0">Enter your email and password to sign in</p>
+                  <h3 class="font-weight-bolder text-info text-gradient" style="color:#0EA10F;">Reset Password</h3>
+                  <p class="mb-0">Choose a new password</p>
                 
 
                 <!-- it gives error messages -->
@@ -47,13 +47,14 @@
                     <div class="mb-3">
                       <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" name="user_pass" required="password">
                     </div>
+                    <label>Confirm Password</label>
+                    <div class="mb-3">
+                      <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="password-addon" name="confirm_pass" required="password">
+                    </div>
                     <div class="text-center">
-                      <button type="submit" class="btn w-100 mt-4 mb-0" style="background-color:#0EA10F !important; color:black;">Sign in</button>
+                      <button type="submit" class="btn w-100 mt-4 mb-0" style="background-color:#0EA10F !important; color:black;">Reset</button>
                     </div>
                   </form>
-                  <div class="col-12 d-flex justify-content-center mt-4">
-                  <p><u><a href="{{route('passwordreset')}}">Reset Password</a></u></p>
-                </div>
                 </div>
               </div>
             </div>

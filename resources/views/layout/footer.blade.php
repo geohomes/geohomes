@@ -21,8 +21,8 @@
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-50">
-                            <div class="footer-title">
-                                    <img src="assets/img/logo/logo-main.png" alt="" style="width:250px;">
+                            <div class=" footer-title">
+                                    <img src="assets/img/logo/logo-main.png" alt="" style="width:250px; margin-left:-22px;">
                                     <p style="margin-right:20px; color: #57636e;">Geohomes is a firm of qualified, Experienced Estate Developers <br> and Mangers, Civil Engineers. </p>
                                 <a href="{{route('about')}}" style="margin-right:20px; " class=" btn2 wantToWork-btn">Learn More <i class="ti-arrow-right"></i></a>
                                 </div>

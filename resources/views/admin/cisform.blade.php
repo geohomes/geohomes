@@ -4,6 +4,10 @@
 </head>
 
 <body>
+    @if(isset(Auth::user()->email))
+         @else
+          <script>window.location="login"</script>
+         @endif
 
         <div class="container">
                  <div class="row">
