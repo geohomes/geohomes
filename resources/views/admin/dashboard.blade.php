@@ -5,13 +5,22 @@
   @include('updatelayout.navbar')
    <div class="container-fluid py-4">
       <div class="row">
-         @if(isset(Auth::user()->email))
-          <div class="alert alert-success success-block">
-            <strong>Welcome {{Auth::user()->email }}   {{ date(' Y-m-d H:i:s') }}</strong>
+          <div class="alert">
+            <strong style="color:#0ea15f">Welcome {{Auth::user()->role }}. You logged in  {{Carbon\Carbon::parse (date(' Y-m-d H:i:s'))->diffForHumans()  }}</strong>
           </div>
-         @else
-          <script>window.location="login"</script>
-         @endif
+
+           <!-- it gives feedback messages -->
+           @if($message = Session::get('success'))
+           <div class="alert">
+           <p style="color:#0EA10F;">{{$message}}</p>
+           </div>
+            @endif
+            @if($message = Session::get('error'))
+            <div class="alert">
+            <p style="color:red;">{{$message}}</p>
+             </div>
+             @endif
+             <!-- feedback message ends here -->
 
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <a href="{{ route('application')}}">
@@ -197,12 +206,60 @@
                 </div>
                 </a>
               </div>
+
+
+    
+
+                  
+
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form method="POST" action="{{route('adduser')}}">
+                    <div class="mb-3">
+                      <label for="recipient-email" class="col-form-label">Email:</label>
+                      <input type="email" name="email" class="form-control" required="" placeholder="user@email.com">
+                    </div>
+                     <div class="mb-3">
+                     <label for="role" class="col-form-label">User Role:</label>
+                    <select name="role" id="role"  class="form-control" required="">
+                      <option class="mt-4 mb-3" value="manager">manager</option>
+                      <option class="mb-3" value="admin">admin</option>
+                    </select>
+                  </div>
+                     <div class="mb-3">
+                      <label for="recipient-password" class="col-form-label">Password:</label>
+                      <input type="password" name="password" class="form-control" required="" placeholder="***********">
+                    </div>
+                     <div class="modal-footer d-flex justify-content-between">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                  <button type="submit" class="btn" style="background-color:#0EA15F; color: white;">Save</button>
+                </div>
+                  </form>
+                </div>
+              
+
+              </div>
+            </div>
+          </div>
+
   <!--   Core JS Files   -->
   <script src="../admin/assets/js/core/popper.min.js"></script>
   <script src="../admin/assets/js/core/bootstrap.min.js"></script>
   <script src="../admin/assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../admin/assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../admin/assets/js/plugins/chartjs.min.js"></script>
+
+   <script type="text/javascript">
+    $('div.alert').delay(2000).slideUp(300);
+  </script>
+
   <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 

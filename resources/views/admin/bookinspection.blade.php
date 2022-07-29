@@ -4,10 +4,6 @@
 </head>
 
 <body>
-    @if(isset(Auth::user()->email))
-         @else
-          <script>window.location="login"</script>
-         @endif
              <!-- booking Form starts here -->
                   <div class="container">
                  <div class="row">

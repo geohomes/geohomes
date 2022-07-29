@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use Hash;
 
 class DashboardController extends Controller
 {
@@ -25,5 +26,4 @@ class DashboardController extends Controller
          ];
         return view('dashboard', compact('applicationCount', 'cisCount','bookingCount','consultantCount','affiliateCount','inpectionCount','propertysearchCount','contactCount'));
     }
-
 }

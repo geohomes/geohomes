@@ -7,11 +7,6 @@
   @include('updatelayout.navbar')
  <div class="container-fluid ">
       <div class="row">
-              @if(isset(Auth::user()->email))
-         @else
-          <script>window.location="login"</script>
-         @endif
-         
           <!-- it gives feedback messages -->
            @if($message = Session::get('success'))
            <div class="alert ">

@@ -19,8 +19,11 @@ class UserSeeder extends Seeder
         //
        $users = [
             ['email' => 'admin@admin.io', 'password' => Hash::make('1234'), 'role' => 'admin'],
+            ['email' => 'manager@manager.io', 'password' => Hash::make('1234'), 'role' => 'manager'],
+            ['email' => 'user@user.io', 'password' => Hash::make('1234'), 'role' => 'user'],
         ];
 
+        User::truncate();
         foreach ($users as $user) {
             User::create($user);
         }
